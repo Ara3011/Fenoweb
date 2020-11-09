@@ -1,0 +1,308 @@
+/*
+ESTILOS BARRA PRINCIPAL HEADER
+ */
+
+#loader2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+.navbar-default2 {
+    background-color: rgba(249,249,249, 1) !important;
+    box-shadow: 0 4px 18px 0 rgba(255, 123, 95, 0.34),0 7px 10px -5px rgba(255, 255, 255, 0.44);
+    border:0px;
+    padding: 20px 0;
+    transition: all 0.3s;
+}
+
+.navbar-default2 .navbar-brand2:focus, .navbar-default2 .navbar-brand2:hover
+{
+    color: #002F2F;
+}
+
+.navbar-default2 .navbar-brand2 {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+.navbar-default2 .navbar-brand2:hover, .navbar-default2 .navbar-brand2:focus
+{
+    color: #fff;
+}
+.navbar-brand2 {
+    padding: 0px;
+    font-size: 19px;
+    text-transform: uppercase;
+    background: transparent;
+    padding: 15px 0px;
+    margin-top: 6px;
+}
+.navbar-default2 .navbar-nav2 > li > a
+{
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 54px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.5);;
+
+}
+
+.top-nav-collapse2 {
+    padding: 0;
+    background: rgba(249,249,249, 1);
+}
+
+
+/*COLOR DE TEXTO CUANDO ESTA SELECCIONADO   */
+.navbar-default2 .navbar-nav2 > .active2 > a, .navbar-default2 .navbar-nav2 > .active2 > a:focus, .navbar-default2 .navbar-nav2 > .active2 > a:hover {
+    color: rgba(255, 87, 51, 0.8);
+    background-color: transparent;
+}
+
+
+.navbar-default2 .navbar-nav2 > li > a:focus, .navbar-default2 .navbar-nav2 > li > a:hover {
+    background-color: transparent;
+    color: rgba(255, 87, 51, 0.8);
+}
+
+@media (min-width: 20px) and (max-width: 450px) {
+    .navbar-default2 .navbar-brand2 {
+        padding-left: 16px;
+        margin-top: 0px;
+    }
+    .navbar-default2 .navbar-nav2 > li > a{
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+
+
+.menu
+{
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    font-size: 20px;
+
+}
+
+/*
+ESTILOS DEL CUERPO SOLO ES LETRA
+ */
+body
+{
+    font-family:Nunito;
+}
+
+/*
+COLOR DE TEXTO NARANJA PARA TITULO RED FENOLOGICA
+ */
+.text-naranja
+{
+    color: #fd7e14;
+}
+
+.bg-naranja
+{
+    background: #fd7e14;
+}
+
+/*
+ESTILOS DE LETRAS Y TAMAÑOS
+ */
+h1{
+    font-size: 60px;
+
+}
+h2{
+    font-size: 40px;
+
+}
+h5{
+
+    font-size: 25px;
+}
+h6{
+    font-size: 18px;
+}
+
+/*
+ESTILOS DEL CONTENIDO CENTRADO DEL PORTAFOLIO
+ */
+.cont-centro
+{
+    color: white;
+}
+
+
+.bg-verde
+{
+    background-color: rgba(6, 46, 10, 0.7);
+}
+/*
+COLOR VERDE ENCIMADO DEL CAROUSEL
+ */
+.bg-color
+{
+    background-color: rgba(6, 46, 10, 0.7);
+    min-height: 650px;
+}
+
+/*
+IMAGEN DE FONDO DE FENOLOGÍA
+ */
+.fondo{
+    background: url('../img/fenologia.png') no-repeat fixed;
+    background-size: cover;
+    min-height: 590px;
+}
+
+/*
+ESTILOS DEL CAROUSEL PRINCIPAL
+ */
+#carouselExampleIndicators
+{
+    min-height: 590px;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+
+}
+
+/*
+ESTILOS DEL PORTAFOLIO DE TARJETAS
+ */
+.visit-portfolio, .visit-portfolio:hover, .visit-portfolio:focus {
+    height: 50px;
+    width: 175px;
+    display: inline-block;
+    text-align: center;
+    color: #495376;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #838aa1;
+    margin-top: 45px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.portfolio-item
+{
+    position:relative;
+    overflow:hidden;
+}
+.portfolio-item figure
+{
+    margin:0;
+    padding:0;
+    position:relative;
+    cursor:pointer;
+}
+.portfolio-item figure img {
+    display:block;
+    position:relative;
+    z-index:10;
+    margin:-15px 0
+}
+.portfolio-item figure figcaption {
+    display:block;
+    position:absolute;
+    z-index:5;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+.portfolio-item figure h2 {
+    font-family: 'Fira Sans', sans-serif;
+    color:#fff;
+    font-size:20px;
+    text-align:left;
+    padding-bottom:15px;
+}
+.portfolio-item figure p {
+    display:block;
+    line-height:18px;
+    margin:0;
+    color:#fff;
+    text-align:left
+}
+.portfolio-item figure figcaption {
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding: 59px 30px;
+    background-color: #fd7e14;
+    backface-visibility:hidden;
+    -webkit-transform:rotateY(-180deg);
+    -moz-transform:rotateY(-180deg);
+    transform:rotateY(-180deg);
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s;
+    text-align: center;
+    min-height: 610px;
+}
+.portfolio-item figure img {
+    backface-visibility:hidden;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s
+}
+.portfolio-item figure:hover img,figure.hover img {
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    transform:rotateY(180deg)
+}
+.portfolio-item figure:hover figcaption,figure.hover figcaption {
+    -webkit-transform:rotateY(0);
+    -moz-transform:rotateY(0);
+    transform:rotateY(0)
+}
+
+#portfolio
+{
+    min-height: 610px;
+}
+
+/*
+ESTILOS DEL PORTAFOLIO RESPONSIVE
+ */
+@media (min-width: 768px) and (max-width: 980px) {
+    .service-item, .blog-sec, .wrap-item, .loction-info{
+        margin-bottom: 15px;
+    }
+    .portfolio-item figure figcaption{
+        padding: 55px 30px;
+    }
+    .portfolio-item figure figcaption {
+        padding: 30px 30px;
+    }
+    .padding-right-zero{
+        padding-right: 15px !important;
+    }
+    .portfolio-item figure p{
+        font-size: 14px;
+    }
+    .portfolio-item figure h2{
+        font-size: 18px;
+    }
+}

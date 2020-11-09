@@ -1,0 +1,17 @@
+.text-naranja
+{
+    color: #fd7e14;
+}
+
+
+.bg-naranja
+{
+    background: #fd7e14;
+}
+
+.btn-naranja:not(:disabled):not(.disabled):active, .btn-naranja:not(:disabled):not(.disabled).active,
+.show > .btn-naranja.dropdown-toggle {
+    color: #fff;
+    background: #fd7e14;
+    border-color: #000000;
+}
