@@ -9,6 +9,7 @@ use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\FamiliaController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\GraficaController;
+use App\Http\Controllers\Grafica1Controller;
 
 
 /*
@@ -37,6 +38,7 @@ Route::resource('estados', EstadoController::class);
 Route::resource('familias', FamiliaController::class);
 Route::resource('generos', GeneroController::class);
 Route::resource('graficas', GraficaController::class);
+Route::resource('grafica1', Grafica1Controller::class);
 
 Auth::routes();
 
