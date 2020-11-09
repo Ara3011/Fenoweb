@@ -8,7 +8,7 @@ use App\Http\Controllers\EspecieController;
 use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\FamiliaController;
 use App\Http\Controllers\GeneroController;
-
+use App\Http\Controllers\GraficaController;
 
 
 /*
@@ -36,6 +36,7 @@ Route::resource('especies', EspecieController::class);
 Route::resource('estados', EstadoController::class);
 Route::resource('familias', FamiliaController::class);
 Route::resource('generos', GeneroController::class);
+Route::resource('graficas', GraficaController::class);
 
 Auth::routes();
 

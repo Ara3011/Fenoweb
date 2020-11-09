@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Fenofases/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,6 +189,8 @@
       <workItem from="1604499394152" duration="13421000" />
       <workItem from="1604681748412" duration="4250000" />
       <workItem from="1604686033380" duration="1366000" />
+      <workItem from="1604890087272" duration="49000" />
+      <workItem from="1604890172303" duration="490000" />
     </task>
     <servers />
   </component>
@@ -199,10 +198,19 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604508046206">
+    <state x="531" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604890211647">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="531" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1604890211647" />
+    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604890115516">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1604890115516" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604890486692">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1604508046206" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1604890486692" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1604102147136">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

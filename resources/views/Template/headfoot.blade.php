@@ -68,6 +68,8 @@
             </li>
             <li class="nav-item"><a class="nav-link text-dark " href="{{url('/generos')}}">Géneros</a>
             </li>
+            <li class="nav-item"><a class="nav-link text-dark " href="{{url('/graficas')}}">Graficas</a>
+            </li>
 
 
 
