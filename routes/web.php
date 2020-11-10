@@ -37,9 +37,13 @@ Route::resource('especies', EspecieController::class);
 Route::resource('estados', EstadoController::class);
 Route::resource('familias', FamiliaController::class);
 Route::resource('generos', GeneroController::class);
-Route::resource('graficas', GraficaController::class);
-Route::resource('grafica1', Grafica1Controller::class);
 
+Route::get('/graficas', function () {
+    return view('Graficas.inicio');
+});
+Route::get('/graficas/grafica1', function () {
+    return view('Graficas.grafica1');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

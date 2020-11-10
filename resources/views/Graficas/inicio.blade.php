@@ -25,7 +25,7 @@
         <h1>hola</h1>
 
         <div id="list-example" class="list-group">
-            <a class="list-group-item list-group-item-action"  href="{{url('/grafica1')}}">Gráfica 1</a>
+            <a class="list-group-item list-group-item-action"  href="{{url('graficas/grafica1')}}">Gráfica 1</a>
             <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
             <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
             <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>

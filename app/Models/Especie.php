@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Response;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,6 +15,12 @@ class Especie extends Model
     protected $table = 'especies';
     protected $primaryKey ='id_especie';
     protected $fillable = ['descripcion'];
+    public function getResponses()
+    {
+        return $this->hasMany(Response::class);
+    }
 
 
 }
+
+
