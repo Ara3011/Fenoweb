@@ -8,7 +8,6 @@ use App\Http\Controllers\EspecieController;
 use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\FamiliaController;
 use App\Http\Controllers\GeneroController;
-use App\Http\Controllers\GraficaController;
 use App\Http\Controllers\Grafica1Controller;
 
 
@@ -41,9 +40,8 @@ Route::resource('generos', GeneroController::class);
 Route::get('/graficas', function () {
     return view('Graficas.inicio');
 });
-Route::get('/graficas/grafica1', function () {
-    return view('Graficas.grafica1');
-});
+
 Auth::routes();
 
+Route::get('/graficas/grafica1', [App\Http\Controllers\Grafica1Controller::class, 'observacionesespeciesInfo'])->name('grafica1');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

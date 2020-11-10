@@ -2,14 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Especies;
-use App\Models\Clima;
+use App\Charts\ObservacionesEspeciesChart;
+use App\Models\Notas;
+
 
 class Grafica1Controller extends Controller
 {
-public function especiesInfo()
+public function observacionesespeciesInfo()
 {
-    $semanales=Clima::groupBy("");
+    $notas=Notas::groupBy("Observadores.nom")
+        ->join('Observadores','Observadores.id_observador','=','Notas.id_nota')
+    ->select ("Observadores.nom")
+    ->selectRaw("Notas.created_at as resultado")
+
+    ->get();
+    $chart=new ObservacionesEspeciesChart();
+    $chart->labels($notas->pluck("Observadores.nom"));
+    $chart->dataset('Nombre','pie',$notas->pluck('resultado'));
+
+    return view('Graficas.grafica1', compact('chart'));
+
 }
+
 }
