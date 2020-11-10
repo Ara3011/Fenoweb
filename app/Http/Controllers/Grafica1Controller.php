@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Charts\ObservacionesEspeciesChart;
-use App\Models\Notas;
+use App\Models\Nota;
 
 
 class Grafica1Controller extends Controller
 {
 public function observacionesespeciesInfo()
 {
-    $notas=Notas::groupBy("Observadores.nom")
+    $notas=Nota::groupBy("Observadores.nom")
         ->join('Observadores','Observadores.id_observador','=','Notas.id_nota')
     ->select ("Observadores.nom")
     ->selectRaw("Notas.created_at as resultado")
