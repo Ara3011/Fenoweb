@@ -47,4 +47,5 @@ Route::get('/graficas/grafica1', [App\Http\Controllers\Grafica1Controller::class
 Route::get('/graficas/grafica2', [App\Http\Controllers\Grafica1Controller::class, 'observacionesespeciesInfo'])->name('grafica2');
 Route::get('/graficas/grafica3', [App\Http\Controllers\Grafica1Controller::class, 'observacionessitiosInfo'])->name('grafica3');
 Route::get('/graficas/grafica4', [App\Http\Controllers\Grafica1Controller::class, 'observacionesfenofasesInfo'])->name('grafica4');
+Route::get('/graficas/grafica5', [App\Http\Controllers\Grafica1Controller::class, 'calendariosespeciesInfo'])->name('grafica5');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

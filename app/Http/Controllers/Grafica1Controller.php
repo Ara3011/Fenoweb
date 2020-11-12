@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\CalendariosEspeciesChart;
 use App\Charts\ObservacionesEspeciesChart;
 use App\Charts\ObservacionesFenofasesChart;
 use App\Charts\ObservacionesObservadoresChart;
@@ -82,6 +83,29 @@ class Grafica1Controller extends Controller
         return($notas);
 
         return view('Graficas.grafica4', compact('chart'));
+
+    }
+    public function calendariosespeciesInfo()
+    {
+        //consulta 1.1
+
+        $notas=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->whereRaw('year(notas.created_at)=2014')
+            ->select ("especies.descripcion","fenofases.descrip_fenofase")
+            ->selectRaw("min(notas.created_at) as primera_fecha")
+            ->selectRaw("max(notas.created_at) as ultima_fecha")
+            ->selectRaw("count(*) as resultado")
+            ->groupBy("fenofases.descrip_fenofase","especies.descripcion")
+            ->get();
+        $chart=new CalendariosEspeciesChart();
+        $chart->labels($notas->pluck("fenofases.descrip_fenofase"));
+        $chart->dataset('Nombre de la fenofase','bar',$notas->pluck('resultado'));
+        return($notas);
+
+        return view('Graficas.grafica5', compact('chart'));
 
     }
 }
