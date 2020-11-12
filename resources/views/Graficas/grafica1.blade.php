@@ -7,19 +7,47 @@
                     Gráficos
                 </h3>
             </div>
-            <div class="row justify-content-center">
-                <div class="col 8">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1>{{ $chart->container() }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <figure class="highcharts-figure">
+                <div id="container_chart" style="height: 600px; width: 1100px"></div>
+            </figure>
+
         </div>
     </div>
 @endsection
 @section("scripts")
-    {{ $chart->script() }}
+    <script type="text/javascript">
+        Highcharts.chart('container_chart', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Monthly Average Rainfall'
+            },
+            subtitle: {
+                text: 'Source: WorldClimate.com'
+            },
+            xAxis: {
+                categories: {!! json_encode($categorias)!!},
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'No de datos registrados'
+                }
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: "Observadores",
+                data:{{json_encode($valores)}},
+            }],
+        });
+    </script>
 @endsection
 

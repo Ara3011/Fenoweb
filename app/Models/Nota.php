@@ -20,4 +20,30 @@ class Nota extends Model
     {
         return $this->hasMany(Response::class);
     }
+    public function getCalendarioEspeciesInfo(){
+        /*
+         [
+           {low:Date.parse("2019/03/02"),high:Date.parse("2019/4/3"),name:"28"},
+           {low:Date.parse("2019/2/3"), high:Date.parse("2019/5/3"),name:"23"},
+           {low:Date.parse("2019/3/3"), high:Date.parse("2019/4/3"),name:"34"},
+        ]
+         */
+        $categorias=array();
+        $valores=array();
+      return $datos= $this->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->whereRaw('year(notas.created_at)=2014')
+            ->select ("especies.descripcion","fenofases.descrip_fenofase")
+            ->selectRaw("min(notas.created_at) as primera_fecha")
+            ->selectRaw("max(notas.created_at) as ultima_fecha")
+            ->selectRaw("count(*) as resultado")
+            ->groupBy("fenofases.descrip_fenofase","especies.descripcion");
+
+           $datos->map(function($item) use (&$categorias,$valores){
+                array_push($categorias,$item->descrip_fenofase);
+           });
+       // dd($categorias);
+    }
 }
