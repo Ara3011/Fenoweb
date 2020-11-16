@@ -20,15 +20,15 @@
                                 <option>{{$sitio->sitio}}</option>
                                 @endforeach
                             </select>
-                            </form>
-                            <form class="form-group form mt-2"  >
                                 <select name="buscar_especie" id="buscar_especie"  onchange="ShowSelected2();">
                                     <option value="" disabled selected>Seleccione una especie</option>
                                     @foreach($especies as $especie)
-                                        <option value="{{$buscar_sitio}}">{{$especie->especie}}</option>
+                                        <option >{{$especie->especie}}</option>
                                     @endforeach
                                 </select>
+                                <input type="submit" value="Buscar">
                             </form>
+
                         </center>
                     </div>
 

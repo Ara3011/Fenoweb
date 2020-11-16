@@ -143,6 +143,8 @@ class Grafica1Controller extends Controller
 
         //Consulta 12.1 Falta por corregir
         $buscar_sitio= $request->input('buscar_sitio');
+        $buscar_especie= $request->input('buscar_especie');
+
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
@@ -156,6 +158,7 @@ class Grafica1Controller extends Controller
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
             ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
+            ->where('especies.descripcion','like','%'.$buscar_especie.'%')
             ->selectRaw('notas.created_at as fecha')
             ->selectRaw('notas.dia_juliano as dia_juliano')
             ->selectRaw('observadores.nom as observador')
@@ -195,6 +198,6 @@ class Grafica1Controller extends Controller
             ->distinct('especies.descripcion')
             ->get();
 
-        return view('Graficas.grafica9', compact('datos','buscar_sitio','sitios','especies'));
+        return view('Graficas.grafica9', compact('datos','buscar_sitio','sitios','especies','buscar_especie'));
     }
 }
