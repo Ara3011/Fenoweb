@@ -110,4 +110,34 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica5', compact('categorias',"data"));
 
     }
+    public function grafica6()
+    {
+        //Consulta 9
+        $datos=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->groupBy('individuos.uso');
+        $categorias=$datos->pluck('individuos.uso');
+        $valores=$datos->selectRaw("count(individuos.uso) as valor")->pluck("valor");
+        return view('Graficas.grafica6', compact('categorias','valores'));
+    }
+    public function grafica7()
+    {
+        //Consulta 11.2
+        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+            ->groupBy('observadores.nom')
+            ->whereRaw('year(notas.created_at)=2014');
+        $categorias=$datos->pluck('observadores.nom');
+        $valores=$datos->selectRaw("count(notas.created_at) as valor")->pluck("valor");
+        return view('Graficas.grafica7', compact('categorias','valores'));
+    }
+
+    public function grafica8()
+    {
+        //Consulta 11.3 Falta por corregir
+        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+            ->groupBy('observadores.nom')
+            ->whereRaw('year(notas.created_at)=2014');
+        $categorias=$datos->pluck('observadores.nom');
+        $valores=$datos->selectRaw("count(notas.created_at) as valor")->pluck("valor");
+        return view('Graficas.grafica8', compact('categorias','valores'));
+    }
 }

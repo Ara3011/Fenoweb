@@ -48,4 +48,14 @@ Route::get('/graficas/grafica2', [App\Http\Controllers\Grafica1Controller::class
 Route::get('/graficas/grafica3', [App\Http\Controllers\Grafica1Controller::class, 'observacionessitiosInfo'])->name('grafica3');
 Route::get('/graficas/grafica4', [App\Http\Controllers\Grafica1Controller::class, 'observacionesfenofasesInfo'])->name('grafica4');
 Route::get('/graficas/grafica5', [App\Http\Controllers\Grafica1Controller::class, 'calendariosespeciesInfo'])->name('grafica5');
+Route::get('/graficas/grafica6', [App\Http\Controllers\Grafica1Controller::class, 'grafica6'])->name('grafica6');
+Route::get('/graficas/grafica7', [App\Http\Controllers\Grafica1Controller::class, 'grafica7'])->name('grafica7');
+Route::get('/graficas/grafica8', [App\Http\Controllers\Grafica1Controller::class, 'grafica8'])->name('grafica8');
+Route::get('/graficas/grafica9', [App\Http\Controllers\Grafica1Controller::class, 'grafica9'])->name('grafica9');
+Route::get('/graficas/grafica10', [App\Http\Controllers\Grafica1Controller::class, 'grafica10'])->name('grafica10');
+Route::get('/graficas/grafica11', [App\Http\Controllers\Grafica1Controller::class, 'grafica11'])->name('grafica11');
+Route::get('/graficas/grafica12', [App\Http\Controllers\Grafica1Controller::class, 'grafica12'])->name('grafica12');
+Route::get('/graficas/grafica13', [App\Http\Controllers\Grafica1Controller::class, 'grafica13'])->name('grafica13');
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
