@@ -9,25 +9,29 @@
 
                     <h4 class="card-title">Fenofases</h4>
                 </div>
+
                 <div class="card-body">
                     <div>
                         <center>
-                            <form class="form-group form mt-2">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar_sitio" class="text-dark"><h4>Buscar Sitio: </h4></label>
-                                <input name="buscar_sitio" class="form-control form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar Fenofase"
-                                       aria-label="buscar_sitio" >
+                            <form class="form-group form mt-2"  >
+                            <select name="buscar_sitio" id="buscar_sitio"  onchange="ShowSelected();">
+                                <option value="" disabled selected>Seleccione un Sitio</option>
+                                @foreach($sitios as $sitio)
+                                <option>{{$sitio->sitio}}</option>
+                                @endforeach
+                            </select>
                             </form>
-                            <form class="form-group form mt-2">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar_especie" class="text-dark"><h4>Buscar Especie: </h4></label>
-                                <input name="buscar_especie" class="form-control form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar Fenofase"
-                                       aria-label="buscar_especie" >
+                            <form class="form-group form mt-2"  >
+                                <select name="buscar_especie" id="buscar_especie"  onchange="ShowSelected2();">
+                                    <option value="" disabled selected>Seleccione una especie</option>
+                                    @foreach($especies as $especie)
+                                        <option value="{{$buscar_sitio}}">{{$especie->especie}}</option>
+                                    @endforeach
+                                </select>
                             </form>
                         </center>
                     </div>
+
 
 
                     <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -120,8 +124,13 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">Intensidad de la Fenofase
+                                        </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Precipitación
                                         </th>
+
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Temperatura minima
@@ -158,6 +167,7 @@
                                             <td>{{$dato->altitud}}</td>
                                             <td>{{$dato->id_fenofase}}</td>
                                             <td>{{$dato->fenofase}}</td>
+                                            <td>{{$dato->int_feno}}</td>
                                             <td>{{$dato->precipitacion}}</td>
                                             <td>{{$dato->temperatura_minima}}</td>
                                             <td>{{$dato->temperatura_maxima}}</td>
@@ -177,6 +187,22 @@
     </div>
 @endsection
 @section("scripts")
+    <script type="text/javascript">
+        function ShowSelected()
+        {
+            /* Para obtener el texto */
+            var combo = document.getElementById("buscar_sitio");
+            var selected = combo.options[combo.selectedIndex].text;
+            alert(selected);
+        }
+        function ShowSelected2()
+        {
+            /* Para obtener el texto */
+            var combo = document.getElementById("buscar_especie");
+            var selected = combo.options[combo.selectedIndex].text;
+            alert(selected);
+        }
 
+    </script>
 @endsection
 

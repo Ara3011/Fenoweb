@@ -42,7 +42,6 @@ Route::get('/graficas', function () {
 });
 
 Auth::routes();
-//Route::get('/graficas/grafica1','Grafica1Controller@observacionesespeciesInfo')->name('grafica1');
 Route::get('/graficas/grafica1', [App\Http\Controllers\Grafica1Controller::class, 'observacionesobservadorInfo'])->name('grafica1');
 Route::get('/graficas/grafica2', [App\Http\Controllers\Grafica1Controller::class, 'observacionesespeciesInfo'])->name('grafica2');
 Route::get('/graficas/grafica3', [App\Http\Controllers\Grafica1Controller::class, 'observacionessitiosInfo'])->name('grafica3');

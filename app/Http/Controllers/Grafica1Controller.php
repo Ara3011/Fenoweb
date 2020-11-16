@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Charts\CalendariosEspeciesChart;
-use App\Charts\ObservacionesEspeciesChart;
-use App\Charts\ObservacionesFenofasesChart;
-use App\Charts\ObservacionesObservadoresChart;
-use App\Charts\ObservacionesSitiosChart;
+
 use App\Models\Nota;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
 
 class Grafica1Controller extends Controller
 {
@@ -142,13 +138,11 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica8', compact('categorias','valores'));
     }
 
-    const Paginacion=7;
-    public function grafica9()
+    public function grafica9(Request $request)
     {
 
         //Consulta 12.1 Falta por corregir
-
-
+        $buscar_sitio= $request->input('buscar_sitio');
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
@@ -161,7 +155,7 @@ class Grafica1Controller extends Controller
             ->join('estados','estados.id_estado','=','municipios.id_estado')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
-
+            ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
             ->selectRaw('notas.created_at as fecha')
             ->selectRaw('notas.dia_juliano as dia_juliano')
             ->selectRaw('observadores.nom as observador')
@@ -182,12 +176,25 @@ class Grafica1Controller extends Controller
             ->selectRaw('sitios.altitud as altitud')
             ->selectRaw('fenofases.id_fenofase as id_fenofase')
             ->selectRaw('fenofases.descrip_fenofase as fenofase')
+            ->selectRaw('notas.intensidad_fenofase as int_feno')
             ->selectRaw('notas.precipitacion as precipitacion')
             ->selectRaw('notas.temperatura_minima as temperatura_minima')
             ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
             ->selectRaw('notas.hallazgos as nota')
             ->get();
-        return view('Graficas.grafica9', compact('datos'));
-        return($datos);
+
+        $sitios=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->selectRaw('sitios.nombre as sitio')
+            ->distinct('sitios.nombre')
+            ->get();
+
+        $especies=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->selectRaw('especies.descripcion as especie')
+            ->distinct('especies.descripcion')
+            ->get();
+
+        return view('Graficas.grafica9', compact('datos','buscar_sitio','sitios','especies'));
     }
 }
