@@ -9,6 +9,7 @@ use App\Charts\ObservacionesObservadoresChart;
 use App\Charts\ObservacionesSitiosChart;
 use App\Models\Nota;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 
 class Grafica1Controller extends Controller
@@ -140,20 +141,15 @@ class Grafica1Controller extends Controller
         $valores=$datos->selectRaw("count(notas.created_at) as valor")->pluck("valor");
         return view('Graficas.grafica8', compact('categorias','valores'));
     }
+
+    const Paginacion=7;
     public function grafica9()
     {
+
         //Consulta 12.1 Falta por corregir
-        //select n.created_at  fecha, n.dia_juliano  dia_juliano, o.nom observador, i.nombre_comun nombre_comun,f.descripcion familia,
-        // g.descripcion genero, e.descripcion especie
-        //,su.descripcion subespecie, gr.descripcion grupo, i.id_individuo id_individuo, s.nombre sitio,s.id_sitio id_sitio,s.comunidad comunidad,m.nombre municipio,
-        //       es.nombre estado,s.latitud latitud,s.longitud longitud,s.altitud altitud, fe.id_fenofase id_fenofase, fe.descrip_fenofase fenofase, n.precipitacion,
-        //       n.temperatura_minima temperatura_minima, n.temperatura_maxima temperatura_maxima, n.hallazgos nota
-        //       from notas n, observadores o, individuos i,familias f, generos g, especies e,
-        //            subespecies su, escalas_bbch gr, sitios s, municipios m, estados es, fenofases fe
-        //where  o.id_observador=n.id_observador and n.id_individuo=i.id_individuo
-        //and g.id_genero=i.id_genero and su.id_subespecie=i.id_subespecie and su.id_especie=e.id_especie
-        //and gr.id_bbch=i.id_bbch and s.id_sitio=n.id_sitio and m.id_municipio=s.id_municipio and
-        //es.id_estado=m.id_estado and fe.id_fenofase=n.id_fenofase and s.nombre='Xorejé' and e.descripcion='leiophylla Schiede ex Schltdl. & Cham.';
+
+
+
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('generos','generos.id_genero','=','individuos.id_genero')
@@ -165,12 +161,11 @@ class Grafica1Controller extends Controller
             ->join('estados','estados.id_estado','=','municipios.id_estado')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
-            ->whereRaw('sitios.nombre="Xorejé"')
-            ->whereRaw('especies.descripcion="leiophylla Schiede ex Schltdl. & Cham."')
+
             ->selectRaw('notas.created_at as fecha')
             ->selectRaw('notas.dia_juliano as dia_juliano')
             ->selectRaw('observadores.nom as observador')
-            ->selectRaw('individuos.nombre_comun as nombre_común')
+            ->selectRaw('individuos.nombre_comun as nombre_comun')
             ->selectRaw('familias.descripcion as familia')
             ->selectRaw('generos.descripcion as genero')
             ->selectRaw('especies.descripcion as especie')
@@ -187,11 +182,12 @@ class Grafica1Controller extends Controller
             ->selectRaw('sitios.altitud as altitud')
             ->selectRaw('fenofases.id_fenofase as id_fenofase')
             ->selectRaw('fenofases.descrip_fenofase as fenofase')
-            ->selectRaw('notas.precipitacion as precipitación')
+            ->selectRaw('notas.precipitacion as precipitacion')
             ->selectRaw('notas.temperatura_minima as temperatura_minima')
             ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
             ->selectRaw('notas.hallazgos as nota')
             ->get();
+        return view('Graficas.grafica9', compact('datos'));
         return($datos);
     }
 }
