@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 
+use App\Exports\NotasExport;
 use App\Models\Nota;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Grafica1Controller extends Controller
 {
@@ -240,6 +245,11 @@ class Grafica1Controller extends Controller
 
         return view('Graficas.grafica9', compact('datos','buscar_sitio','sitios','especies','buscar_especie'));
     }
+
+    public function bladeToExcel()
+    {
+     return Excel::download(new NotasExport, 'notas.xlsx');
+    }
     public function grafica10(Request $request)
     {
         //Consulta 11.1 ¿Cuántas especies registro cada observador por año en un año?
@@ -263,6 +273,10 @@ class Grafica1Controller extends Controller
         $valores=$datos->selectRaw("count(DISTINCT especies.id_especie) as valor")->pluck("valor");
         return view('Graficas.grafica10 ', compact('categorias','valores','anios',
             'buscar_anio'));
+    }
+    public function export()
+    {
+        return Excel::download(new NotasExport(), 'notas.xlsx');
     }
     public function grafica11(Request $request)
     {

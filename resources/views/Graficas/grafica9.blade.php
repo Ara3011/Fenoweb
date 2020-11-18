@@ -7,7 +7,13 @@
             <div class="card">
                 <div class="card-header bg-success">
 
-                    <h4 class="card-title">Fenofases</h4>
+                    <h4 class="card-title">Base de datos Fenologia</h4>
+                </div>
+
+                <div class="float-right">
+                    <form action="{{url('/graficas/grafica9/exportar')}}" enctype="multipart/form-data">
+                        <button class="btn btn-dark" type="submit">Export</button>
+                    </form>
                 </div>
 
                 <div class="card-body">
@@ -16,7 +22,7 @@
                             <form class="form-group form mt-2"  >
                             <select name="buscar_sitio" id="buscar_sitio" >
                                 <option value="" disabled selected>Seleccione un Sitio</option>
-                                @foreach($sitios as $sitio)
+                                @foreach($sitios ?? '' as $sitio)
                                 <option>{{$sitio->sitio}}</option>
                                 @endforeach
                             </select>
@@ -31,8 +37,6 @@
 
                         </center>
                     </div>
-
-
 
                     <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                         <div class="row">

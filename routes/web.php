@@ -9,7 +9,8 @@ use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\FamiliaController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\Grafica1Controller;
-
+use App\Exports\NotasExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::get('/graficas/grafica10', [App\Http\Controllers\Grafica1Controller::clas
 Route::get('/graficas/grafica11', [App\Http\Controllers\Grafica1Controller::class, 'grafica11'])->name('grafica11');
 Route::get('/graficas/grafica12', [App\Http\Controllers\Grafica1Controller::class, 'grafica12'])->name('grafica12');
 Route::get('/graficas/grafica13', [App\Http\Controllers\Grafica1Controller::class, 'grafica13'])->name('grafica13');
+
+Route::get('/graficas/grafica9/exportar', [App\Http\Controllers\Grafica1Controller::class, 'bladeToExcel'])->name('exportar');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
