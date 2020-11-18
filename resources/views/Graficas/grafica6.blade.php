@@ -3,10 +3,6 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12"><h3>
-                    Gráficos
-                </h3>
-            </div>
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card">
@@ -29,10 +25,10 @@
             },
 
             title: {
-                text: 'Monthly Average Rainfall'
+                text: 'Mayores usos de las especies'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: ''
             },
             xAxis: {
                 categories: {!! json_encode($categorias)!!},

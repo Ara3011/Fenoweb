@@ -6,12 +6,6 @@
             <div>
                 <center>
                     <form class="form-group form mt-2"  >
-                        <select name="buscar_observador" id="buscar_observador" >
-                            <option value="" disabled selected>Seleccione un observador</option>
-                            @foreach($observadores as $observador)
-                                <option>{{$observador->nombre}}</option>
-                            @endforeach
-                        </select>
                         <select name="buscar_anio" id="buscar_anio" >
                             <option value="" disabled selected>Seleccione un año</option>
                             @foreach($anios as $anio)
@@ -44,7 +38,7 @@
             },
 
             title: {
-                text: 'Sitios monitoreados por observador "X" agrupado por años'
+                text: 'Especies monitoreadas por los observadores de manera anual'
             },
             subtitle: {
                 text: ''
@@ -67,7 +61,7 @@
                 }
             },
             series: [{
-                name: "Sitios observados",
+                name: "especies observadas",
                 data:{{json_encode($valores)}},
             }],
         });

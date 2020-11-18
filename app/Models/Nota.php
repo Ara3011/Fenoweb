@@ -41,9 +41,11 @@ class Nota extends Model
             ->selectRaw("count(*) as resultado")
             ->groupBy("fenofases.descrip_fenofase","especies.descripcion");
 
+
+
            $datos->map(function($item) use (&$categorias,$valores){
                 array_push($categorias,$item->descrip_fenofase);
            });
-       // dd($categorias);
+
     }
 }

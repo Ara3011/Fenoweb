@@ -3,11 +3,6 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-8"><h3>
-                    Gráficos
-                </h3>
-            </div>
-
             <figure class="highcharts-figure">
                 <div id="container_chart" style="height: 600px; width: 1100px"></div>
             </figure>
@@ -23,10 +18,10 @@
             },
 
             title: {
-                text: 'Monthly Average Rainfall'
+                text: 'Observaciones para cada especie'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: ''
             },
             xAxis: {
                 categories: {!! json_encode($categorias)!!},
@@ -46,7 +41,7 @@
                 }
             },
             series: [{
-                name: "Especies",
+                name: "Observaciones",
                 data:{{json_encode($valores)}},
             }],
         });

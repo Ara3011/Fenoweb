@@ -44,7 +44,7 @@
             },
 
             title: {
-                text: 'Sitios monitoreados por observador "X" agrupado por años'
+                text: 'Fenofases monitoreadas por observador "X" de manera anual'
             },
             subtitle: {
                 text: ''
@@ -67,7 +67,7 @@
                 }
             },
             series: [{
-                name: "Sitios observados",
+                name: "fenofases observadas",
                 data:{{json_encode($valores)}},
             }],
         });

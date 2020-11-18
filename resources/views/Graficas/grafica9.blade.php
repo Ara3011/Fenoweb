@@ -14,13 +14,13 @@
                     <div>
                         <center>
                             <form class="form-group form mt-2"  >
-                            <select name="buscar_sitio" id="buscar_sitio"  onchange="ShowSelected();">
+                            <select name="buscar_sitio" id="buscar_sitio" >
                                 <option value="" disabled selected>Seleccione un Sitio</option>
                                 @foreach($sitios as $sitio)
                                 <option>{{$sitio->sitio}}</option>
                                 @endforeach
                             </select>
-                                <select name="buscar_especie" id="buscar_especie"  onchange="ShowSelected2();">
+                                <select name="buscar_especie" id="buscar_especie" >
                                     <option value="" disabled selected>Seleccione una especie</option>
                                     @foreach($especies as $especie)
                                         <option >{{$especie->especie}}</option>
@@ -188,20 +188,6 @@
 @endsection
 @section("scripts")
     <script type="text/javascript">
-        function ShowSelected()
-        {
-            /* Para obtener el texto */
-            var combo = document.getElementById("buscar_sitio");
-            var selected = combo.options[combo.selectedIndex].text;
-            alert(selected);
-        }
-        function ShowSelected2()
-        {
-            /* Para obtener el texto */
-            var combo = document.getElementById("buscar_especie");
-            var selected = combo.options[combo.selectedIndex].text;
-            alert(selected);
-        }
 
     </script>
 @endsection

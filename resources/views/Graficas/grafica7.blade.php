@@ -3,10 +3,27 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12"><h3>
-                    Gráficos
-                </h3>
-            </div>
+            <div class="card-body">
+                <div>
+                    <center>
+                        <form class="form-group form mt-2"  >
+                            <select name="buscar_observador" id="buscar_observador" >
+                                <option value="" disabled selected>Seleccione un observador</option>
+                                @foreach($observadores as $observador)
+                                    <option>{{$observador->nombre}}</option>
+                                @endforeach
+                            </select>
+                            <select name="buscar_anio" id="buscar_anio" >
+                                <option value="" disabled selected>Seleccione un año</option>
+                                @foreach($anios as $anio)
+                                    <option >{{$anio->anio}}</option>
+                                @endforeach
+                            </select>
+                            <input type="submit" value="Buscar" id="btn">
+                        </form>
+
+                    </center>
+                </div>
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card">
@@ -29,10 +46,10 @@
             },
 
             title: {
-                text: 'Monthly Average Rainfall'
+                text: 'Registros de un colector "X" en un año'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: ''
             },
             xAxis: {
                 categories: {!! json_encode($categorias)!!},
@@ -52,10 +69,11 @@
                 }
             },
             series: [{
-                name: "",
+                name: "Observaciones",
                 data:{{json_encode($valores)}},
             }],
         });
     </script>
+
 @endsection
 

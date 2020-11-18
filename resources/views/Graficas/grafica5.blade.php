@@ -3,11 +3,16 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12"><h3>
-                    Gráficos
-                </h3>
-            </div>
             <div class="row justify-content-center">
+                <form class="form-group form mt-2"  >
+                    <select name="buscar_ano" id="buscar_ano" >
+                        <option value="" disabled selected>Seleccione un año</option>
+                        @foreach($anos as $ano)
+                            <option>{{$ano->anio}}</option>
+                        @endforeach
+                    </select>
+                    <input type="submit" value="Buscar">
+                </form>
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
@@ -36,11 +41,11 @@
             },
 
             title: {
-                text: 'Temperature variation by month'
+                text: 'Calendario de primera y última observación de cada fase fenológica por especie (anuales).'
             },
 
             subtitle: {
-                text: 'Observed in Vik i Sogn, Norway, 2017'
+                text: ''
             },
 
             xAxis: {
@@ -68,7 +73,7 @@
                         enabled: true,
                         inside:true,
                         formatter: function (){
-                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Descripciones:"+this.point.name;
+                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Observaciones:"+this.point.name;
                         }
                     }
                 }
