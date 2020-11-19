@@ -16,7 +16,7 @@
                 </a>
             </button>
         </div>
-        <div class="col-md-12">
+        <div class="col-12">
             <div class="card">
                 <div class="card-header bg-success">
 

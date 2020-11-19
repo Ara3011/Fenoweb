@@ -84,7 +84,7 @@
     </div>
 </nav>
 
-<main class="container">
+<main class="container row align-items-start">
     @yield('content')
 </main>
 
