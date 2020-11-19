@@ -1,6 +1,23 @@
 @extends('Template.headfoot')
 @section('content')
 
+    <style type="text/css">
+        #scrolly{
+            width: 1000px;
+            height: 190px;
+            overflow: auto;
+            overflow-y: hidden;
+            margin: 0 auto;
+            white-space: nowrap
+        }
+
+        img{
+            width: 300px;
+            height: 150px;
+            margin: 20px 10px;
+            display: inline;
+        }
+    </style>
     <div class="container-fluid">
 
         <div class="col-md-12">
@@ -38,7 +55,7 @@
                         </center>
                     </div>
 
-                    <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div id="scrolly" class="dataTables_wrapper dt-bootstrap4">
                         <div class="row">
                             <div class="col-sm-12">
                                 <table id="example1" class="table dataTable"
