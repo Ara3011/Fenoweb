@@ -42,6 +42,10 @@ Route::get('/graficas', function () {
     return view('Graficas.inicio');
 });
 
+Route::get('/menu', function () {
+    return view('Template.menugraf');
+});
+
 Auth::routes();
 Route::get('/graficas/grafica1', [App\Http\Controllers\Grafica1Controller::class, 'observacionesobservadorInfo'])->name('grafica1');
 Route::get('/graficas/grafica2', [App\Http\Controllers\Grafica1Controller::class, 'observacionesespeciesInfo'])->name('grafica2');

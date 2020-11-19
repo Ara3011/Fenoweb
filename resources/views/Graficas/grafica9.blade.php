@@ -1,5 +1,5 @@
-@extends('Template.headfoot')
-@section('content')
+@extends('Template.menugraf')
+@section('contenido')
 
     <style type="text/css">
         #scrolly{

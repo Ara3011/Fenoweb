@@ -1,7 +1,6 @@
-@extends('Template.headfoot')
-@section('content')
-
-    <div class="container">
+@extends('Template.menugraf')
+@section('contenido')
+    <div class="container container mt-4" style="padding-top: 50px;">
         <div class="row justify-content-center">
             <div class="row justify-content-center">
                 <form class="form-group form mt-2"  >

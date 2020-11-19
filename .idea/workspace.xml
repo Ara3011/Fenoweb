@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Fenoweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fenoweb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica1.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica11.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica11.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica3.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica4.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica6.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica6.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica7.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica7.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica8.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica8.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +76,6 @@
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
@@ -141,6 +153,19 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/consoletvs/charts" />
       <path value="$PROJECT_DIR$/vendor/balping/json-raw-encoder" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iU5JAOTVIurl52BYri3l19BZMX" />
@@ -201,7 +226,9 @@
       <workItem from="1604890087272" duration="49000" />
       <workItem from="1604890172303" duration="490000" />
       <workItem from="1605147926290" duration="9074000" />
-      <workItem from="1605504160505" duration="4258000" />
+      <workItem from="1605504160505" duration="4426000" />
+      <workItem from="1605798966368" duration="84000" />
+      <workItem from="1605799065879" duration="6191000" />
     </task>
     <servers />
   </component>
