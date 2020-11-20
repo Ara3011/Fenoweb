@@ -14,7 +14,9 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Facades\Excel;
 
 class Grafica1Controller extends Controller
+
 {
+    const Paginacion=6;
     function __construct() {
      $this->nota=new Nota();
     }
@@ -79,7 +81,7 @@ class Grafica1Controller extends Controller
     {
 
         //consulta 1.1 Calendario particular por especie y por individuo por mes y por grupo de planta (escala BBCH), (ID de individuo y fenofase)
-        $buscar_ano= $request->input('buscar_ano');
+        $buscar_anio= $request->input('buscar_anio');
         $categorias=$this->nota->getCalendarioEspeciesInfo()->distinct("descrip_fenofase")->select("descrip_fenofase")->pluck("descrip_fenofase");
         $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
         $anos=$this->nota->selectRaw('year(created_at) as anio')
@@ -93,7 +95,8 @@ class Grafica1Controller extends Controller
             foreach ($categorias as $categoria)
             {
                 $valor=$this->nota->getCalendarioEspeciesInfo()
-                    ->whereDescripFenofase($categoria)->where("especies.descripcion",$especie)->get();
+                    ->whereDescripFenofase($categoria)->where("especies.descripcion",$especie)
+                    ->whereYear('notas.created_at','like','%'.$buscar_anio.'%')->get();
                 if($valor->count()>0) {
                    // $date = strtotime($valor[0]->primera_fecha);
 
@@ -110,7 +113,7 @@ class Grafica1Controller extends Controller
         }
 
 
-        return view('Graficas.grafica5', compact('categorias',"data","buscar_ano","anos"));
+        return view('Graficas.grafica5', compact('categorias',"data","buscar_anio","anos"));
 
     }
     public function grafica6()
@@ -213,23 +216,20 @@ class Grafica1Controller extends Controller
             ->selectRaw('especies.descripcion as especie')
             ->selectRaw('subespecies.descripcion as subespecies')
             ->selectRaw('escalas_bbch.descripcion as escala_bbch')
-            ->selectRaw('individuos.id_individuo as id_individuo')
             ->selectRaw('sitios.nombre as sitio')
-            ->selectRaw('sitios.id_sitio as id_sitio')
             ->selectRaw('sitios.comunidad as comunidad')
             ->selectRaw('municipios.nombre as municipio')
             ->selectRaw('estados.nombre as estado')
             ->selectRaw('sitios.latitud as latitud')
             ->selectRaw('sitios.longitud as longitud')
             ->selectRaw('sitios.altitud as altitud')
-            ->selectRaw('fenofases.id_fenofase as id_fenofase')
             ->selectRaw('fenofases.descrip_fenofase as fenofase')
             ->selectRaw('notas.intensidad_fenofase as int_feno')
             ->selectRaw('notas.precipitacion as precipitacion')
             ->selectRaw('notas.temperatura_minima as temperatura_minima')
             ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
             ->selectRaw('notas.hallazgos as nota')
-            ->get();
+            ->paginate($this::Paginacion);
 
         $sitios=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
             ->selectRaw('sitios.nombre as sitio')

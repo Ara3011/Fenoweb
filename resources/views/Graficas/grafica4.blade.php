@@ -1,10 +1,10 @@
 @extends('Template.menugraf')
 @section('contenido')
 
-    <div class="container container mt-4" style="padding-top: 50px;">
+    <div class="container container mt-4"style="padding-top: 10px">
         <div class="row justify-content-center">
             <figure class="highcharts-figure">
-                <div id="container_chart" style="height: 600px; width: 1100px"></div>
+                <div id="container_chart" style="height: 650px; width: 1100px"></div>
             </figure>
 
         </div>
@@ -37,7 +37,7 @@
                 column: {
                     pointPadding: 0.1,
                     borderWidth: 3,
-                    color:'orange',
+                    color:'rgb(44, 75, 107)',
                 }
             },
             series: [{

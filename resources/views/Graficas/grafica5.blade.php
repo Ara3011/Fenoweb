@@ -1,22 +1,26 @@
 @extends('Template.menugraf')
 @section('contenido')
-    <div class="container container mt-4" style="padding-top: 50px;">
+    <div class="container container mt-4" style="padding-top: 10px">
         <div class="row justify-content-center">
             <div class="row justify-content-center">
-                <form class="form-group form mt-2"  >
-                    <select name="buscar_ano" id="buscar_ano" >
-                        <option value="" disabled selected>Seleccione un año</option>
-                        @foreach($anos as $ano)
-                            <option>{{$ano->anio}}</option>
-                        @endforeach
-                    </select>
-                    <input type="submit" value="Buscar">
-                </form>
+                <div>
+                    <center>
+                        <form class="form-group form mt-2"  >
+                            <select name="buscar_anio" id="buscar_anio">
+                                <option  disabled selected>Seleccione un año</option>
+                                @foreach($anos as $ano)
+                                    <option>{{$ano->anio}}</option>
+                                @endforeach
+                            </select>
+                            <input type="submit" value="Buscar">
+                        </form>
+                    </center>
+                </div>
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
                             <figure class="highcharts-figure">
-                                <div id="container_chart" style="height: 600px; width: 1100px"></div>
+                                <div id="container_chart" style="height: 700px; width: 1050px"></div>
                             </figure>
                         </div>
                     </div>

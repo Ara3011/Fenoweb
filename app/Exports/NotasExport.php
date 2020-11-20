@@ -34,16 +34,13 @@ class NotasExport implements FromCollection,  WithHeadings
                 ->selectRaw('especies.descripcion as especie')
                 ->selectRaw('subespecies.descripcion as subespecies')
                 ->selectRaw('escalas_bbch.descripcion as escala_bbch')
-                ->selectRaw('individuos.id_individuo as id_individuo')
                 ->selectRaw('sitios.nombre as sitio')
-                ->selectRaw('sitios.id_sitio as id_sitio')
                 ->selectRaw('sitios.comunidad as comunidad')
                 ->selectRaw('municipios.nombre as municipio')
                 ->selectRaw('estados.nombre as estado')
                 ->selectRaw('sitios.latitud as latitud')
                 ->selectRaw('sitios.longitud as longitud')
                 ->selectRaw('sitios.altitud as altitud')
-                ->selectRaw('fenofases.id_fenofase as id_fenofase')
                 ->selectRaw('fenofases.descrip_fenofase as fenofase')
                 ->selectRaw('notas.intensidad_fenofase as int_feno')
                 ->selectRaw('notas.precipitacion as precipitacion')
@@ -65,16 +62,14 @@ return $datos;
             'Especie',
             'Subespecie',
             'Escala_BBCH',
-            'id_individuo',
             'Sitio',
-            'id_sitio',
             'Comunidad',
             'Municipio',
             'Estado',
             'Latitud',
             'Longitud',
             'Altitud',
-            'id_fenofase',
+            'fenofase',
             'intensidad_Fenofase',
             'precipitación',
             'Temperatura_minima',

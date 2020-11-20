@@ -21,7 +21,7 @@
                     <div class="card" style="left: 20px">
                         <div class="card-body">
                             <figure class="highcharts-figure">
-                                <div id="container_chart" style="height: 600px; width: 1100px"></div>
+                                <div id="container_chart" style="height: 600px; width: 1050px"></div>
                             </figure>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                 column: {
                     pointPadding: 0.1,
                     borderWidth: 3,
-                    color:'orange',
+                    color:'rgb( 36, 2, 253 )',
                 }
             },
             series: [{

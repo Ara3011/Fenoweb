@@ -1,7 +1,7 @@
 @extends('Template.menugraf')
 @section('contenido')
 
-    <div class="container container mt-4" style="padding-top: 50px;">
+    <div class="container container mt-4" style="padding-top: 0px;">
         <div class="row justify-content-center">
             <div>
                 <center>
@@ -27,7 +27,7 @@
                     <div class="card">
                         <div class="card-body">
                             <figure class="highcharts-figure">
-                                <div id="container_chart" style="height: 600px; width: 1100px"></div>
+                                <div id="container_chart" style="height: 580px; width: 1050px"></div>
                             </figure>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                 column: {
                     pointPadding: 0.1,
                     borderWidth: 3,
-                    color:'orange',
+                    color:'rgb( 93, 4, 4 )',
                 }
             },
             series: [{

@@ -2,10 +2,10 @@
 @section('contenido')
 
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
 
         <div class="col-md-12">
-            <div class="card mt-2">
+            <div class="card mt-2" >
                 <div class="card-header">
 
                     <h4 class="card-title text-center">Base de datos Fenologia</h4>
@@ -41,7 +41,7 @@
 
                     <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
                     height:700px;
-                     width:1080px;">
+                     width:1010px;">
                         <div class="row">
                             <div class="col-sm-12">
                                 <table id="example1" class="table dataTable"
@@ -88,18 +88,10 @@
                                             aria-label="Rendering engine: activate to sort column descending">Escala
                                             BBCH
                                         </th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">
-                                            Id_individuo
-                                        </th>
+
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Sitio
-                                        </th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Id_sitio
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -125,11 +117,7 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Altitud
                                         </th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">
-                                            Id_fenofase
-                                        </th>
+
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Fenofase
@@ -172,16 +160,13 @@
                                             <td>{{$dato->especie}}</td>
                                             <td>{{$dato->subespecies}}</td>
                                             <td>{{$dato->escala_bbch}}</td>
-                                            <td>{{$dato->id_individuo}}</td>
                                             <td>{{$dato->sitio}}</td>
-                                            <td>{{$dato->id_sitio}}</td>
                                             <td>{{$dato->comunidad}}</td>
                                             <td>{{$dato->municipio}}</td>
                                             <td>{{$dato->estado}}</td>
                                             <td>{{$dato->latitud}}</td>
                                             <td>{{$dato->longitud}}</td>
                                             <td>{{$dato->altitud}}</td>
-                                            <td>{{$dato->id_fenofase}}</td>
                                             <td>{{$dato->fenofase}}</td>
                                             <td>{{$dato->int_feno}}</td>
                                             <td>{{$dato->precipitacion}}</td>
@@ -193,13 +178,24 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
 
                     </div>
-                </div>
+
             </div>
         </div>
+    </div>
+    <div class="align-content-center">
+        <span class="align-content-center">
+            {{ $datos->links('pagination::bootstrap-4') }}
+        </span>
+        <style>
+            .w-5 {
+                display: none;
+            }
+        </style>
     </div>
 @endsection
 @section("scripts")

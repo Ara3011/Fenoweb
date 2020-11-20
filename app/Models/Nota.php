@@ -34,7 +34,6 @@ class Nota extends Model
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
             ->join('especies','especies.id_especie','=','subespecies.id_especie')
-            ->whereRaw('year(notas.created_at)=2014')
             ->select ("especies.descripcion","fenofases.descrip_fenofase")
             ->selectRaw("min(notas.created_at) as primera_fecha")
             ->selectRaw("max(notas.created_at) as ultima_fecha")
