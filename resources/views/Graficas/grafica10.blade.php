@@ -18,7 +18,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="card" style="left: 140px">
+                    <div class="card" style="left: 20px">
                         <div class="card-body">
                             <figure class="highcharts-figure">
                                 <div id="container_chart" style="height: 600px; width: 1100px"></div>

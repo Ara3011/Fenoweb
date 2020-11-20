@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Fenoweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fenoweb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica1.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica11.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica11.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica3.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica4.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica6.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica6.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica7.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica7.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica8.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica8.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/inicio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/menugraf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/menugraf.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,6 +217,7 @@
       <workItem from="1605504160505" duration="4426000" />
       <workItem from="1605798966368" duration="84000" />
       <workItem from="1605799065879" duration="6191000" />
+      <workItem from="1605833641689" duration="4939000" />
     </task>
     <servers />
   </component>
@@ -273,9 +262,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1602113803382" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1601963013449">
+    <state x="425" y="197" key="run.anything.popup" timestamp="1605838068184">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1601963013449" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1605838068184" />
   </component>
 </project>

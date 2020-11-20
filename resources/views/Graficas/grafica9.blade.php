@@ -1,52 +1,36 @@
 @extends('Template.menugraf')
 @section('contenido')
 
-    <style type="text/css">
-        #scrolly{
-            width: 1000px;
-            height: 190px;
-            overflow: auto;
-            overflow-y: hidden;
-            margin: 0 auto;
-            white-space: nowrap
-        }
 
-        img{
-            width: 300px;
-            height: 150px;
-            margin: 20px 10px;
-            display: inline;
-        }
-    </style>
     <div class="container-fluid">
 
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header bg-success">
+            <div class="card mt-2">
+                <div class="card-header">
 
-                    <h4 class="card-title">Base de datos Fenologia</h4>
+                    <h4 class="card-title text-center">Base de datos Fenologia</h4>
                 </div>
-
-                <div class="float-right">
+                <div class="float-left">
                     <form action="{{url('/graficas/grafica9/exportar')}}" enctype="multipart/form-data">
-                        <button class="btn btn-dark" type="submit">Export</button>
+                        <button class="btn font-weight-bold" style="border: grey 1px solid;" type="submit">
+                            <img src="/img/excell.png" width="30" height="30">
+                            Exportar</button>
                     </form>
                 </div>
-
                 <div class="card-body">
                     <div>
                         <center>
-                            <form class="form-group form mt-2"  >
-                            <select name="buscar_sitio" id="buscar_sitio" >
-                                <option value="" disabled selected>Seleccione un Sitio</option>
-                                @foreach($sitios ?? '' as $sitio)
-                                <option>{{$sitio->sitio}}</option>
-                                @endforeach
-                            </select>
-                                <select name="buscar_especie" id="buscar_especie" >
+                            <form class="form-group form mt-2">
+                                <select name="buscar_sitio" id="buscar_sitio">
+                                    <option value="" disabled selected>Seleccione un Sitio</option>
+                                    @foreach($sitios ?? '' as $sitio)
+                                        <option>{{$sitio->sitio}}</option>
+                                    @endforeach
+                                </select>
+                                <select name="buscar_especie" id="buscar_especie">
                                     <option value="" disabled selected>Seleccione una especie</option>
                                     @foreach($especies as $especie)
-                                        <option >{{$especie->especie}}</option>
+                                        <option>{{$especie->especie}}</option>
                                     @endforeach
                                 </select>
                                 <input type="submit" value="Buscar">
@@ -55,7 +39,9 @@
                         </center>
                     </div>
 
-                    <div id="scrolly" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
+                    height:700px;
+                     width:1080px;">
                         <div class="row">
                             <div class="col-sm-12">
                                 <table id="example1" class="table dataTable"
@@ -69,7 +55,8 @@
 
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Día Juliano
+                                            aria-label="Rendering engine: activate to sort column descending">Día
+                                            Juliano
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -77,7 +64,8 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Nombre Común
+                                            aria-label="Rendering engine: activate to sort column descending">Nombre
+                                            Común
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -97,11 +85,13 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Escala BBCH
+                                            aria-label="Rendering engine: activate to sort column descending">Escala
+                                            BBCH
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Id_individuo
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Id_individuo
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -137,7 +127,8 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Id_fenofase
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Id_fenofase
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -145,20 +136,24 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Intensidad de la Fenofase
+                                            aria-label="Rendering engine: activate to sort column descending">Intensidad
+                                            de la Fenofase
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Precipitación
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Precipitación
                                         </th>
 
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Temperatura minima
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Temperatura minima
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Temperatura máxima
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Temperatura máxima
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"

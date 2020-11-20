@@ -1,10 +1,11 @@
 @extends('Template.headfoot')
 @section('content')
 
-    <div class="wrapper d-flex align-items-stretch mt-6">
-        <nav id="sidebar">
-            <h2 class="card-header"> Menú gráficas</h2>
-            <div class="nav flex-column nav-pills"  >
+    <div class="wrapper d-flex align-items-stretch">
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+
+            <div class="nav flex-column nav-pills" style="width: 300px"  >
+                <h2 class="card-header"> Menú de gráficas</h2>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica1')}}">Observaciones por cada
                     observador (general).</a>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica2')}}">Observaciones por cada
