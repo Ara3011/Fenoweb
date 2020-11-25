@@ -86,7 +86,8 @@ class Grafica1Controller extends Controller
         $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
         $anos=$this->nota->selectRaw('year(created_at) as anio')
             ->distinct('year(created_at)')
-            ->get();
+            ->orderBy('anio', 'DESC')->get();
+
         $data=array();
         foreach ($especies as $especie)
         {
@@ -147,7 +148,7 @@ class Grafica1Controller extends Controller
 
         $anios=Nota::selectRaw('year(created_at) as anio')
             ->distinct('year(created_at)')
-            ->orderBy('anio', 'ASC')->get();
+            ->orderBy('anio', 'DESC')->get();
 
         $categorias=$datos->pluck('observadores.nom');
         $valores=$datos->selectRaw("count(notas.created_at) as valor")->pluck("valor");
@@ -178,7 +179,7 @@ class Grafica1Controller extends Controller
 
         $anios=Nota::selectRaw('year(created_at) as anio')
             ->distinct('year(created_at)')
-            ->orderBy('anio', 'ASC')->get();
+            ->orderBy('anio', 'DESC')->get();
 
         $categorias=$datos->pluck('observadores.nom');
         $valores=$datos->selectRaw("count(DISTINCT sitios.id_sitio) as valor")->pluck("valor");
@@ -267,7 +268,7 @@ class Grafica1Controller extends Controller
 
         $anios=Nota::selectRaw('year(created_at) as anio')
             ->distinct('year(created_at)')
-            ->orderBy('anio', 'ASC')->get();
+            ->orderBy('anio', 'DESC')->get();
 
         $categorias=$datos->pluck('observadores.nom');
         $valores=$datos->selectRaw("count(DISTINCT especies.id_especie) as valor")->pluck("valor");
@@ -299,7 +300,7 @@ class Grafica1Controller extends Controller
 
         $anios=Nota::selectRaw('year(created_at) as anio')
             ->distinct('year(created_at)')
-            ->orderBy('anio', 'ASC')->get();
+            ->orderBy('anio', 'DESC')->get();
 
         $categorias=$datos->pluck('observadores.nom');
         $valores=$datos->selectRaw("count(DISTINCT fenofases.id_fenofase) as valor")->pluck("valor");
