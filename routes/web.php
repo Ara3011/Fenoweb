@@ -23,13 +23,13 @@ use Maatwebsite\Excel\Facades\Excel;
 |
 */
 
-
+//PAGINA DE HOME
 Route::get('/', function () {
     return view('Template.template');
 });
 
 
-
+//RUTAS DE NAVBAR CATALOGOS
 Route::resource('fenofases', FenofaseController::class);
 Route::resource('climas', ClimaController::class);
 Route::resource('escalas', EscalaController::class);
@@ -38,13 +38,17 @@ Route::resource('estados', EstadoController::class);
 Route::resource('familias', FamiliaController::class);
 Route::resource('generos', GeneroController::class);
 
+//RUTAS TABLAS RELACIONADAS
+Route::resource('municipios', \App\Http\Controllers\MunicipioController::class);
+Route::resource('individuos', \App\Http\Controllers\IndividuoController::class);
+Route::resource('sitios', \App\Http\Controllers\SitioController::class);
+Route::resource('notas', \App\Http\Controllers\NotaController::class);
+
 Route::get('/graficas', function () {
     return view('Graficas.inicio');
 });
 
-Route::get('/menu', function () {
-    return view('Template.menugraf');
-});
+
 
 Auth::routes();
 Route::get('/graficas/grafica1', [App\Http\Controllers\Grafica1Controller::class, 'observacionesobservadorInfo'])->name('grafica1');

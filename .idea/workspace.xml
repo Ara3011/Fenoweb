@@ -3,10 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Municipio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Municipio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/inicio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Template/menugraf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/menugraf.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,12 +172,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Graficas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Municipios" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Municipios" />
+      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Notas" />
+      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views" />
       <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Graficas" />
     </key>
   </component>
@@ -218,6 +226,8 @@
       <workItem from="1605798966368" duration="84000" />
       <workItem from="1605799065879" duration="6191000" />
       <workItem from="1605833641689" duration="4939000" />
+      <workItem from="1606281855337" duration="4307000" />
+      <workItem from="1606360465167" duration="33217000" />
     </task>
     <servers />
   </component>
@@ -233,11 +243,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1604890115516" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604890486692">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606421552960">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1604508046206" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1604890486692" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606421552960" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1604102147136">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -258,10 +268,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605504132010" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1602113803382">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1606363768116">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1602113803382" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1606363768116" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1605838068184">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
