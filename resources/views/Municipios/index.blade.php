@@ -62,16 +62,53 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Estado
                                         </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">Acciones
+                                        </th>
                                     </thead>
                                     <tbody>
                                     @foreach($datosmunicipio as $datosmunicipios)
                                         <tr role="row" class="odd">
                                             <td>{{$datosmunicipios->municipio}}</td>
                                             <td>{{$datosmunicipios->estado}}</td>
+                                            <td>
+                                                <form method="post"
+                                                      action="{{url('/municipios/'.$datosmunicipios->id_municipio)}}">
+                                                    <!-- Actualizar -->
+                                                    {{csrf_field()}}
+                                                    <button type="button" rel="tooltip"
+                                                            class="btn btn-success rounded-circle ">
+                                                        <a class="text-light"
+                                                           href="{{url('/municipios/'.$datosmunicipios->id_municipio.'/edit')}}"><i
+                                                                class="material-icons ">edit</i></a>
+                                                    </button>
+
+
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <!-- BORRAR -->
+                                                    <button type="submit" rel="tooltip"
+                                                            class="btn btn-danger rounded-circle ">
+                                                        <i class="material-icons"
+                                                           onclick="return confirm('¿Borrar?');">restore_from_trash</i>
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
+                                <div class="text-center">
+                                    <span>
+                                {{ $datosmunicipio->links('pagination::bootstrap-4') }}
+                                </span>
+                                    <style>
+                                        .w-5 {
+                                            display: none;
+                                        }
+                                    </style>
+                                </div>
                             </div>
                         </div>
 

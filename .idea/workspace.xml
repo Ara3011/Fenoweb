@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Municipio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Municipio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Template/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MunicipioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MunicipioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +220,7 @@
       <workItem from="1605799065879" duration="6191000" />
       <workItem from="1605833641689" duration="4939000" />
       <workItem from="1606281855337" duration="4307000" />
-      <workItem from="1606360465167" duration="33217000" />
+      <workItem from="1606360465167" duration="39344000" />
     </task>
     <servers />
   </component>
@@ -243,11 +236,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1604890115516" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606421552960">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606430408854">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1604508046206" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606421552960" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606430408854" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1604102147136">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

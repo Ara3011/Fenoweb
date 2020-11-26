@@ -13,12 +13,16 @@ class MunicipioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    const Paginacion=10;
     public function index()
     {
 
         $datosmunicipio=Municipio::join('estados','estados.id_estado','=','municipios.id_estado')
+            ->selectRaw('municipios.id_municipio as id_municipio')
             ->selectRaw('municipios.nombre as municipio')
-            ->selectRaw('estados.nombre as estado')->get();
+            ->selectRaw('estados.id_estado as id_estado')
+            ->selectRaw('estados.nombre as estado')
+            ->paginate($this::Paginacion);
 
         return view('Municipios.index', compact('datosmunicipio'));
 
@@ -49,16 +53,17 @@ class MunicipioController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required',
+            'id_estado'=>'required',
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
 
+        Municipio::create($request->all());
 
-
-      return Municipio::create([
-
-            'nombre'=>request ('nombre'),
-            'estado'=>request ('id_estado'),
-
-        ]) ;
-
+        return redirect()->route('municipios.index')
+            ->with('Mensaje','Clima Creado Con éxito');
 
     }
 
@@ -79,9 +84,10 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_municipio)
     {
-        //
+        $datosmunicipios= Municipio::findOrFail($id_municipio);
+        return view('municipios.edit ', compact('datosmunicipios'));
     }
 
     /**
@@ -91,9 +97,15 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_municipio)
     {
-        //
+        $datosMunicipio=request()->except(['_token','_method']);
+        Municipio::where('id_municipio','=',$id_municipio)->update($datosMunicipio);
+
+        return redirect()->route('municipios.index')
+            ->with('Mensaje','Clima Actualizado Con éxito');
+
+
     }
 
     /**
@@ -102,8 +114,11 @@ class MunicipioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Municipio $municipio)
     {
-        //
+        $municipio->delete();
+
+        return redirect()->route('municipios.index')
+            ->with('Mensaje','Clima Eliminado Con éxito');
     }
 }
