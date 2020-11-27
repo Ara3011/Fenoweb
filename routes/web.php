@@ -11,7 +11,7 @@ use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\Grafica1Controller;
 use App\Exports\NotasExport;
 use Maatwebsite\Excel\Facades\Excel;
-
+use App\Http\Controllers\NotaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,13 +42,12 @@ Route::resource('generos', GeneroController::class);
 Route::resource('municipios', \App\Http\Controllers\MunicipioController::class);
 Route::resource('individuos', \App\Http\Controllers\IndividuoController::class);
 Route::resource('sitios', \App\Http\Controllers\SitioController::class);
-Route::resource('notas', \App\Http\Controllers\NotaController::class);
+Route::resource('notas', NotaController::class);
 
 
 Route::get('/graficas', function () {
     return view('Graficas.inicio');
 });
-
 
 
 Auth::routes();

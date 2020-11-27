@@ -170,25 +170,25 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                </div>
                             </div>
                         </div>
-
                     </div>
+
+                </div>
 
             </div>
         </div>
     </div>
-<div class="">
+    <div class="">
         <span >
             {{ $notas->links('pagination::bootstrap-4') }}
         </span>
-</div>
-        <style>
-            .w-5 {
-                display: none;
-            }
-        </style>
+    </div>
+    <style>
+        .w-5 {
+            display: none;
+        }
+    </style>
 
 @endsection
 @section("scripts")

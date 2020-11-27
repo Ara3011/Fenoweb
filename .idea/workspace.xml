@@ -4,7 +4,8 @@
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Notas/notas.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +222,7 @@
       <workItem from="1605833641689" duration="4939000" />
       <workItem from="1606281855337" duration="4307000" />
       <workItem from="1606360465167" duration="41446000" />
-      <workItem from="1606434768342" duration="40247000" />
+      <workItem from="1606434768342" duration="44037000" />
     </task>
     <servers />
   </component>

@@ -67,7 +67,7 @@ class NotaController extends Controller
             ->selectRaw('notas.hallazgos as nota')
             ->paginate($this::Paginacion);
 
-        return view('Notas.notas', compact('notas','buscar_observador'));
+        return view('Notas.index', compact('notas','buscar_observador'));
     }
 
     /**
@@ -186,7 +186,7 @@ class NotaController extends Controller
      */
     public function store(Request $request)   //TODOS LOS CAMPOS DEL FORMULARIO Y TABLAS RELACIONADAS
     {
-        $data = $request->validate([
+         $request->validate([
             'dia_juliano' => 'required',
             'id_observador'=>'required',
             'id_familia'=>'required',
@@ -253,7 +253,7 @@ class NotaController extends Controller
         $notas->save();
         $id_notas=$notas->id_nota;
 
-        return redirect()->route('Notas.notas')
+        return redirect('notas')
             ->with('Mensaje','Nota Creada con éxito');
 
     }
