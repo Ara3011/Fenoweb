@@ -82,8 +82,26 @@
         </ul>
 
     </div>
-</nav>
 
+</nav>
+<div class="text-center card-header" style="text-align: center">
+<nav class="navbar-header" style="left: 1000px">
+    <ul class="nav">
+        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/municipios')}}">Municipios</a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/individuos')}}">Individuos</a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/sitios')}}">Sitios</a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/notas')}}">Notas</a>
+        </li>
+        <li class="nav-item"> <a class="nav-link text-dark "href="{{url('/notas/create')}}">Formulario</a>
+        </li>
+
+
+    </ul>
+</nav>
+</div>
 <main class="container row align-items-start">
     @yield('content')
 </main>

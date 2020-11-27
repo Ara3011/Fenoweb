@@ -7,10 +7,17 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12"style="left: 600px">
-                <div class="form-group">
-                    <strong>Nombre del clima:</strong>
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{$datosmunicipios->nombre}}">
+                <div class="form-group card card-body">
+                    <strong>Nombre del clima:</strong><br>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{$datosmunicipios->nombre}}"><br>
+                    <strong>Estado:</strong><br>
+                    <select name="id_estado" id="id_estado">
 
+                        <option value="" disabled selected>Seleccione un estado</option>
+                        @foreach($estados as $estado)
+                            <option value={{$estado->id}}>{{$estado->estado}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 

@@ -17,13 +17,12 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12"style="left: 600px">
-                <div class="form-group card card-body">
-                    <strong>Nombre del municipio:</strong><br>
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre"><br>
-                    <strong>Estado:</strong> <br>
+                <div class="form-group">
+                    <strong>Nombre del clima:</strong>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                     <select name="id_estado" id="id_estado">
 
-                        <option value="" disabled selected>Seleccione un estado</option>
+                        <option value="" disabled selected>Seleccione una especie</option>
                         @foreach($estados as $estado)
                             <option value={{$estado->id}}>{{$estado->estado}}</option>
                         @endforeach

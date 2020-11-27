@@ -63,7 +63,7 @@ class MunicipioController extends Controller
         Municipio::create($request->all());
 
         return redirect()->route('municipios.index')
-            ->with('Mensaje','Clima Creado Con éxito');
+            ->with('Mensaje','Municipio Creado Con éxito');
 
     }
 
@@ -86,8 +86,15 @@ class MunicipioController extends Controller
      */
     public function edit($id_municipio)
     {
+        $estados=Municipio::join('estados','estados.id_estado','=','municipios.id_estado')
+            ->selectRaw('estados.id_estado as id')
+            ->selectRaw('estados.nombre as estado')
+            ->distinct('estados.nombre')
+            ->get();
+
+
         $datosmunicipios= Municipio::findOrFail($id_municipio);
-        return view('municipios.edit ', compact('datosmunicipios'));
+        return view('municipios.edit ', compact('datosmunicipios','estados'));
     }
 
     /**
@@ -103,7 +110,7 @@ class MunicipioController extends Controller
         Municipio::where('id_municipio','=',$id_municipio)->update($datosMunicipio);
 
         return redirect()->route('municipios.index')
-            ->with('Mensaje','Clima Actualizado Con éxito');
+            ->with('Mensaje','Municipio Actualizado Con éxito');
 
 
     }
@@ -119,6 +126,6 @@ class MunicipioController extends Controller
         $municipio->delete();
 
         return redirect()->route('municipios.index')
-            ->with('Mensaje','Clima Eliminado Con éxito');
+            ->with('Mensaje','Municipio Eliminado Con éxito');
     }
 }

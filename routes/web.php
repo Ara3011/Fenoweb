@@ -44,6 +44,7 @@ Route::resource('individuos', \App\Http\Controllers\IndividuoController::class);
 Route::resource('sitios', \App\Http\Controllers\SitioController::class);
 Route::resource('notas', \App\Http\Controllers\NotaController::class);
 
+
 Route::get('/graficas', function () {
     return view('Graficas.inicio');
 });

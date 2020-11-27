@@ -2,6 +2,12 @@
 @section('content')
 
     <div class="container-fluid">
+
+        @if(Session::has('Mensaje'))
+            <div class="alert alert-secondary text-center alert-dismissible text-uppercase"style="left: 197px">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
+        @endif
         <div class="col-md-2 mt-3" style="left: 197px">
 
             <button class="btn btn-success btn-round" >

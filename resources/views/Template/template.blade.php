@@ -57,6 +57,7 @@
                         </li>
                         <li class="nav-item"><a class="nav-link text-dark " href="{{url('/graficas')}}">Gráficas</a>
                         </li>
+
                         <!--<li class="nav-item"><a class="nav-link  text-naranja navbar-navhead " href="{{url('/')}}">Inicio</a>
                         </li>
                         <li class="nav-item"><a class="nav-link text-dark " href="{{url('/fenofases')}}">Fenofases</a>
@@ -71,6 +72,19 @@
                     </ul>
                 </nav>
             </div>
+            <nav class="navbar-header">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/municipios')}}">Municipios</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/individuos')}}">Individuos</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/sitios')}}">Sitios</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/notas')}}">Notas</a>
+                    </li>
+
+                </ul>
+            </nav>
         </div>
         <!-- CONTENIDO DEL CENTRO DEL CAROUSEL -->
         <div class="text-center cont-centro">

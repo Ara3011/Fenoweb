@@ -3,8 +3,13 @@
 
 
     <div class="container-fluid" >
-
+        @if(Session::has('Mensaje'))
+            <div class="alert alert-secondary text-center alert-dismissible text-uppercase"style="left: 197px">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
+        @endif
         <div class="col-md-12">
+
             <div class="card mt-2" style="height:620px;
                      width:1500px;">
                 <div class="card-header bg-success" style="width: 1500px;">
@@ -14,9 +19,20 @@
 
                 <div class="">
 
+                    <div>
+                        <center>
+                            <form class="form-group form mt-2">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <label for="buscar_observador" class="text-dark"><h4>Buscar: </h4></label>
+                                <input name="buscar_observador" class="form-control form-control-sm ml-3 w-75" type="text"
+                                       placeholder="Buscar observador"
+                                       aria-label="buscar_observador" >
+                            </form>
+                        </center>
+                    </div>
 
                     <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
-                    height:570px;
+                    height:480px;
                      width:1500px;">
                         <div class="row">
                             <div class="col-sm-12">
@@ -125,30 +141,30 @@
                                         </th>
                                     </thead>
                                     <tbody>
-                                    @foreach($datosnotas as $datosnota)
+                                    @foreach($notas as $nota)
                                         <tr role="row" class="odd">
-                                            <td>{{$datosnota->fecha}}</td>
-                                            <td>{{$datosnota->dia_juliano}}</td>
-                                            <td>{{$datosnota->observador}}</td>
-                                            <td>{{$datosnota->nombre_comun}}</td>
-                                            <td>{{$datosnota->familia}}</td>
-                                            <td>{{$datosnota->genero}}</td>
-                                            <td>{{$datosnota->especie}}</td>
-                                            <td>{{$datosnota->subespecies}}</td>
-                                            <td>{{$datosnota->escala_bbch}}</td>
-                                            <td>{{$datosnota->sitio}}</td>
-                                            <td>{{$datosnota->comunidad}}</td>
-                                            <td>{{$datosnota->municipio}}</td>
-                                            <td>{{$datosnota->estado}}</td>
-                                            <td>{{$datosnota->latitud}}</td>
-                                            <td>{{$datosnota->longitud}}</td>
-                                            <td>{{$datosnota->altitud}}</td>
-                                            <td>{{$datosnota->fenofase}}</td>
-                                            <td>{{$datosnota->int_feno}}</td>
-                                            <td>{{$datosnota->precipitacion}}</td>
-                                            <td>{{$datosnota->temperatura_minima}}</td>
-                                            <td>{{$datosnota->temperatura_maxima}}</td>
-                                            <td>{{$datosnota->nota}}</td>
+                                            <td>{{$nota->fecha}}</td>
+                                            <td>{{$nota->dia_juliano}}</td>
+                                            <td>{{$nota->observador}}</td>
+                                            <td>{{$nota->nombre_comun}}</td>
+                                            <td>{{$nota->familia}}</td>
+                                            <td>{{$nota->genero}}</td>
+                                            <td>{{$nota->especie}}</td>
+                                            <td>{{$nota->subespecies}}</td>
+                                            <td>{{$nota->escala_bbch}}</td>
+                                            <td>{{$nota->sitio}}</td>
+                                            <td>{{$nota->comunidad}}</td>
+                                            <td>{{$nota->municipio}}</td>
+                                            <td>{{$nota->estado}}</td>
+                                            <td>{{$nota->latitud}}</td>
+                                            <td>{{$nota->longitud}}</td>
+                                            <td>{{$nota->altitud}}</td>
+                                            <td>{{$nota->fenofase}}</td>
+                                            <td>{{$nota->int_feno}}</td>
+                                            <td>{{$nota->precipitacion}}</td>
+                                            <td>{{$nota->temperatura_minima}}</td>
+                                            <td>{{$nota->temperatura_maxima}}</td>
+                                            <td>{{$nota->nota}}</td>
 
                                         </tr>
                                     @endforeach
@@ -163,9 +179,9 @@
             </div>
         </div>
     </div>
-<div class="card">
+<div class="">
         <span >
-            {{ $datosnotas->links('pagination::bootstrap-4') }}
+            {{ $notas->links('pagination::bootstrap-4') }}
         </span>
 </div>
         <style>
