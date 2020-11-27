@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MunicipioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MunicipioController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Formularios/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/notas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/notas.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Template/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +221,7 @@
       <workItem from="1605833641689" duration="4939000" />
       <workItem from="1606281855337" duration="4307000" />
       <workItem from="1606360465167" duration="41446000" />
-      <workItem from="1606434768342" duration="19747000" />
+      <workItem from="1606434768342" duration="40247000" />
     </task>
     <servers />
   </component>
@@ -244,11 +237,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1604890115516" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606481106855">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606495076479">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1604508046206" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606481106855" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606495076479" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1604102147136">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

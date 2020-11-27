@@ -27,30 +27,61 @@
                             <option value={{$observador->id_observador}}>{{$observador->nombre}}</option>
                         @endforeach
                     </select>
-                    <strong>Hallazgos:</strong><br>
-                    <textarea name="hallazgos" id="hallazgos" cols="30" rows="5"></textarea><br>
-                    <strong>Temperatura máxima:</strong>
-                    <input type="number" name="temperatura_maxima" class="form-control" placeholder="">
-                    <strong>Temperatura minima:</strong>
-                    <input type="number" name="temperatura_minima" class="form-control" placeholder="">
-                    <strong>Precipitación:</strong><br>
-                    <input type="number" name="precipitacion" class="form-control" placeholder="">
-                    <strong>Intensidad Fenofase:</strong><br>
-                    <input type="number" name="intensidad_fenofase" class="form-control" placeholder="">
-                    <strong>Individuos:</strong><br>
-                    <select name="id_individuo" id="id_individuo">
-                        <option value="" disabled selected>Seleccione una especie</option>
-                        @foreach($individuos as $individuo)
-                            <option value={{$individuo->id_individuo}}>{{$individuo->nombre_comun}}</option>
+                    <strong>Familias:</strong><br>
+                    <select name="id_familia" id="id_familia">
+                        <option value="" disabled selected>Seleccione familia</option>
+                        @foreach($familias as $familia)
+                            <option value={{$familia->id_familia}}>{{$familia->familia}}</option>
                         @endforeach
                     </select>
-                    <strong>Sitios:</strong><br>
-                    <select name="id_sitio" id="id_sitio">
-                        <option value="" disabled selected>Seleccione un sitio</option>
-                    @foreach($sitios as $sitio)
-                        <option value={{$sitio->id_sitio}}>{{$sitio->sitio}}</option>
-                    @endforeach
+                    <strong>Géneros:</strong><br>
+                    <select name="id_genero" id="id_genero">
+                        <option value="" disabled selected>Seleccione género</option>
+                        @foreach($generos as $genero)
+                            <option value={{$genero->id_genero}}>{{$genero->genero}}</option>
+                        @endforeach
                     </select>
+                    <strong>Especies:</strong><br>
+                    <select name="id_especie" id="id_especie">
+                        <option value="" disabled selected>Seleccione especie</option>
+                        @foreach($especies as $especie)
+                            <option value={{$especie->id_especie}}>{{$especie->especie}}</option>
+                        @endforeach
+                    </select>
+                    <strong>Subespecies:</strong><br>
+                    <input type="text" name="descripcion" class="form-control" placeholder="Ingresa nombre de subespecie">
+
+                    <strong>Individuos:</strong><br>
+                    <input type="text" name="nombre_comun" class="form-control" placeholder="Ingresa nombre común del individuo">
+
+                    <strong>Grupo de plantas:</strong><br>
+                    <select name="id_bbch" id="id_bbch">
+                        <option value="" disabled selected>Seleccione especie</option>
+                        @foreach($escalas as $escala)
+                            <option value={{$escala->id_bbch}}>{{$escala->escala}}</option>
+                        @endforeach
+                    </select>
+
+                    <strong>Sitio:</strong><br>
+                    <input type="text" name="nombre" class="form-control" placeholder="Ecribe nombre del sitio">
+                    <strong>Comunidad:</strong><br>
+                    <input type="text" name="comunidad" class="form-control" placeholder="Ecribe nombre de la comunidad">
+                    <strong>Latitud:</strong><br>
+                    <input type="number" name="latitud" class="form-control" placeholder="19.48593056">
+                    <strong>Longitud:</strong><br>
+                    <input type="number" name="longitud" class="form-control" placeholder="100.2797278">
+                    <strong>ALtitud:</strong><br>
+                    <input type="number" name="altitud" class="form-control" placeholder="2256">
+
+                    <strong>Municipios:</strong><br>
+                    <select name="id_municipio" id="id_municipio">
+                        <option value="" disabled selected>Seleccione un municipio</option>
+                        @foreach($municipios as $municipio)
+                            <option value={{$municipio->id_municipio}}>{{$municipio->municipio}}</option>
+                        @endforeach
+                    </select>
+                    <strong>Intensidad Fenofase:</strong><br>
+                    <input type="number" name="intensidad_fenofase" class="form-control" placeholder="">
                     <strong>Fenofases:</strong><br>
                     <select name="id_fenofase" id="id_fenofase">
                         <option value="" disabled selected>Seleccione una fenofase</option>
@@ -58,13 +89,26 @@
                             <option value={{$fenofase->id_fenofase}}>{{$fenofase->fenofase}}</option>
                         @endforeach
                     </select>
+                    <strong>Precipitación:</strong><br>
+                    <input type="number" name="precipitacion" class="form-control" placeholder="">
+
                     <strong>Climas:</strong><br>
                     <select name="id_clima" id="id_clima">
-                        <option value="" disabled selected>Seleccione un clima</option>
+                        <option value="" disabled selected>Seleccione clima</option>
                         @foreach($climas as $clima)
                             <option value={{$clima->id_clima}}>{{$clima->clima}}</option>
                         @endforeach
                     </select>
+                    <strong>Temperatura minima:</strong>
+                    <input type="number" name="temperatura_minima" class="form-control" placeholder="">
+
+                    <strong>Temperatura máxima:</strong>
+                    <input type="number" name="temperatura_maxima" class="form-control" placeholder="">
+
+                    <strong>Hallazgos:</strong><br>
+                    <textarea name="hallazgos" id="hallazgos" placeholder="Describe tus observaciones" cols="30" rows="5"></textarea><br>
+
+
                 </div>
             </div>
 
