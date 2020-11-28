@@ -12,10 +12,15 @@ class SitioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    const Paginacion=8;
+    public function index(Request $request)
     {
+
+        $buscar_sitio= $request->input('buscar_sitio');
+
         $datossitio=Sitio::join('municipios','municipios.id_municipio','=','sitios.id_municipio')
             ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
             ->selectRaw('sitios.nombre as sitio')
             ->selectRaw('sitios.comunidad as comunidad')
             ->selectRaw('sitios.latitud as latitud')
@@ -23,9 +28,9 @@ class SitioController extends Controller
             ->selectRaw('sitios.altitud as altitud')
             ->selectRaw('municipios.nombre as municipio')
             ->selectRaw('estados.nombre as estado')
-            ->get();
+            ->paginate($this::Paginacion);
 
-        return view('sitios.index', compact('datossitio'));
+        return view('sitios.index', compact('datossitio','buscar_sitio'));
     }
 
     /**

@@ -13,7 +13,7 @@ class MunicipioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    const Paginacion=10;
+    const Paginacion=8;
     public function index()
     {
 

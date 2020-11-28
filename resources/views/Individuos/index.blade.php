@@ -14,9 +14,9 @@
                         <center>
                             <form class="form-group form mt-2">
                                 <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar" class="text-dark"><h4>Buscar: </h4></label>
-                                <input name="buscar" class="form-control form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar Clima"
+                                <label for="buscar_individuo" class="text-dark"><h4>Buscar: </h4></label>
+                                <input name="buscar_individuo" class="form-control form-control-sm ml-3 w-75" type="text"
+                                       placeholder="Buscar por individuo"
                                        aria-label="buscar" >
                             </form>
                         </center>
@@ -46,10 +46,7 @@
                                        role="grid" aria-describedby="example1_info">
                                     <thead class="thead-light">
                                     <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">#
-                                        </th>
+
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Individuo
@@ -83,7 +80,7 @@
                                     <tbody>
                                     @foreach($datosindividuo as $datosindividuos)
                                         <tr role="row" class="odd">
-                                            <td>{{$datosindividuos->id}}</td>
+
                                             <td>{{$datosindividuos->individuo}}</td>
                                             <td>{{$datosindividuos->usos}}</td>
                                             <td>{{$datosindividuos->genero}}</td>
@@ -95,12 +92,31 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+
                             </div>
+
                         </div>
 
                     </div>
                 </div>
+
             </div>
+            <div class="">
+        <span >
+            {{ $datosindividuo->links('pagination::bootstrap-4') }}
+        </span>
+            </div>
+            <style>
+                .w-5 {
+                    display: none;
+                }
+            </style>
         </div>
     </div>
+
+@endsection
+@section("scripts")
+    <script type="text/javascript">
+
+    </script>
 @endsection

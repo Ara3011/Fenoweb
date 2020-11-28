@@ -29,7 +29,7 @@
                                 <i class="fas fa-search" aria-hidden="true"></i>
                                 <label for="buscar" class="text-dark"><h4>Buscar: </h4></label>
                                 <input name="buscar" class="form-control form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar Clima"
+                                       placeholder="Buscar municipio"
                                        aria-label="buscar" >
                             </form>
                         </center>

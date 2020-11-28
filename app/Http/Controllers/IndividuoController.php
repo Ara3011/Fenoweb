@@ -12,13 +12,17 @@ class IndividuoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    const Paginacion=8;
+    public function index(Request $request)
     {
+        $buscar_individuo= $request->input('buscar_individuo');
+
         $datosindividuo=Individuo::join('generos','generos.id_genero','=','individuos.id_genero')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
             ->join('especies','especies.id_especie','=','subespecies.id_especie')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
             ->join('escalas_bbch','escalas_bbch.id_bbch','=','individuos.id_bbch')
+            ->where('individuos.nombre_comun','like','%'.$buscar_individuo.'%')
             ->selectRaw('individuos.id_individuo as id')
             ->selectRaw('individuos.nombre_comun as individuo')
             ->selectRaw('individuos.uso as usos')
@@ -28,9 +32,9 @@ class IndividuoController extends Controller
             ->selectRaw('familias.descripcion as familia')
             ->selectRaw('escalas_bbch.descripcion as bbch')
             ->groupBy('id_individuo')
-            ->get();
+            ->paginate($this::Paginacion);
 
-        return view('Individuos.index', compact('datosindividuo'));
+        return view('Individuos.index', compact('datosindividuo','buscar_individuo'));
     }
 
     /**

@@ -25,7 +25,7 @@ class NotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    const Paginacion=6;
+    const Paginacion=10;
     public function index(Request $request)
     {
         $buscar_observador= $request->input('buscar_observador');
@@ -65,6 +65,8 @@ class NotaController extends Controller
             ->selectRaw('notas.temperatura_minima as temperatura_minima')
             ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
             ->selectRaw('notas.hallazgos as nota')
+
+
             ->paginate($this::Paginacion);
 
         return view('Notas.index', compact('notas','buscar_observador'));
@@ -194,6 +196,7 @@ class NotaController extends Controller
             'id_especie'=>'required',
             'descripcion'=>'required',
             'nombre_comun'=>'required',
+            'uso',
             'id_bbch'=>'required',
             'nombre'=>'required',
             'comunidad'=>'required',
@@ -221,6 +224,7 @@ class NotaController extends Controller
 
         $individuos= new Individuo();
         $individuos->nombre_comun=$request->nombre_comun;
+        $individuos->uso=$request->uso;
         $individuos->id_genero=$request->id_genero;
         $individuos->id_subespecie=$id_subespecies;
         $individuos->id_familia=$request->id_familia;

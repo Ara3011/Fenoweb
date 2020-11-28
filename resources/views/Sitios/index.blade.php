@@ -7,17 +7,17 @@
             <div class="card">
                 <div class="card-header bg-success">
 
-                    <h4 class="card-title">Individuos</h4>
+                    <h4 class="card-title">Sitios</h4>
                 </div>
                 <div class="card-body">
                     <div>
                         <center>
                             <form class="form-group form mt-2">
                                 <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar" class="text-dark"><h4>Buscar: </h4></label>
-                                <input name="buscar" class="form-control form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar Clima"
-                                       aria-label="buscar" >
+                                <label for="buscar_sitio" class="text-dark"><h4>Buscar: </h4></label>
+                                <input name="buscar_sitio" class="form-control form-control-sm ml-3 w-75" type="text"
+                                       placeholder="Buscar Sitio"
+                                       aria-label="buscar sitio" >
                             </form>
                         </center>
                     </div>
@@ -98,6 +98,18 @@
                     </div>
                 </div>
             </div>
+            <div class="">
+        <span >
+            {{ $datossitio->links('pagination::bootstrap-4') }}
+        </span>
+            </div>
+            <style>
+                .w-5 {
+                    display: none;
+                }
+            </style>
         </div>
+        </div>
+
     </div>
 @endsection
