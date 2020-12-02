@@ -35,8 +35,8 @@ class Nota extends Model
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
             ->join('especies','especies.id_especie','=','subespecies.id_especie')
             ->select ("especies.descripcion","fenofases.descrip_fenofase")
-            ->selectRaw("min(notas.created_at) as primera_fecha")
-            ->selectRaw("max(notas.created_at) as ultima_fecha")
+            ->selectRaw("min(notas.fecha) as primera_fecha")
+            ->selectRaw("max(notas.fecha) as ultima_fecha")
             ->selectRaw("count(*) as resultado")
             ->groupBy("fenofases.descrip_fenofase","especies.descripcion");
 

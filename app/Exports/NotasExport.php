@@ -25,7 +25,7 @@ class NotasExport implements FromCollection,  WithHeadings
                 ->join('estados','estados.id_estado','=','municipios.id_estado')
                 ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
                 ->join('familias','familias.id_familia','=','individuos.id_familia')
-                ->selectRaw('notas.created_at as fecha')
+                ->selectRaw('notas.fecha as fecha')
                 ->selectRaw('notas.dia_juliano as dia_juliano')
                 ->selectRaw('observadores.nom as observador')
                 ->selectRaw('individuos.nombre_comun as nombre_comun')
