@@ -151,9 +151,12 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
 
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="{{ asset('js/highcharts.js') }}"></script>
+<script src="{{ asset('js/exporting.js') }}"></script>
+<script src="{{ asset('js/export-data.js') }}"></script>
+<script src="{{ asset('js/accessibility.js') }}"></script>
+<script src="{{ asset('js/highcharts-more.js') }}"></script>
 
 @yield("scripts")
 </body>
