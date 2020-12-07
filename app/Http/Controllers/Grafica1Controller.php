@@ -25,10 +25,18 @@ class Grafica1Controller extends Controller
         //consulta 4.3 Observaciones por cada observador
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->groupBy("observadores.nom");
-        $categorias=$datos->pluck("observadores.nom");
-        $valores=$datos->selectRaw("count(notas.fecha) as valor")->pluck("valor");
-        return view('Graficas.grafica1', compact('categorias','valores'));
+            ->select("observadores.nom")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("observadores.nom")
+            ->get();
+
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"nom"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+
+        //return $datos;
+        return view('Graficas.grafica1', compact('datos'));
 
     }
     public function observacionesespeciesInfo()
@@ -38,14 +46,15 @@ class Grafica1Controller extends Controller
         $datos=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
             ->join('especies','especies.id_especie','=','subespecies.id_especie')
-            ->groupBy("especies.descripcion");
-            $categorias=$datos->pluck("especies.descripcion");
-            $valores=$datos->selectRaw("count(notas.fecha) as valor")->pluck("valor");
-
-
-
-
-        return view('Graficas.grafica2', compact('categorias','valores'));
+            ->select("especies.descripcion")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("especies.descripcion")
+            ->get();
+        $datos=json_encode($datos);
+        $datos=str_replace('"descripcion"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+        //return $datos;
+        return view('Graficas.grafica2', compact('datos'));
 
     }
     public function observacionessitiosInfo()
@@ -121,10 +130,14 @@ class Grafica1Controller extends Controller
     {
         //Consulta 9 ¿Cuáles son los mayores usos que se le dan a la especie?
         $datos=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
-            ->groupBy('individuos.uso');
-        $categorias=$datos->pluck('individuos.uso');
-        $valores=$datos->selectRaw("count(individuos.uso) as valor")->pluck("valor");
-        return view('Graficas.grafica6', compact('categorias','valores'));
+            ->select('individuos.uso')
+            ->selectRaw("count(individuos.uso) as valor")
+            ->groupBy('individuos.uso')
+            ->get();
+        $datos=json_encode($datos);
+        $datos=str_replace('"uso"','name',$datos);
+        $datos=str_replace('"valor"','y',$datos);
+        return view('Graficas.grafica6', compact('datos'));
     }
     public function grafica7(Request $request)
     {
@@ -133,12 +146,18 @@ class Grafica1Controller extends Controller
         $buscar_anio= $request->input('buscar_anio');
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->groupBy('observadores.nom')
+            ->select('observadores.nom')
+            ->selectRaw("count(notas.fecha) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
-            ->where('observadores.nom','like','%'.$buscar_observador.'%');
+            ->where('observadores.nom','like','%'.$buscar_observador.'%')
+            ->groupBy('observadores.nom')
+            ->get();
 
-
-
+            $datos=json_encode($datos);
+            $datos=str_replace('"nom":','',$datos);
+            $datos=str_replace('"valor":','',$datos);
+            $datos=str_replace('{','[',$datos);
+            $datos=str_replace('}',']',$datos);
 
         $observadores=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->selectRaw('observadores.nom as nombre')
@@ -150,10 +169,8 @@ class Grafica1Controller extends Controller
             ->distinct('year(fecha)')
             ->orderBy('anio', 'DESC')->get();
 
-        $categorias=$datos->pluck('observadores.nom');
-        $valores=$datos->selectRaw("count(notas.fecha) as valor")->pluck("valor");
 
-        return view('Graficas.grafica7', compact('categorias','valores','observadores','anios',
+        return view('Graficas.grafica7', compact('datos','observadores','anios',
         'buscar_anio','buscar_observador'));
 
     }
@@ -167,9 +184,18 @@ class Grafica1Controller extends Controller
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->select('observadores.nom')
+            ->selectRaw("count(DISTINCT sitios.id_sitio) as valor")
             ->groupBy('observadores.nom')
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
-            ->where('observadores.nom','like','%'.$buscar_observador.'%');
+            ->where('observadores.nom','like','%'.$buscar_observador.'%')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"nom":','',$datos);
+        $datos=str_replace('"valor":','',$datos);
+        $datos=str_replace('{','[',$datos);
+        $datos=str_replace('}',']',$datos);
 
         $observadores=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->selectRaw('observadores.nom as nombre')
@@ -181,9 +207,7 @@ class Grafica1Controller extends Controller
             ->distinct('year(fecha)')
             ->orderBy('anio', 'DESC')->get();
 
-        $categorias=$datos->pluck('observadores.nom');
-        $valores=$datos->selectRaw("count(DISTINCT sitios.id_sitio) as valor")->pluck("valor");
-        return view('Graficas.grafica8', compact('categorias','valores','anios','observadores',
+        return view('Graficas.grafica8', compact('datos','anios','observadores',
         'buscar_anio','buscar_observador'));
     }
 
@@ -261,24 +285,27 @@ class Grafica1Controller extends Controller
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
             ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select('observadores.nom')
+            ->selectRaw("count(DISTINCT especies.id_especie) as valor")
+            ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
             ->groupBy('observadores.nom')
-            ->whereYear('notas.fecha','like','%'.$buscar_anio.'%');
+            ->get();
 
+        $datos=json_encode($datos);
+        $datos=str_replace('"nom":','',$datos);
+        $datos=str_replace('"valor":','',$datos);
+        $datos=str_replace('{','[',$datos);
+        $datos=str_replace('}',']',$datos);
 
 
         $anios=Nota::selectRaw('year(fecha) as anio')
             ->distinct('year(fecha)')
             ->orderBy('anio', 'DESC')->get();
 
-        $categorias=$datos->pluck('observadores.nom');
-        $valores=$datos->selectRaw("count(DISTINCT especies.id_especie) as valor")->pluck("valor");
-        return view('Graficas.grafica10 ', compact('categorias','valores','anios',
+        return view('Graficas.grafica10 ', compact('datos','anios',
             'buscar_anio'));
     }
-    public function export()
-    {
-        return Excel::download(new NotasExport(), 'notas.xlsx');
-    }
+
     public function grafica11(Request $request)
     {
         //Consulta 11.4	¿Cuántas fenofases monitorea un observador X en un año?
@@ -289,9 +316,20 @@ class Grafica1Controller extends Controller
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
-            ->groupBy('observadores.nom')
+            ->select('observadores.nom')
+            ->selectRaw("count(DISTINCT fenofases.id_fenofase) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
-            ->where('observadores.nom','like','%'.$buscar_observador.'%');
+            ->where('observadores.nom','like','%'.$buscar_observador.'%')
+            ->groupBy('observadores.nom')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"nom":','',$datos);
+        $datos=str_replace('"valor":','',$datos);
+        $datos=str_replace('{','[',$datos);
+        $datos=str_replace('}',']',$datos);
+
+
 
         $observadores=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->selectRaw('observadores.nom as nombre')
@@ -302,9 +340,7 @@ class Grafica1Controller extends Controller
             ->distinct('year(fecha)')
             ->orderBy('anio', 'DESC')->get();
 
-        $categorias=$datos->pluck('observadores.nom');
-        $valores=$datos->selectRaw("count(DISTINCT fenofases.id_fenofase) as valor")->pluck("valor");
-        return view('Graficas.grafica11 ', compact('categorias','valores','anios',
+        return view('Graficas.grafica11 ', compact('datos','anios',
             'buscar_anio','observadores','buscar_observador'));
     }
 

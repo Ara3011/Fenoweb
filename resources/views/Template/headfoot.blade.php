@@ -152,11 +152,20 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 
+<script src="{{ mix('js/app.js') }}" defer></script>
 <script src="{{ asset('js/highcharts.js') }}"></script>
 <script src="{{ asset('js/exporting.js') }}"></script>
 <script src="{{ asset('js/export-data.js') }}"></script>
 <script src="{{ asset('js/accessibility.js') }}"></script>
 <script src="{{ asset('js/highcharts-more.js') }}"></script>
+<script src="{{ asset('js/funnel-module.js') }}"></script>
+<script src="{{ asset('js/highcharts-3d.js') }}"></script>
+<script src="{{ asset('js/cylinder.js') }}"></script>
+<script src="{{ asset('js/pyramid3d.js') }}"></script>
+
+
+
+
 
 @yield("scripts")
 </body>

@@ -40,37 +40,51 @@
     <script type="text/javascript">
         Highcharts.chart('container_chart', {
             chart: {
-                type: 'column'
+                type: 'pyramid'
             },
-
             title: {
-                text: 'Sitios monitoreados por observador "X" agrupado por años'
-            },
-            subtitle: {
-                text: ''
-            },
-            xAxis: {
-                categories: {!! json_encode($categorias)!!},
-                crosshair: true
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'No de datos registrados'
-                }
+                text: 'Registros de un colector "X" en cierto año',
+                x: -100
             },
             plotOptions: {
-                column: {
-                    pointPadding: 0.1,
-                    borderWidth: 3,
-                    color:'rgb( 93, 4, 4 )',
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b> ({point.y:,.0f})',
+                        softConnector: true
+                    },
+                    center: ['40%', '50%'],
+                    width: '80%'
                 }
             },
+            legend: {
+                enabled: false
+            },
             series: [{
-                name: "Sitios observados",
-                data:{{json_encode($valores)}},
+                name: 'Sitios monitoreados',
+                data: {!! $datos !!}
             }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        plotOptions: {
+                            series: {
+                                dataLabels: {
+                                    inside: true
+                                },
+                                center: ['50%', '50%'],
+                                width: '100%'
+                            }
+                        }
+                    }
+                }]
+            }
         });
+
     </script>
 @endsection
 

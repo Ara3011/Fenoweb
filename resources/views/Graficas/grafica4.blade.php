@@ -33,15 +33,23 @@
                     text: 'No de datos registrados'
                 }
             },
+            legend: {
+                enabled: false
+            },
             plotOptions: {
                 column: {
-                    pointPadding: 0.1,
-                    borderWidth: 3,
-                    color:'rgb(44, 75, 107)',
-                }
+                    borderRadius:10
+                },
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                    }
+                },
             },
             series: [{
                 name: "Observaciones",
+                colorByPoint: true,
                 data:{{json_encode($valores)}},
             }],
         });

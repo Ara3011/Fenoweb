@@ -16,6 +16,54 @@
             chart: {
                 type: 'column'
             },
+            title: {
+                text: 'Observaciones para cada especie'
+            },
+            subtitle: {
+                text: ''
+            },
+            accessibility: {
+                announceNewData: {
+                    enabled: true
+                }
+            },
+            xAxis: {
+                type: 'category'
+            },
+            yAxis: {
+                title: {
+                    text: 'No. de registros'
+                }
+
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                column: {
+                    borderRadius:10
+                },
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                    }
+                }
+            },
+
+            series: [
+                {
+                    name: "Observaciones",
+                    colorByPoint: true,
+                    data:{!! $datos !!}
+                }
+            ],
+
+        });
+/*        Highcharts.chart('container_chart', {
+            chart: {
+                type: 'column'
+            },
 
             title: {
                 text: 'Observaciones para cada especie'
@@ -24,7 +72,6 @@
                 text: ''
             },
             xAxis: {
-                categories: {!! json_encode($categorias)!!},
                 crosshair: true
             },
             yAxis: {
@@ -42,9 +89,9 @@
             },
             series: [{
                 name: "Observaciones",
-                data:{{json_encode($valores)}},
             }],
         });
+        */
     </script>
 @endsection
 

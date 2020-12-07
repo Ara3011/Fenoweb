@@ -41,6 +41,53 @@
     <script type="text/javascript">
         Highcharts.chart('container_chart', {
             chart: {
+                type: 'pyramid'
+            },
+            title: {
+                text: 'Registros de un colector "X" en cierto año',
+                x: -100
+            },
+            plotOptions: {
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b> ({point.y:,.0f})',
+                        softConnector: true
+                    },
+                    center: ['40%', '50%'],
+                    width: '80%'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                name: 'Registros',
+                data: {!! $datos !!}
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        plotOptions: {
+                            series: {
+                                dataLabels: {
+                                    inside: true
+                                },
+                                center: ['50%', '50%'],
+                                width: '100%'
+                            }
+                        }
+                    }
+                }]
+            }
+        });
+
+      /*  Highcharts.chart('container_chart', {
+            chart: {
                 type: 'column'
             },
 
@@ -51,7 +98,6 @@
                 text: ''
             },
             xAxis: {
-                categories: {!! json_encode($categorias)!!},
                 crosshair: true
             },
             yAxis: {
@@ -69,9 +115,9 @@
             },
             series: [{
                 name: "Observaciones",
-                data:{{json_encode($valores)}},
             }],
         });
+        */
     </script>
 
 @endsection

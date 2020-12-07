@@ -22,27 +22,46 @@
             subtitle: {
                 text: ''
             },
+            accessibility: {
+                announceNewData: {
+                    enabled: true
+                }
+            },
             xAxis: {
-                categories: {!! json_encode($categorias)!!},
-                crosshair: true
+                type: 'category'
             },
             yAxis: {
-                min: 0,
                 title: {
                     text: 'No. de registros'
                 }
+
+            },
+            legend: {
+                enabled: false
             },
             plotOptions: {
                 column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
+                    borderRadius:10
+                },
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                    }
                 }
             },
-            series: [{
-                name: "Observaciones",
-                data:{{json_encode($valores)}},
-            }],
+
+            series: [
+                {
+                    name: "Observaciones",
+                    colorByPoint: true,
+                    data:{!! $datos !!}
+                }
+            ],
+
         });
+
+
     </script>
 @endsection
 

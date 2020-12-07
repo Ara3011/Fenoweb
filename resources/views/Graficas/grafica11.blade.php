@@ -40,36 +40,50 @@
     <script type="text/javascript">
         Highcharts.chart('container_chart', {
             chart: {
-                type: 'column'
+                type: 'funnel'
             },
-
             title: {
-                text: 'Fenofases monitoreadas por observador "X" de manera anual'
-            },
-            subtitle: {
-                text: ''
-            },
-            xAxis: {
-                categories: {!! json_encode($categorias)!!},
-                crosshair: true
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'No de datos registrados'
-                }
+                text: 'Fenofases Monitoreadas por observador "X" anual'
             },
             plotOptions: {
-                column: {
-                    pointPadding: 0.1,
-                    borderWidth: 3,
-                    color:'rgb(  141, 146, 29 )',
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b> ({point.y:,.0f})',
+                        softConnector: true
+                    },
+                    center: ['47%', '50%'],
+                    neckWidth: '30%',
+                    neckHeight: '25%',
+                    width: '75%'
                 }
             },
+            legend: {
+                enabled: false
+            },
             series: [{
-                name: "fenofases observadas",
-                data:{{json_encode($valores)}},
+                name: 'Fenofases monitoreadas',
+                data:{!! $datos !!}
             }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        plotOptions: {
+                            series: {
+                                dataLabels: {
+                                    inside: true
+                                },
+                                center: ['50%', '50%'],
+                                width: '100%'
+                            }
+                        }
+                    }
+                }]
+            }
         });
     </script>
 @endsection

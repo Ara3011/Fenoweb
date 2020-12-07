@@ -19,7 +19,35 @@
 @endsection
 @section("scripts")
     <script type="text/javascript">
+
         Highcharts.chart('container_chart', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Mayores usos de las especies'
+            },
+
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+
+                    }
+                }
+            },
+            series: [{
+                name: 'Observaciones',
+                colorByPoint: true,
+                data: {!! $datos !!}
+            }]
+        });
+       /* Highcharts.chart('container_chart', {
             chart: {
                 type: 'column'
             },
@@ -31,7 +59,6 @@
                 text: ''
             },
             xAxis: {
-                categories: {!! json_encode($categorias)!!},
                 crosshair: true
             },
             yAxis: {
@@ -49,9 +76,9 @@
             },
             series: [{
                 name: "Registros",
-                data:{{json_encode($valores)}},
             }],
         });
+        */
     </script>
 @endsection
 
