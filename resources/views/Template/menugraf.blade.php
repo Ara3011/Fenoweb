@@ -28,6 +28,8 @@
                     <br>por los observadores (anuales).</a>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica11')}}">Fenofases monitoreadas
                     <br> por observador "X" (anuales).</a>
+                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica12')}}">Aparición de fase fenológica
+                    <br> para la misma especie.</a>
                </div>
 
         </nav>

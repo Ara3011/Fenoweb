@@ -151,6 +151,7 @@ class Grafica1Controller extends Controller
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
             ->where('observadores.nom','like','%'.$buscar_observador.'%')
             ->groupBy('observadores.nom')
+            ->orderBy('valor', 'DESC')
             ->get();
 
             $datos=json_encode($datos);
@@ -186,9 +187,10 @@ class Grafica1Controller extends Controller
             ->join('sitios','sitios.id_sitio','=','notas.id_sitio')
             ->select('observadores.nom')
             ->selectRaw("count(DISTINCT sitios.id_sitio) as valor")
-            ->groupBy('observadores.nom')
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
             ->where('observadores.nom','like','%'.$buscar_observador.'%')
+            ->groupBy('observadores.nom')
+            ->orderBy('valor', 'DESC')
             ->get();
 
         $datos=json_encode($datos);
@@ -342,6 +344,46 @@ class Grafica1Controller extends Controller
 
         return view('Graficas.grafica11 ', compact('datos','anios',
             'buscar_anio','observadores','buscar_observador'));
+    }
+    public function grafica12(Request $request)
+    {
+
+        //consulta 1.1 Calendario particular por especie y por individuo por mes y por grupo de planta (escala BBCH), (ID de individuo y fenofase)
+        $buscar_anio= $request->input('buscar_anio');
+        $categorias=$this->nota->getCalendarioEspeciesInfo()->distinct("descrip_fenofase")->select("descrip_fenofase")->pluck("descrip_fenofase");
+        $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
+        $anos=$this->nota->selectRaw('year(fecha) as anio')
+            ->distinct('year(fecha)')
+            ->orderBy('anio', 'DESC')->get();
+
+        $data=array();
+        foreach ($especies as $especie)
+        {
+            $aux=array();
+
+            foreach ($categorias as $categoria)
+            {
+                $valor=$this->nota->getCalendarioEspeciesInfo()
+                    ->whereDescripFenofase($categoria)->where("especies.descripcion",$especie)
+                    ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')->get();
+                if($valor->count()>0) {
+                    // $date = strtotime($valor[0]->primera_fecha);
+
+                    //return $date;
+                    array_push($aux, ["low" => "Date.parse('{$valor[0]->primera_fecha}')",
+                        "high" =>"Date.parse('{$valor[0]->ultima_fecha}')",
+                        "name" => $valor[0]->resultado
+                    ]);
+                }
+                else
+                    array_push($aux, []);
+            }
+            array_push($data,["name"=>"'".$especie."'","data"=>$aux]);
+        }
+
+
+        return view('Graficas.grafica5', compact('categorias',"data","buscar_anio","anos"));
+
     }
 
 }
