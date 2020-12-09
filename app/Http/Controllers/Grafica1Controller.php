@@ -291,6 +291,7 @@ class Grafica1Controller extends Controller
             ->selectRaw("count(DISTINCT especies.id_especie) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
             ->groupBy('observadores.nom')
+            ->orderBy('valor', 'DESC')
             ->get();
 
         $datos=json_encode($datos);
@@ -323,6 +324,7 @@ class Grafica1Controller extends Controller
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
             ->where('observadores.nom','like','%'.$buscar_observador.'%')
             ->groupBy('observadores.nom')
+            ->orderBy('valor', 'DESC')
             ->get();
 
         $datos=json_encode($datos);
@@ -348,13 +350,41 @@ class Grafica1Controller extends Controller
     public function grafica12(Request $request)
     {
 
-        //consulta 1.1 Calendario particular por especie y por individuo por mes y por grupo de planta (escala BBCH), (ID de individuo y fenofase)
-        $buscar_anio= $request->input('buscar_anio');
+        //consulta 1.5	Gráficos por de fecha de aparición de fase fenológica de diversas especies en un solo sitio.
+        // Identificar las fechas de inicio y fin de cada fase fenológica de diferentes especies en un solo sitio, por estado, por municipio y comunidad.
+        // Gráficos de fases fenológicas. Fecha, ID individuo, ID fenofase, ID sitio
+        $buscar_sitio= $request->input('buscar_sitio');
+        $buscar_comunidad= $request->input('buscar_comunidad');
+        $buscar_municipio= $request->input('buscar_municipio');
+        $buscar_estado= $request->input('buscar_estado');
+
+
+
         $categorias=$this->nota->getCalendarioEspeciesInfo()->distinct("descrip_fenofase")->select("descrip_fenofase")->pluck("descrip_fenofase");
         $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
-        $anos=$this->nota->selectRaw('year(fecha) as anio')
-            ->distinct('year(fecha)')
-            ->orderBy('anio', 'DESC')->get();
+
+        $sitios=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->select('sitios.nombre as sitio')
+            ->distinct("sitios.nombre as sitio")
+            ->orderBy('sitio', 'ASC')->get();
+
+        $municipios=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->select('municipios.nombre as municipio')
+            ->distinct("municipios.nombre as municipio")
+            ->orderBy('municipio', 'ASC')->get();
+
+        $comunidadades=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->select('sitios.comunidad as comunidad')
+            ->distinct("sitios.comunidad as comunidad")
+            ->orderBy('comunidad', 'ASC')->get();
+
+        $estados=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select('estados.nombre as estado')
+            ->distinct("estados.nombre as estado")
+            ->orderBy('estado', 'ASC')->get();
 
         $data=array();
         foreach ($especies as $especie)
@@ -365,7 +395,11 @@ class Grafica1Controller extends Controller
             {
                 $valor=$this->nota->getCalendarioEspeciesInfo()
                     ->whereDescripFenofase($categoria)->where("especies.descripcion",$especie)
-                    ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')->get();
+                    ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
+                    ->where('sitios.comunidad','like','%'.$buscar_comunidad.'%')
+                    ->where('municipios.nombre','like','%'.$buscar_municipio.'%')
+                    ->where('estados.nombre','like','%'.$buscar_estado.'%')->get();
+
                 if($valor->count()>0) {
                     // $date = strtotime($valor[0]->primera_fecha);
 
@@ -382,7 +416,8 @@ class Grafica1Controller extends Controller
         }
 
 
-        return view('Graficas.grafica5', compact('categorias',"data","buscar_anio","anos"));
+        return view('Graficas.grafica12', compact('categorias',"data","buscar_sitio","sitios","municipios",
+        "buscar_municipio","comunidadades","buscar_comunidad","buscar_estado","estados"));
 
     }
 

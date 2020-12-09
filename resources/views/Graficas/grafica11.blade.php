@@ -40,51 +40,33 @@
     <script type="text/javascript">
         Highcharts.chart('container_chart', {
             chart: {
-                type: 'funnel'
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
             },
             title: {
                 text: 'Fenofases Monitoreadas por observador "X" anual'
             },
+
             plotOptions: {
-                series: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        format: '<b>{point.name}</b> ({point.y:,.0f})',
-                        softConnector: true
-                    },
-                    center: ['47%', '50%'],
-                    neckWidth: '30%',
-                    neckHeight: '25%',
-                    width: '75%'
+
+                    }
                 }
-            },
-            legend: {
-                enabled: false
             },
             series: [{
                 name: 'Fenofases monitoreadas',
-                data:{!! $datos !!}
-            }],
-
-            responsive: {
-                rules: [{
-                    condition: {
-                        maxWidth: 500
-                    },
-                    chartOptions: {
-                        plotOptions: {
-                            series: {
-                                dataLabels: {
-                                    inside: true
-                                },
-                                center: ['50%', '50%'],
-                                width: '100%'
-                            }
-                        }
-                    }
-                }]
-            }
+                colorByPoint: true,
+                data: {!! $datos !!}
+            }]
         });
+
+
     </script>
 @endsection
 
