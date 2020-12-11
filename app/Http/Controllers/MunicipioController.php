@@ -35,8 +35,7 @@ class MunicipioController extends Controller
      */
     public function create()
     {
-        $estados=Municipio::join('estados','estados.id_estado','=','municipios.id_estado')
-            ->selectRaw('estados.id_estado as id')
+        $estados=Estado::selectRaw('estados.id_estado as id')
             ->selectRaw('estados.nombre as estado')
             ->distinct('estados.nombre')
             ->get();
@@ -86,8 +85,8 @@ class MunicipioController extends Controller
      */
     public function edit($id_municipio)
     {
-        $estados=Municipio::join('estados','estados.id_estado','=','municipios.id_estado')
-            ->selectRaw('estados.id_estado as id')
+        $estados=Estado::
+            selectRaw('estados.id_estado as id')
             ->selectRaw('estados.nombre as estado')
             ->distinct('estados.nombre')
             ->get();

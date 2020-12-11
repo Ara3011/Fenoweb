@@ -6,16 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--LIBRERIA DE ESTILOS UTILIZADOS  -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Estilos.css">
 
-
-
-
-
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/Estilos.css') }}" />
 
     <!--FUENTE DE LETRAS -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Oswald&display=swap') }}" />
+
 
     <title>Red Nacional de Fenología</title>
 </head>
@@ -405,6 +402,8 @@
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>
+
+
 
 </body>
 </html>

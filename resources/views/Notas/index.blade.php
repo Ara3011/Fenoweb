@@ -11,10 +11,10 @@
         <div class="col-md-12">
 
             <div class="card mt-2" style="height:620px;
-                     width:1500px;">
-                <div class="card-header bg-success" style="width: 1500px;">
+                     width:1470px;">
+                <div class="card-header bg-success" style="width: 1470px;">
 
-                    <h4 class="card-title text-center"style="width: 1500px; ">Notas</h4>
+                    <h4 class="card-title text-center"style="width: 1470px; ">Notas</h4>
                 </div>
 
                 <div class="">
@@ -33,7 +33,7 @@
 
                     <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
                     height:480px;
-                     width:1500px;">
+                     width:1470px;">
                         <div class="row">
                             <div class="col-sm-12">
                                 <table id="example1" class="table dataTable"

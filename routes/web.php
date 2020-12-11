@@ -43,11 +43,11 @@ Route::resource('municipios', \App\Http\Controllers\MunicipioController::class);
 Route::resource('individuos', \App\Http\Controllers\IndividuoController::class);
 Route::resource('sitios', \App\Http\Controllers\SitioController::class);
 Route::resource('notas', NotaController::class);
-
-
 Route::get('/graficas', function () {
     return view('Graficas.inicio');
 });
+
+Route::get('/show', [App\Http\Controllers\NotaController::class, 'show'])->name('show');
 
 
 Auth::routes();

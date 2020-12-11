@@ -2,6 +2,19 @@
 @section('content')
 
     <div class="container-fluid">
+        @if(Session::has('Mensaje'))
+            <div class="alert alert-secondary text-center alert-dismissible text-uppercase"style="left: 197px">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
+        @endif
+        <div class="col-md-2 mt-3" style="left: 197px">
+
+            <button class="btn btn-success btn-round" >
+                <a href="{{url('/sitios/create')}}">
+                    <i class="material-icons text-light">loupe</i><i class="text-light">Agregar</i>
+                </a>
+            </button>
+        </div>
 
         <div class="col-12" style="left: 197px">
             <div class="card">
@@ -76,18 +89,42 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Estado
                                         </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">Acciones
+                                        </th>
                                     </thead>
                                     <tbody>
-                                    @foreach($datossitio as $datossitios)
+                                    @foreach($datossitios as $datossitio)
                                         <tr role="row" class="odd">
-                                            <td>{{$datossitios->sitio}}</td>
-                                            <td>{{$datossitios->comunidad}}</td>
-                                            <td>{{$datossitios->latitud}}</td>
-                                            <td>{{$datossitios->longitud}}</td>
-                                            <td>{{$datossitios->altitud}}</td>
-                                            <td>{{$datossitios->municipio}}</td>
-                                            <td>{{$datossitios->estado}}</td>
-
+                                            <td>{{$datossitio->sitio}}</td>
+                                            <td>{{$datossitio->comunidad}}</td>
+                                            <td>{{$datossitio->latitud}}</td>
+                                            <td>{{$datossitio->longitud}}</td>
+                                            <td>{{$datossitio->altitud}}</td>
+                                            <td>{{$datossitio->municipio}}</td>
+                                            <td>{{$datossitio->estado}}</td>
+                                            <td>
+                                                <form method="post"
+                                                      action="{{url('/sitios/'.$datossitio->id_sitio)}}">
+                                                    <!-- Actualizar -->
+                                                    {{csrf_field()}}
+                                                    <button type="button" rel="tooltip"
+                                                            class="btn btn-success rounded-circle ">
+                                                        <a class="text-light"
+                                                           href="{{url('/sitios/'.$datossitio->id_sitio.'/edit')}}"><i
+                                                                class="material-icons ">edit</i></a>
+                                                    </button>
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <!-- BORRAR -->
+                                                    <button type="submit" rel="tooltip"
+                                                            class="btn btn-danger rounded-circle ">
+                                                        <i class="material-icons"
+                                                           onclick="return confirm('¿Borrar?');">restore_from_trash</i>
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -100,7 +137,7 @@
             </div>
             <div class="">
         <span >
-            {{ $datossitio->links('pagination::bootstrap-4') }}
+            {{ $datossitios->links('pagination::bootstrap-4') }}
         </span>
             </div>
             <style>
@@ -110,6 +147,4 @@
             </style>
         </div>
         </div>
-
-    </div>
 @endsection

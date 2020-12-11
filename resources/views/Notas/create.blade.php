@@ -1,7 +1,6 @@
 @extends('Template.headfoot')
 @section('content')
 
-
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -21,15 +20,15 @@
 
                 <div class="form-group card card-body mt-2" style="width: 920px; left: 310px">
                     <h1 class="card-header bg-success text-light"  >Formulario Notas</h1>
-                    <strong class="mt-3">Día Juliano:</strong>
-                    <input type="text" name="dia_juliano" class="form-control" placeholder="2014323">
-                    <strong>Observadores:</strong><br>
-                    <select name="id_observador" id="id_observador">
-                        <option value="" disabled selected>Seleccione un observador</option>
-                        @foreach($observadores as $observador)
-                            <option value={{$observador->id_observador}}>{{$observador->nombre}}</option>
-                        @endforeach
-                    </select>
+
+                    <strong>Observador:</strong><br>
+                    @foreach($observadores as $observador)
+                    <h4>{{$observador->nombre}}</h4>
+                    @endforeach
+
+
+                    <strong class="mt-3">Fecha:</strong>
+                    <input type="date" class="form-control datepicker" name="fecha">
                     <strong>Familias:</strong><br>
                     <select name="id_familia" id="id_familia">
                         <option value="" disabled selected>Seleccione familia</option>
@@ -55,7 +54,7 @@
                     <input type="text" name="descripcion" class="form-control" placeholder="Ingresa nombre de subespecie">
 
                     <strong>Individuos:</strong><br>
-                    <input type="text" name="nombre_comun" class="form-control" placeholder="Ingresa nombre común del individuo">
+                    <input id="nombre_individuos" type="text" name="nombre_comun" class="form-control typeahead" placeholder="Ingresa nombre común del individuo">
 
                     <strong>Uso del individuo:</strong><br>
                     <input type="text" name="uso" class="form-control" placeholder="Ingresa algún uso del individuo">
@@ -67,27 +66,15 @@
                             <option value={{$escala->id_bbch}}>{{$escala->escala}}</option>
                         @endforeach
                     </select>
-
-                    <strong>Sitio:</strong><br>
-                    <input type="text" name="nombre" class="form-control" placeholder="Ecribe nombre del sitio">
-                    <strong>Comunidad:</strong><br>
-                    <input type="text" name="comunidad" class="form-control" placeholder="Ecribe nombre de la comunidad">
-                    <strong>Latitud:</strong><br>
-                    <input type="text" name="latitud" class="form-control" placeholder="19.48593056">
-                    <strong>Longitud:</strong><br>
-                    <input type="text" name="longitud" class="form-control" placeholder="100.2797278">
-                    <strong>ALtitud:</strong><br>
-                    <input type="text" name="altitud" class="form-control" placeholder="2256">
-
-                    <strong>Municipios:</strong><br>
-                    <select name="id_municipio" id="id_municipio">
-                        <option value="" disabled selected>Seleccione un municipio</option>
-                        @foreach($municipios as $municipio)
-                            <option value={{$municipio->id_municipio}}>{{$municipio->municipio}}</option>
+                    <strong>Sitios:</strong><br>
+                    <select name="id_sitio" id="id_sitio">
+                        <option value="" disabled selected>Seleccione un sitio</option>
+                        @foreach($sitios as $sitio)
+                            <option value={{$sitio->id_sitio}}>{{$sitio->sitio}}</option>
                         @endforeach
                     </select>
                     <strong>Intensidad Fenofase:</strong><br>
-                    <input type="text" name="intensidad_fenofase" class="form-control" placeholder="">
+                    <input type="number" min="0" max="100" name="intensidad_fenofase" class="form-control" placeholder="1% a 20%">
                     <strong>Fenofases:</strong><br>
                     <select name="id_fenofase" id="id_fenofase">
                         <option value="" disabled selected>Seleccione una fenofase</option>
@@ -96,7 +83,7 @@
                         @endforeach
                     </select>
                     <strong>Precipitación:</strong><br>
-                    <input type="text" name="precipitacion" class="form-control" placeholder="">
+                    <input type="number" name="precipitacion" class="form-control" placeholder="30mm.">
 
                     <strong>Climas:</strong><br>
                     <select name="id_clima" id="id_clima">
@@ -106,10 +93,10 @@
                         @endforeach
                     </select>
                     <strong>Temperatura minima:</strong>
-                    <input type="text" name="temperatura_minima" class="form-control" placeholder="">
+                    <input type="number"  min="-30" max="50" name="temperatura_minima" class="form-control" placeholder="-30°C a 50°C">
 
                     <strong>Temperatura máxima:</strong>
-                    <input type="text" name="temperatura_maxima" class="form-control" placeholder="">
+                    <input type="number" min="-30" max="50" name="temperatura_maxima" class="form-control" placeholder="-30°C a 50°C">
 
                     <strong>Hallazgos:</strong><br>
                     <textarea name="hallazgos" id="hallazgos" placeholder="Describe tus observaciones" cols="30" rows="5"></textarea><br>
@@ -124,4 +111,43 @@
         </div>
 
     </form>
+
+
+@section("scripts")
+
+    <script type="text/javascript">
+    $("#id_sitio",).select2({
+    });
+</script>
+
+    <script type="text/javascript">
+        $("#id_bbch",).select2({
+        });
+    </script>
+    <script type="text/javascript">
+        $("#id_familia",).select2({
+        });
+    </script>
+    <script type="text/javascript">
+        $("#id_genero",).select2({
+        });
+    </script>
+    <script type="text/javascript">
+        $("#id_especie",).select2({
+        });
+    </script>
+    <script type="text/javascript">
+        $("#id_fenofase",).select2({
+        });
+    </script>
+    <script type="text/javascript">
+        $("#id_clima",).select2({
+        });
+    </script>
+
+
 @endsection
+
+
+@endsection
+

@@ -38,3 +38,9 @@
 
     </form>
 @endsection
+@section('scripts')
+    <script type="text/javascript">
+        $("#id_estado",).select2({
+        });
+    </script>
+    @endsection
