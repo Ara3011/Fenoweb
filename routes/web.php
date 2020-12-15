@@ -64,6 +64,10 @@ Route::get('/graficas/grafica10', [App\Http\Controllers\Grafica1Controller::clas
 Route::get('/graficas/grafica11', [App\Http\Controllers\Grafica1Controller::class, 'grafica11'])->name('grafica11');
 Route::get('/graficas/grafica12', [App\Http\Controllers\Grafica1Controller::class, 'grafica12'])->name('grafica12');
 Route::get('/graficas/grafica13', [App\Http\Controllers\Grafica1Controller::class, 'grafica13'])->name('grafica13');
+Route::get('/graficas/grafica14', [App\Http\Controllers\Grafica1Controller::class, 'grafica14'])->name('grafica14');
+Route::get('/graficas/grafica15', [App\Http\Controllers\Grafica1Controller::class, 'grafica15'])->name('grafica15');
+Route::get('/graficas/grafica16', [App\Http\Controllers\Grafica1Controller::class, 'grafica16'])->name('grafica16');
+
 
 Route::get('/graficas/grafica9/exportar', [App\Http\Controllers\Grafica1Controller::class, 'bladeToExcel'])->name('exportar');
 

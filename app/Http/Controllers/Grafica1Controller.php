@@ -420,5 +420,98 @@ class Grafica1Controller extends Controller
         "buscar_municipio","comunidadades","buscar_comunidad","buscar_estado","estados"));
 
     }
+    public function grafica13()
+    {
+        //consulta 4.5 Observaciones para cada estado
+
+        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("estados.nombre")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("estados.nombre")
+            ->orderBy('valor', 'DESC')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"nombre"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+
+
+        //return $datos;
+
+        return view('Graficas.grafica13', compact('datos'));
+
+    }
+    public function grafica14()
+    {
+        //consulta 4.6 Observaciones para cada municipio
+        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("municipios.nombre")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("municipios.nombre")
+            ->orderBy('valor', 'DESC')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"nombre"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+
+        //return $datos;
+        return view('Graficas.grafica14', compact('datos'));
+
+    }
+    public function grafica15()
+    {
+        //consulta 4.7 Observaciones para cada comunidad
+
+        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("sitios.comunidad")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("sitios.comunidad")
+            ->orderBy('valor', 'DESC')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"comunidad"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+
+        //return $datos;
+        return view('Graficas.grafica15', compact('datos'));
+
+    }
+    public function grafica16()
+    {
+        //consulta 1.2 Promediar por ejemplo todas las fechas de inicio del desarrollo de hojas y
+        // las fechas de fin de una misma especie, con el objetivo de tener la duración total
+        // de esta fase fenológica no por año, sino para la especie.
+
+        /* select e.descripcion,fe.descrip_fenofase, min(n.fecha) primer_fecha,max(n.fecha) ultima_fecha, month(min(n.fecha)) primer_mes, month(max(n.fecha)) ultimo_mes
+ from individuos i, fenofases fe, notas n,
+especies e, subespecies s where i.id_individuo=n.id_individuo and fe.id_fenofase=n.id_fenofase and i.id_subespecie=s.id_subespecie
+    and e.id_especie=s.id_especie
+    and YEAR(n.fecha)="2014" and fe.descrip_fenofase="Desarrollo de hojas" group by fe.descrip_fenofase,e.descripcion;
+*/
+        $datos=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select('especies.descripcion as especie','fenofases.descrip_fenofase as fenofase')
+            ->selectRaw("min(notas.fecha) as primer_fecha")
+            ->selectRaw("max(notas.fecha) as ultima_fecha")
+            ->selectRaw("month(min(notas.fecha)) as primer_mes")
+            ->selectRaw("month(max(notas.fecha)) as ultimo_mes")
+            ->groupBy('fenofases.descrip_fenofase','especies.descripcion')
+            ->get();
+
+       return $datos;
+        return view('Graficas.grafica16',compact("datos"));
+
+
+    }
 
 }

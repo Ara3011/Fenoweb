@@ -1,19 +1,25 @@
 @extends('Template.headfoot')
 @section('content')
 
-    <div class="wrapper d-flex align-items-stretch">
+    <div class="wrapper d-flex align-items-stretch"   >
         <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
 
-            <div class="nav flex-column nav-pills" style="width: 300px"  >
-                <h2 class="card-header text-center text-black font-weight-bold">Información</h2>
-                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica1')}}">Observaciones por cada
+            <div class="nav flex-column nav-pills" style="width: 300px;"  >
+                <h2 class="card-header text-center text-orange font-weight-bold">Información</h2>
+                <a class="list-group-item list-group-item-action "  href="{{url('graficas/grafica1')}}">Observaciones por cada
                     observador (general).</a>
-                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica2')}}">Observaciones por cada
+                <a class="list-group-item list-group-item-action"   href="{{url('graficas/grafica2')}}" >Observaciones por cada
                      especie (general).</a>
+                <a class="list-group-item list-group-item-action"  href="{{url('graficas/grafica13')}}">Observaciones por cada
+                    estado (general).</a>
+                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica14')}}">Observaciones por cada
+                    municipio (general).</a>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica3')}}">Observaciones por cada
-                     sitio (general).</a>
+                    sitio (general).</a>
+                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica15')}}">Observaciones por cada
+                    comunidad (general).</a>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica4')}}">Observaciones por cada
-                     fase fenológica (general).</a>
+                    fase fenológica (general).</a>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica5')}}">Calendario de primera
                    y última observación
                     de cada fase fenológica  por especie (anuales).</a>
@@ -30,9 +36,11 @@
                     <br> por observador "X" (anuales).</a>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica12')}}">Aparición de fase fenológica
                     <br> para la misma especie.</a>
+                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica16')}}">Duración de la fase fenológica
+                    <br> por especies.</a>
                </div>
-
         </nav>
+
 
         <!-- Page Content  -->
         <main class="conteiner">
