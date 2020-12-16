@@ -499,17 +499,49 @@ especies e, subespecies s where i.id_individuo=n.id_individuo and fe.id_fenofase
         $datos=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
-            ->join('especies','especies.id_especie','=','subespecies.id_especie')
-            ->select('especies.descripcion as especie','fenofases.descrip_fenofase as fenofase')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie');
+            //->where("especies.id_especie",1);
+
+        $categorias=$datos->select("especies.descripcion")->orderBy("especies.id_especie")->distinct("especies.descripcion")->pluck("especies.descripcion");
+
+        $fenofases=$datos->select("fenofases.id_fenofase","fenofases.descrip_fenofase")->orderBy("fenofases.id_fenofase")->distinct("fenofases.id_fenofase")->get();
+
+        $datos=$datos->select('especies.descripcion as especie','fenofases.descrip_fenofase as fenofase',"fenofases.id_fenofase")
             ->selectRaw("min(notas.fecha) as primer_fecha")
             ->selectRaw("max(notas.fecha) as ultima_fecha")
-            ->selectRaw("month(min(notas.fecha)) as primer_mes")
-            ->selectRaw("month(max(notas.fecha)) as ultimo_mes")
             ->groupBy('fenofases.descrip_fenofase','especies.descripcion')
+            ->orderBy("especies.id_especie")->orderBy("fenofases.id_fenofase")
             ->get();
 
-       return $datos;
-        return view('Graficas.grafica16',compact("datos"));
+        $data=array();
+        foreach($fenofases as $fase)
+        {
+            $values=array();
+            foreach($categorias as $cat)
+            {
+                $aux=array();
+                foreach($datos as $dato)
+                {
+
+                    if($fase->id_fenofase==$dato->id_fenofase&&$cat==$dato->especie)
+                    {
+
+                        array_push($values, ["low" => "Date.parse('{$dato->primer_fecha}')",
+                            "high" =>"Date.parse('{$dato->ultima_fecha}')",
+                            //"name" => $valor[0]->resultado
+                        ]);
+                        break;
+                    }
+                }
+                //array_push($values,$aux);
+
+            }
+
+            array_push($data,["name"=>"'".$fase->descrip_fenofase."'","data"=>$values]);
+
+        }
+      // return $datos;
+        return view('Graficas.grafica16',compact("categorias","data"));
 
 
     }

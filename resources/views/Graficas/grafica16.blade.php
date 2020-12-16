@@ -9,6 +9,7 @@
                         <div class="card-body">
                             <figure class="highcharts-figure">
                                 <div id="container_chart" style="height: 650px; width: 1050px"></div>
+
                             </figure>
                         </div>
                     </div>
@@ -21,42 +22,59 @@
     <script type="text/javascript">
 
         Highcharts.chart('container_chart', {
+
             chart: {
-                type: 'bar'
+                type: 'columnrange',
+                inverted: true,
+
             },
+
+            accessibility: {
+                description: 'Image'
+            },
+
             title: {
-                text: 'Duración de la fase fenológica por especies'
+                text: 'Calendario de primera y última observación de cada fase fenológica por especie (anuales).'
             },
+
+            subtitle: {
+                text: ''
+            },
+
             xAxis: {
-                categories: ['Especie1', 'Especie2', 'Especie3', 'Especie4', 'Especie5']
+                categories: {!! $categorias !!},
             },
+
             yAxis: {
-                min: 0,
+
                 title: {
-                    text: 'Fechas'
+                    text: 'Meses'
+                },
+                type: "datetime",
+            },
+
+            tooltip: {
+                animation:true,
+                formatter:function(){
+                    return this.point.name
                 }
             },
-            legend: {
-                reversed: true
-            },
+
             plotOptions: {
-                bar: {
-                    stacking: 'normal',
+                columnrange: {
                     dataLabels: {
-                        enabled: true
+                        enabled: true,
+                        inside:true,
+                        formatter: function (){
+                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Observaciones:"+this.point.name;
+                        }
                     }
                 }
             },
-            series: [{
-                name: 'Fenofase1',
-                data: [5, 3, 4, 7, 2]
-            }, {
-                name: 'Fenofase2',
-                data: [2, 2, 3, 2, 1]
-            }, {
-                name: 'Fenofase3',
-                data: [3, 4, 4, 2, 5]
-            }]
+
+
+            series:{!! str_replace('"',"",json_encode($data)) !!},
+
         });
     </script>
 @endsection
