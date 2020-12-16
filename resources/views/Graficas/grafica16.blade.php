@@ -4,6 +4,19 @@
     <div class="container container mt-4" style="padding-top: 10px;">
         <div class="row justify-content-center">
             <div class="row justify-content-center">
+                <div>
+                    <center>
+                        <form class="form-group form mt-2"  >
+                            <select name="buscar_especie" id="buscar_especie">
+                                <option  disabled selected>Seleccione una especie</option>
+                                @foreach($esp as $es)
+                                    <option>{{$es->especie}}</option>
+                                @endforeach
+                            </select>
+                            <input type="submit" value="Buscar">
+                        </form>
+                    </center>
+                </div>
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
@@ -48,15 +61,15 @@
             yAxis: {
 
                 title: {
-                    text: 'Meses'
+                    text: 'Fechas'
                 },
                 type: "datetime",
             },
 
             tooltip: {
-                animation:true,
+                animation:false,
                 formatter:function(){
-                    return this.point.name
+                    return this.series.name
                 }
             },
 
@@ -66,7 +79,9 @@
                         enabled: true,
                         inside:true,
                         formatter: function (){
-                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Observaciones:"+this.point.name;
+                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Fenofase: "+ this.series.name;
+                            return '<b>' +"Fenofase:"+
+                                this.series.name ;
                         }
                     }
                 }

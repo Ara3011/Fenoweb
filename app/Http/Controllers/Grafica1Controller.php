@@ -175,7 +175,6 @@ class Grafica1Controller extends Controller
         'buscar_anio','buscar_observador'));
 
     }
-
     public function grafica8(Request $request)
     {
         //Consulta 11.3 ¿Cuántos sitios monitorea un observador X en un año?
@@ -212,7 +211,6 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica8', compact('datos','anios','observadores',
         'buscar_anio','buscar_observador'));
     }
-
     public function grafica9(Request $request)
     {
 
@@ -272,7 +270,6 @@ class Grafica1Controller extends Controller
 
         return view('Graficas.grafica9', compact('datos','buscar_sitio','sitios','especies','buscar_especie'));
     }
-
     public function bladeToExcel()
     {
      return Excel::download(new NotasExport, 'notas.xlsx');
@@ -308,7 +305,6 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica10 ', compact('datos','anios',
             'buscar_anio'));
     }
-
     public function grafica11(Request $request)
     {
         //Consulta 11.4	¿Cuántas fenofases monitorea un observador X en un año?
@@ -484,22 +480,28 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica15', compact('datos'));
 
     }
-    public function grafica16()
+    public function grafica16(Request $request)
     {
         //consulta 1.2 Promediar por ejemplo todas las fechas de inicio del desarrollo de hojas y
         // las fechas de fin de una misma especie, con el objetivo de tener la duración total
         // de esta fase fenológica no por año, sino para la especie.
 
-        /* select e.descripcion,fe.descrip_fenofase, min(n.fecha) primer_fecha,max(n.fecha) ultima_fecha, month(min(n.fecha)) primer_mes, month(max(n.fecha)) ultimo_mes
- from individuos i, fenofases fe, notas n,
-especies e, subespecies s where i.id_individuo=n.id_individuo and fe.id_fenofase=n.id_fenofase and i.id_subespecie=s.id_subespecie
-    and e.id_especie=s.id_especie
-    and YEAR(n.fecha)="2014" and fe.descrip_fenofase="Desarrollo de hojas" group by fe.descrip_fenofase,e.descripcion;
-*/
+
+        $buscar_especie= $request->input('buscar_especie');
+
+        $esp=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("especies.descripcion as especie")
+            ->distinct("especies.descripcion as especie")
+            ->get();
+
+
         $datos=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
-            ->join('especies','especies.id_especie','=','subespecies.id_especie');
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->where('especies.descripcion','like','%'.$buscar_especie.'%');
             //->where("especies.id_especie",1);
 
         $categorias=$datos->select("especies.descripcion")->orderBy("especies.id_especie")->distinct("especies.descripcion")->pluck("especies.descripcion");
@@ -540,8 +542,9 @@ especies e, subespecies s where i.id_individuo=n.id_individuo and fe.id_fenofase
             array_push($data,["name"=>"'".$fase->descrip_fenofase."'","data"=>$values]);
 
         }
-      // return $datos;
-        return view('Graficas.grafica16',compact("categorias","data"));
+       //return $data;
+        return view('Graficas.grafica16',compact("categorias","data","buscar_especie",
+        "esp"));
 
 
     }
