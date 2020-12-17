@@ -318,6 +318,7 @@ class Grafica1Controller extends Controller
             ->selectRaw('notas.temperatura_minima as temperatura_minima')
             ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
             ->selectRaw('notas.hallazgos as nota')
+            ->OrderBy('fecha','DESC')
             ->paginate($this::Paginacion);
 
         $sitios=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')

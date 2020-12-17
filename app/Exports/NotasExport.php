@@ -47,6 +47,7 @@ class NotasExport implements FromCollection,  WithHeadings
                 ->selectRaw('notas.temperatura_minima as temperatura_minima')
                 ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
                 ->selectRaw('notas.hallazgos as nota')
+                ->OrderBy('fecha','DESC')
                 ->get();
 return $datos;
 
