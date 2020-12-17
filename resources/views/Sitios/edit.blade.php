@@ -6,7 +6,7 @@
         {{method_field('PATCH')}}
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12"style="left: 600px">
+            <div class="col-xs-12 col-sm-12 col-md-12"style="left: 500px">
                 <div class="form-group card card-body">
 
                     <strong>Sitio:</strong><br>
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center"style="left: 600px">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center"style="left: 500px">
                 <button type="submit" class="btn btn-success" value="Editar">Actualizar</button>
             </div>
         </div>

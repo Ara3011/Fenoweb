@@ -9,7 +9,7 @@
                 <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
         @endif
 
-        <div class="col-md-12 mt-4">
+        <div class="col-md-12 mt-4" style="left: 197px">
             <div class="card">
                 <div class="card-header bg-success">
 

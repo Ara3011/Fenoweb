@@ -54,7 +54,7 @@
                     <input type="text" name="descripcion" class="form-control" placeholder="Ingresa nombre de subespecie">
 
                     <strong>Individuos:</strong><br>
-                    <input id="nombre_individuos" type="text" name="nombre_comun" class="form-control typeahead" placeholder="Ingresa nombre común del individuo">
+                    <input id="nombre_especies" type="text" name="nombre_comun" class="form-control typeahead" placeholder="Ingresa nombre común del individuo">
 
                     <strong>Uso del individuo:</strong><br>
                     <input type="text" name="uso" class="form-control" placeholder="Ingresa algún uso del individuo">
@@ -114,6 +114,14 @@
 
 
 @section("scripts")
+    <script>
+
+            var availableTutorials  = {{$nombre_especies}}
+            $( "#nombre_especies" ).autocomplete({
+                source: availableTutorials
+            });
+    </script>
+
 
     <script type="text/javascript">
     $("#id_sitio",).select2({

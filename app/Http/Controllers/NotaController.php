@@ -116,13 +116,14 @@ class NotaController extends Controller
             ->distinct('climas.descripcion')
             ->get();
 
-        $nombre_especie=Individuo::distinct()
+        $nombre_especies=Individuo::distinct()
             ->pluck("nombre_comun");
-        $nombre_individuos=json_encode($nombre_especie);
+        $nombre_especies=json_encode($nombre_especies);
 
         return view('Notas.create', compact('observadores','fenofases','sitios'
-            ,'familias','generos','especies','escalas','climas','nombre_individuos'));
+            ,'familias','generos','especies','escalas','climas','nombre_especies'));
 
+        
 
     }
 

@@ -16,14 +16,14 @@
         @csrf
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12" style="left: 600px">
                 <div class="form-group">
                     <strong>Nombre de familia:</strong>
                     <input type="text" name="descripcion" class="form-control" placeholder="Familias">
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="left: 600px">
                 <button type="submit" class="btn btn-success">Crear</button>
             </div>
         </div>
