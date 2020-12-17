@@ -9,8 +9,14 @@
                         <form class="form-group form mt-2"  >
                             <select name="buscar_especie" id="buscar_especie">
                                 <option  disabled selected>Seleccione una especie</option>
-                                @foreach($esp as $es)
-                                    <option>{{$es->especie}}</option>
+                                @foreach($especies as $especie)
+                                    <option>{{$especie->especie}}</option>
+                                @endforeach
+                            </select>
+                            <select name="buscar_anio" id="buscar_anio" >
+                                <option value="" disabled selected>Seleccione un año</option>
+                                @foreach($anios as $anio)
+                                    <option >{{$anio->anio}}</option>
                                 @endforeach
                             </select>
                             <input type="submit" value="Buscar">
@@ -33,64 +39,57 @@
 @endsection
 @section("scripts")
     <script type="text/javascript">
-
         Highcharts.chart('container_chart', {
-
             chart: {
-                type: 'columnrange',
-                inverted: true,
-
+                type: 'column'
             },
-
-            accessibility: {
-                description: 'Image'
-            },
-
             title: {
-                text: 'Primera y última observación de cada fase fenológica por especies.'
+                text: 'Menor duración de las fases fenológicas en las especies por año.'
             },
-
             subtitle: {
                 text: ''
             },
-
-            xAxis: {
-                categories: {!! $categorias !!},
-            },
-
-            yAxis: {
-
-                title: {
-                    text: 'Fechas'
-                },
-                type: "datetime",
-            },
-
-            tooltip: {
-                animation:true,
-                formatter:function(){
-                    return this.series.name
+            accessibility: {
+                announceNewData: {
+                    enabled: true
                 }
             },
+            xAxis: {
+                type: 'category'
+            },
+            yAxis: {
+                title: {
+                    text: 'No. de días transcurridos'
+                }
 
+            },
+            legend: {
+                enabled: false
+            },
             plotOptions: {
-                columnrange: {
+
+                column: {
+                    borderRadius:10
+                },
+                series: {
+                    borderWidth: 0,
                     dataLabels: {
                         enabled: true,
-                        inside:true,
-                        formatter: function (){
-                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Fenofase: "+ this.series.name;
-                            return '<b>' +"Fenofase:"+
-                                this.series.name ;
-                        }
                     }
                 }
             },
 
-
-            series:{!! str_replace('"',"",json_encode($data)) !!},
+            series: [
+                {
+                    name: "Días transcurridos",
+                    colorByPoint: true,
+                    data:{!! $datos !!}
+                }
+            ],
 
         });
+
+
     </script>
 @endsection
 

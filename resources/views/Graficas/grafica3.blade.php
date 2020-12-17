@@ -18,7 +18,7 @@
             },
 
             title: {
-                text: 'Observaciones por cada sitio'
+                text: 'Observaciones por cada sitio.'
             },
             subtitle: {
                 text: ''

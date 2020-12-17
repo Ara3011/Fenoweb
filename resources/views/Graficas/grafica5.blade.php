@@ -44,7 +44,7 @@
             },
 
             title: {
-                text: 'Calendario de primera y última observación de cada fase fenológica por especie (anuales).'
+                text: 'Calendario de primera y última observación de cada fase fenológica por especie.'
             },
 
             subtitle: {

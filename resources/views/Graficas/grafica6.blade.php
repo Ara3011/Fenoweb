@@ -28,7 +28,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Mayores usos de las especies'
+                text: 'Mayores usos de las especies.'
             },
 
             plotOptions: {

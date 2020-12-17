@@ -62,7 +62,7 @@
             },
 
             title: {
-                text: 'Calendario de primera y última observación de cada fase fenológica por especie (anuales).'
+                text: 'Primera y última fecha de cada fase fenológica de las especies.'
             },
 
             subtitle: {
@@ -76,7 +76,7 @@
             yAxis: {
 
                 title: {
-                    text: 'Meses'
+                    text: 'Fechas'
                 },
                 type: "datetime",
             },

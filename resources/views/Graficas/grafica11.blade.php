@@ -46,7 +46,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Fenofases Monitoreadas por observador "X" anual'
+                text: 'Número de fases fenológicas monitoreadas por los observadores.'
             },
 
             plotOptions: {
@@ -60,7 +60,7 @@
                 }
             },
             series: [{
-                name: 'Fenofases monitoreadas',
+                name: 'Fases fenológicas monitoreadas',
                 colorByPoint: true,
                 data: {!! $datos !!}
             }]

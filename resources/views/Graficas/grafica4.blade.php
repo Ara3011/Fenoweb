@@ -18,7 +18,7 @@
             },
 
             title: {
-                text: 'Observaciones por cada fase fenológica'
+                text: 'Observaciones por cada fase fenológica.'
             },
             subtitle: {
                 text: ''

@@ -43,7 +43,7 @@
                 type: 'pyramid'
             },
             title: {
-                text: 'Registros de un colector "X" en cierto año',
+                text: 'Número de sitios monitoreados por los observadores.',
                 x: -100
             },
             plotOptions: {

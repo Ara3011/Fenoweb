@@ -28,7 +28,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Observaciones por cada comunidad'
+                text: 'Observaciones por cada comunidad.'
             },
 
             plotOptions: {
