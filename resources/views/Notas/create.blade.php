@@ -116,7 +116,7 @@
 @section("scripts")
     <script>
 
-            var availableTutorials  = {{$nombre_especies}}
+            var availableTutorials  = {!!$nombre_especies!!}
             $( "#nombre_especies" ).autocomplete({
                 source: availableTutorials
             });

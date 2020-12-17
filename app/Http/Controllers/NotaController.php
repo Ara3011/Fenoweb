@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use App\Models\Clima;
 use App\Models\Escala;
 use App\Models\Especie;
@@ -118,12 +118,12 @@ class NotaController extends Controller
 
         $nombre_especies=Individuo::distinct()
             ->pluck("nombre_comun");
-        $nombre_especies=json_encode($nombre_especies);
+        $nombre_especies=($nombre_especies);
 
         return view('Notas.create', compact('observadores','fenofases','sitios'
             ,'familias','generos','especies','escalas','climas','nombre_especies'));
 
-        
+
 
     }
 
@@ -173,8 +173,16 @@ class NotaController extends Controller
         $individuos->save();
         $id_individuos= $individuos->id_individuo;
 
+        $fecha=$request->fecha;    //SE EXTRAÉ LA FECHA INSERTADA
+        $date=Carbon::create($fecha); //OBTIENE LA VARIABLE FECHA INSERTADA
+        $year=$date->format("Y");
+        $initialDate=Carbon::create($year,1,1);
+        $julianDate=$initialDate->diffInDays($date)+1;
+        $fechajuliana= $year.$julianDate;
+
         $notas = new Nota();
         $notas->fecha=$request->fecha;
+        $notas->dia_juliano=$fechajuliana;
         $notas->id_observador='3';     //SE ASIGNÁ UN ID ESPECIFICO PERO SE DEBE MODIFICAR PARA MOSTARR EL USUARIO ACTIVO
         $notas->id_individuo=$id_individuos;
         $notas->id_sitio=$request->id_sitio;
