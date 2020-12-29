@@ -248,6 +248,9 @@ class Grafica1Controller extends Controller
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("municipios.nombre")
             ->select('observadores.nom')
             ->selectRaw("count(DISTINCT sitios.id_sitio) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
@@ -294,6 +297,7 @@ class Grafica1Controller extends Controller
             ->join('estados','estados.id_estado','=','municipios.id_estado')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
+            ->join('climas','climas.id_clima','=','notas.id_clima')
             ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
             ->where('especies.descripcion','like','%'.$buscar_especie.'%')
             ->selectRaw('notas.fecha as fecha')
@@ -317,6 +321,7 @@ class Grafica1Controller extends Controller
             ->selectRaw('notas.precipitacion as precipitacion')
             ->selectRaw('notas.temperatura_minima as temperatura_minima')
             ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
+            ->selectRaw('climas.descripcion as clima')
             ->selectRaw('notas.hallazgos as nota')
             ->OrderBy('fecha','DESC')
             ->paginate($this::Paginacion);
@@ -378,7 +383,6 @@ class Grafica1Controller extends Controller
         $buscar_observador=$request->input('buscar_observador');
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->select('observadores.nom')
             ->selectRaw("count(DISTINCT fenofases.id_fenofase) as valor")
@@ -586,7 +590,7 @@ class Grafica1Controller extends Controller
         //return "hola";
         //return $datos;
         return view('Graficas.grafica17', compact('datos','especies',
-        'buscar_especie','anios'));
+        'buscar_especie','buscar_anio','anios'));
 
     }
     public function grafica18(Request $request)
@@ -625,7 +629,7 @@ class Grafica1Controller extends Controller
 
         //return "hola";
         //return $datos;
-        return view('Graficas.grafica18', compact('datos','especies',
+        return view('Graficas.grafica18', compact('datos','especies','buscar_anio',
             'buscar_especie','anios'));
 
     }

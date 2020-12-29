@@ -48,6 +48,7 @@
                                        role="grid" aria-describedby="example1_info">
                                     <thead class="thead-light">
                                     <tr role="row">
+
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Fecha
@@ -145,6 +146,11 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Clima
+                                        </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Hallazgo
                                         </th>
                                     </thead>
@@ -172,6 +178,7 @@
                                             <td>{{$dato->precipitacion}}</td>
                                             <td>{{$dato->temperatura_minima}}</td>
                                             <td>{{$dato->temperatura_maxima}}</td>
+                                            <td>{{$dato->clima}}</td>
                                             <td>{{$dato->nota}}</td>
 
                                         </tr>

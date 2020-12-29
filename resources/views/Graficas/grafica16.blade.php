@@ -79,9 +79,8 @@
                         enabled: true,
                         inside:true,
                         formatter: function (){
-                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Fenofase: "+ this.series.name;
-                            return '<b>' +"Fenofase:"+
-                                this.series.name ;
+                            return new Date(this.point.low).toLocaleDateString()+"-"+new Date(this.point.high).toLocaleDateString()+"<br>Fase Fenológica: "+ this.series.name;
+
                         }
                     }
                 }

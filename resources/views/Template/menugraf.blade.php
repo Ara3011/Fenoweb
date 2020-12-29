@@ -37,8 +37,8 @@
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica15')}}">15.- Inicio y fin de las fases fenológicas
                     <br> de las especies.</a>
                 <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica16')}}">16.- Calendario de duración de las fases fenológicas por especies.</a>
-                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica17')}}">17.- En que año duró menos la fase fenológica de la especie.</a>
-                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica18')}}">18.- En que año duró más la fase fenológica de la especie.</a>
+                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica17')}}">17.- En que año duró menos la fase fenológica de las especies.</a>
+                <a class="list-group-item list-group-item-action" href="{{url('graficas/grafica18')}}">18.- En que año duró más la fase fenológica de las especies.</a>
                </div>
         </nav>
 
