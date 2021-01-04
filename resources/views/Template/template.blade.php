@@ -54,19 +54,21 @@
                         </li>
                         <li class="nav-item"><a class="nav-link text-dark " href="{{url('/graficas')}}">Gráficas</a>
                         </li>
-
-                        <!--<li class="nav-item"><a class="nav-link  text-naranja navbar-navhead " href="{{url('/')}}">Inicio</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/fenofases')}}">Fenofases</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="{{url('/individuos')}}">Individuos</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link text-dark"
-                                                href="{{url('/observadores')}}">Observadores</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="{{url('/sitios')}}">Sitios</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/notas2') }}">Notas</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/notas1') }}">Notas1</a></li>-->
                     </ul>
+                    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+                        @if (Route::has('login'))
+                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                                @auth
+                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                                @else
+                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                                    @endif
+                                @endif
+                            </div>
+                    @endif
                 </nav>
             </div>
             <nav class="navbar-header">
@@ -79,7 +81,8 @@
                     </li>
                     <li class="nav-item"><a class="nav-link text-dark " href="{{url('/notas')}}">Notas</a>
                     </li>
-
+                    <li class="nav-item"> <a class="nav-link text-dark "href="{{url('/notas/create')}}">Formulario</a>
+                    </li>
                 </ul>
             </nav>
         </div>

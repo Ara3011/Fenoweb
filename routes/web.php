@@ -22,6 +22,12 @@ use App\Http\Controllers\NotaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('welcome', function () {
+    return view('welcome');
+});
+Route::get('bienvenido', function () {
+    return view('Template.bienvenida');
+});
 
 //PAGINA DE HOME
 Route::get('/', function () {
@@ -75,5 +81,9 @@ Route::get('/graficas/grafica18', [App\Http\Controllers\Grafica1Controller::clas
 
 Route::get('/graficas/grafica9/exportar', [App\Http\Controllers\Grafica1Controller::class, 'bladeToExcel'])->name('exportar');
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
