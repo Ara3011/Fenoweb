@@ -40,7 +40,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Especies Monitoreadas por observadores anual'
+                text: 'Número de especies monitoreadas por los observadores.'
             },
 
             plotOptions: {

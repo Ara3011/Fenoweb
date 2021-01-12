@@ -28,7 +28,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Observaciones por cada municipio'
+                text: 'Observaciones por cada municipio.'
             },
 
             plotOptions: {

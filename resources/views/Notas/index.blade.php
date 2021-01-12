@@ -140,6 +140,10 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Hallazgo
                                         </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">Acciones
+                                        </th>
                                     </thead>
                                     <tbody>
                                     @foreach($notas as $nota)
@@ -166,6 +170,29 @@
                                             <td>{{$nota->temperatura_minima}}</td>
                                             <td>{{$nota->temperatura_maxima}}</td>
                                             <td>{{$nota->nota}}</td>
+                                            <td>
+                                                <form method="post"
+                                                      action="{{url('/notas/'.$nota->id_nota)}}">
+                                                    <!-- Actualizar -->
+                                                    {{csrf_field()}}
+                                                    <button type="button" rel="tooltip"
+                                                            class="btn btn-success rounded-circle ">
+                                                        <a class="text-light"
+                                                           href="{{url('/notas/'.$nota->id_nota.'/edit')}}"><i
+                                                                class="material-icons ">edit</i></a>
+                                                    </button>
+
+
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <!-- BORRAR -->
+                                                    <button type="submit" rel="tooltip"
+                                                            class="btn btn-danger rounded-circle ">
+                                                        <i class="material-icons"
+                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
+                                                    </button>
+                                                </form>
+                                            </td>
 
                                         </tr>
                                     @endforeach

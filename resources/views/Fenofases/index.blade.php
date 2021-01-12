@@ -4,19 +4,19 @@
     <div class="container-fluid">
 
         @if(Session::has('Mensaje'))
-            <div class="alert alert-secondary text-center alert-dismissible text-uppercase">
+            <div class="alert alert-secondary text-center alert-dismissible text-uppercase"  style="left: 197px">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
         @endif
-        <div class="col-md-2 mt-3">
+        <div class="col-md-2 mt-3" style="left: 197px">
 
             <button class="btn btn-success btn-round">
                 <a href="{{url('/fenofases/create')}}">
-                    <i class="material-icons text-light">loupe</i><i class="text-light">Agregar</i>
+                    <i class="material-icons text-light">loupe</i><i class="text-light">Agregar fenofase</i>
                 </a>
             </button>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" style="left: 197px">
             <div class="card">
                 <div class="card-header bg-success">
 
@@ -92,7 +92,7 @@
                                                     <button type="submit" rel="tooltip"
                                                             class="btn btn-danger rounded-circle ">
                                                         <i class="material-icons"
-                                                           onclick="return confirm('¿Borrar?');">restore_from_trash</i>
+                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>
                                                 </form>
                                             </td>

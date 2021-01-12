@@ -30,7 +30,65 @@
     </div>
 @endsection
 @section("scripts")
+
+
+
     <script type="text/javascript">
+
+        Highcharts.chart('container_chart', {
+            chart: {
+                type: 'xrange'
+            },
+            title: {
+                text: 'Highcharts X-range'
+            },
+            tooltip: {
+                formatter: function() {
+                    return 'hola';
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                formatter: function() {
+                    return 'hola';
+                }
+            },
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    }
+                }
+            },
+            accessibility: {
+                point: {
+                    descriptionFormatter: function (point) {
+                        var ix = point.index + 1,
+                            category = point.partial,
+                            from = new Date(point.x),
+                            to = new Date(point.x2);
+                        //console.log(ix);
+                        return ix + '. ' + category + ', ' + from.toDateString() +
+                            ' to ' + to.toDateString() + '.';
+                    }
+                }
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: ''
+                },
+                categories:  {!! json_encode($categorias) !!},
+                reversed: true
+            },
+            series: {!! str_replace('"',"",json_encode($data)) !!}
+
+        });
+        {{--
         Highcharts.chart('container_chart', {
 
             chart: {
@@ -44,7 +102,7 @@
             },
 
             title: {
-                text: 'Calendario de primera y última observación de cada fase fenológica por especie (anuales).'
+                text: 'Calendario de primera y última observación de cada fase fenológica por especie.'
             },
 
             subtitle: {
@@ -86,6 +144,7 @@
             series: {!! str_replace('"',"",json_encode($data)) !!},
 
         });
+        --}}
     </script>
 @endsection
 

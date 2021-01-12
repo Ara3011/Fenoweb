@@ -17,7 +17,7 @@
                 type: 'column'
             },
             title: {
-                text: 'Observaciones por cada Observador'
+                text: 'Observaciones por cada observador.'
             },
             subtitle: {
                 text: ''

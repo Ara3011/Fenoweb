@@ -1,55 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
+    <list default="true" id="084adb44-5726-46e0-a2ac-786845892b71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/contactform/contactform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/css/jquery.bxslider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/bg-banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/bg-banner02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/blog01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/blog02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/blog03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/blog04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/fenologia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/male.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/port01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/port02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/port03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/port04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/port05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/port06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/ser01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/ser02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/ser03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/ser04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/img/thumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/js/jquery.bxslider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/js/jquery.easing.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Plantilla/js/wow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/estilosbienvenida.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica17.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica18.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Notas/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exports/NotasExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/NotasExport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Nota.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Nota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Familias/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Generos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Generos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica1.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica10.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica11.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica11.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica12.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica12.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica13.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica13.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica14.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica14.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica15.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica15.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica16.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica16.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica3.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica4.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica6.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica6.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica7.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica7.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica8.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica8.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Graficas/grafica9.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/menugraf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/menugraf.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
+    <ignored path="$PROJECT_DIR$/vendor/balping/json-raw-encoder/" />
+    <ignored path="$PROJECT_DIR$/vendor/brick/math/" />
+    <ignored path="$PROJECT_DIR$/vendor/composer/" />
+    <ignored path="$PROJECT_DIR$/vendor/consoletvs/charts/" />
+    <ignored path="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir/" />
+    <ignored path="$PROJECT_DIR$/vendor/doctrine/inflector/" />
+    <ignored path="$PROJECT_DIR$/vendor/doctrine/instantiator/" />
+    <ignored path="$PROJECT_DIR$/vendor/doctrine/lexer/" />
+    <ignored path="$PROJECT_DIR$/vendor/dompdf/dompdf/" />
+    <ignored path="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/" />
+    <ignored path="$PROJECT_DIR$/vendor/egulias/email-validator/" />
+    <ignored path="$PROJECT_DIR$/vendor/facade/flare-client-php/" />
+    <ignored path="$PROJECT_DIR$/vendor/facade/ignition/" />
+    <ignored path="$PROJECT_DIR$/vendor/facade/ignition-contracts/" />
+    <ignored path="$PROJECT_DIR$/vendor/fideloper/proxy/" />
+    <ignored path="$PROJECT_DIR$/vendor/filp/whoops/" />
+    <ignored path="$PROJECT_DIR$/vendor/fruitcake/laravel-cors/" />
+    <ignored path="$PROJECT_DIR$/vendor/graham-campbell/result-type/" />
+    <ignored path="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/" />
+    <ignored path="$PROJECT_DIR$/vendor/guzzlehttp/promises/" />
+    <ignored path="$PROJECT_DIR$/vendor/guzzlehttp/psr7/" />
+    <ignored path="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php/" />
+    <ignored path="$PROJECT_DIR$/vendor/laravel/framework/" />
+    <ignored path="$PROJECT_DIR$/vendor/laravel/tinker/" />
+    <ignored path="$PROJECT_DIR$/vendor/laravel/ui/" />
+    <ignored path="$PROJECT_DIR$/vendor/league/commonmark/" />
+    <ignored path="$PROJECT_DIR$/vendor/league/flysystem/" />
+    <ignored path="$PROJECT_DIR$/vendor/league/mime-type-detection/" />
+    <ignored path="$PROJECT_DIR$/vendor/maatwebsite/excel/" />
+    <ignored path="$PROJECT_DIR$/vendor/maennchen/zipstream-php/" />
+    <ignored path="$PROJECT_DIR$/vendor/markbaker/complex/" />
+    <ignored path="$PROJECT_DIR$/vendor/markbaker/matrix/" />
+    <ignored path="$PROJECT_DIR$/vendor/mockery/mockery/" />
+    <ignored path="$PROJECT_DIR$/vendor/monolog/monolog/" />
+    <ignored path="$PROJECT_DIR$/vendor/mpdf/mpdf/" />
+    <ignored path="$PROJECT_DIR$/vendor/myclabs/deep-copy/" />
+    <ignored path="$PROJECT_DIR$/vendor/myclabs/php-enum/" />
+    <ignored path="$PROJECT_DIR$/vendor/nesbot/carbon/" />
+    <ignored path="$PROJECT_DIR$/vendor/nikic/php-parser/" />
+    <ignored path="$PROJECT_DIR$/vendor/nunomaduro/collision/" />
+    <ignored path="$PROJECT_DIR$/vendor/opis/closure/" />
+    <ignored path="$PROJECT_DIR$/vendor/paragonie/random_compat/" />
+    <ignored path="$PROJECT_DIR$/vendor/phar-io/manifest/" />
+    <ignored path="$PROJECT_DIR$/vendor/phar-io/version/" />
+    <ignored path="$PROJECT_DIR$/vendor/phenx/php-font-lib/" />
+    <ignored path="$PROJECT_DIR$/vendor/phenx/php-svg-lib/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpoption/phpoption/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpspec/prophecy/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpunit/php-file-iterator/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpunit/php-invoker/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpunit/php-text-template/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpunit/php-timer/" />
+    <ignored path="$PROJECT_DIR$/vendor/phpunit/phpunit/" />
+    <ignored path="$PROJECT_DIR$/vendor/psr/container/" />
+    <ignored path="$PROJECT_DIR$/vendor/psr/event-dispatcher/" />
+    <ignored path="$PROJECT_DIR$/vendor/psr/http-client/" />
+    <ignored path="$PROJECT_DIR$/vendor/psr/http-factory/" />
+    <ignored path="$PROJECT_DIR$/vendor/psr/http-message/" />
+    <ignored path="$PROJECT_DIR$/vendor/psr/log/" />
+    <ignored path="$PROJECT_DIR$/vendor/psr/simple-cache/" />
+    <ignored path="$PROJECT_DIR$/vendor/psy/psysh/" />
+    <ignored path="$PROJECT_DIR$/vendor/ralouphie/getallheaders/" />
+    <ignored path="$PROJECT_DIR$/vendor/ramsey/collection/" />
+    <ignored path="$PROJECT_DIR$/vendor/ramsey/uuid/" />
+    <ignored path="$PROJECT_DIR$/vendor/sabberworm/php-css-parser/" />
+    <ignored path="$PROJECT_DIR$/vendor/scrivo/highlight.php/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/cli-parser/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/code-unit/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/comparator/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/complexity/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/diff/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/environment/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/exporter/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/global-state/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/lines-of-code/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/object-enumerator/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/object-reflector/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/recursion-context/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/resource-operations/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/type/" />
+    <ignored path="$PROJECT_DIR$/vendor/sebastian/version/" />
+    <ignored path="$PROJECT_DIR$/vendor/setasign/fpdi/" />
+    <ignored path="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/console/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/css-selector/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/deprecation-contracts/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/error-handler/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/event-dispatcher/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/finder/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/http-client-contracts/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/http-foundation/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/http-kernel/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/mime/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-ctype/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-iconv/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-php70/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-php72/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-php73/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-php80/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/process/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/routing/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/service-contracts/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/string/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/translation/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/translation-contracts/" />
+    <ignored path="$PROJECT_DIR$/vendor/symfony/var-dumper/" />
+    <ignored path="$PROJECT_DIR$/vendor/theseer/tokenizer/" />
+    <ignored path="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles/" />
+    <ignored path="$PROJECT_DIR$/vendor/vlucas/phpdotenv/" />
+    <ignored path="$PROJECT_DIR$/vendor/voku/portable-ascii/" />
+    <ignored path="$PROJECT_DIR$/vendor/webmozart/assert/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="504" column="94" selection-start-line="504" selection-start-column="94" selection-end-line="504" selection-end-column="94" />
+            <state relative-caret-position="295">
+              <caret line="195" column="43" lean-forward="true" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="43" />
               <folding>
-                <element signature="e#2955#4773#0#PHP" expanded="true" />
-                <element signature="e#13071#14666#0#PHP" expanded="true" />
+                <element signature="e#403#462#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica16.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1212">
-              <caret line="68" column="57" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
-              <folding>
-                <element signature="e#470#506#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -57,23 +264,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Nota.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state relative-caret-position="481">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <element signature="e#573#2019#0#PHP" expanded="true" />
+                <element signature="e#2021#3073#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Template/headfoot.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="146" column="58" lean-forward="true" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,8 +300,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/Graficas/grafica16.blade.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Nota.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php" />
+        <option value="$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php" />
       </list>
     </option>
   </component>
@@ -213,13 +435,6 @@
       <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="22" />
-    <option name="width" value="1280" />
-    <option name="height" value="778" />
-  </component>
-  <component name="ProjectId" id="1iU5JAOTVIurl52BYri3l19BZMX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -254,12 +469,6 @@
             <path>
               <item name="Fenoweb" type="b2602c69:ProjectViewProjectNode" />
               <item name="Fenoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Fenoweb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Fenoweb" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,28 +497,6 @@
       </pane>
     </panes>
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Sitios" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Sitios" />
-      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Municipios" />
-      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Notas" />
-      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views" />
-      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Graficas" />
-    </key>
-  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -322,70 +509,37 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="" />
-      <created>1601949255859</created>
+      <changelist id="084adb44-5726-46e0-a2ac-786845892b71" name="Default Changelist" comment="" />
+      <created>1610479674331</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1601949255859</updated>
-      <workItem from="1601949257706" duration="11391000" />
-      <workItem from="1601962465112" duration="1575000" />
-      <workItem from="1602112763552" duration="25381000" />
-      <workItem from="1602191214295" duration="3686000" />
-      <workItem from="1602222737053" duration="6395000" />
-      <workItem from="1602250919958" duration="1806000" />
-      <workItem from="1602727315566" duration="440000" />
-      <workItem from="1602787707473" duration="2898000" />
-      <workItem from="1602864828909" duration="5447000" />
-      <workItem from="1603487384936" duration="1074000" />
-      <workItem from="1603994175273" duration="4334000" />
-      <workItem from="1604101853360" duration="1239000" />
-      <workItem from="1604364800443" duration="7546000" />
-      <workItem from="1604372384592" duration="4919000" />
-      <workItem from="1604379500497" duration="12617000" />
-      <workItem from="1604438222420" duration="28385000" />
-      <workItem from="1604499394152" duration="13421000" />
-      <workItem from="1604681748412" duration="4250000" />
-      <workItem from="1604686033380" duration="1366000" />
-      <workItem from="1604890087272" duration="49000" />
-      <workItem from="1604890172303" duration="490000" />
-      <workItem from="1605147926290" duration="9074000" />
-      <workItem from="1605504160505" duration="4426000" />
-      <workItem from="1605798966368" duration="84000" />
-      <workItem from="1605799065879" duration="6191000" />
-      <workItem from="1605833641689" duration="4939000" />
-      <workItem from="1606281855337" duration="4307000" />
-      <workItem from="1606360465167" duration="41446000" />
-      <workItem from="1606434768342" duration="53415000" />
-      <workItem from="1606765039331" duration="1042000" />
-      <workItem from="1606842756398" duration="356000" />
-      <workItem from="1606888240562" duration="645000" />
-      <workItem from="1607128120540" duration="1406000" />
-      <workItem from="1607562405390" duration="42481000" />
+      <updated>1610479674331</updated>
+      <workItem from="1610479677564" duration="8022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4602000" />
+    <option name="totallyTimeSpent" value="8022000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2536349" />
+      <window_info id="npm" side_tool="true" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Tinkerwell" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -393,141 +547,58 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Tinkerwell" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Tinkerwell" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="531" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604890211647">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="531" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1604890211647" />
-    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604890115516">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1604890115516" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607624922614">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1604508046206" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1607624922614" />
-    <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1604102147136">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1604102147136" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1605504132010">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605504132010" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1605504132010">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605504132010" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1605504132010">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605504132010" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1605504132010">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605504132010" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1606363768116">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1602113803382" />
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1606363768116" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1605838068184">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1605838068184" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica1.blade.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="6" column="78" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
-          <folding>
-            <element signature="e#260#296#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica8.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Template/headfoot.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+        <state relative-caret-position="231">
+          <caret line="146" column="58" lean-forward="true" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Nota.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="481">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="e#573#2019#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica16.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1212">
-          <caret line="68" column="57" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
-          <folding>
-            <element signature="e#470#506#0#HTML" expanded="true" />
+            <element signature="e#2021#3073#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="504" column="94" selection-start-line="504" selection-start-column="94" selection-end-line="504" selection-end-column="94" />
+        <state relative-caret-position="295">
+          <caret line="195" column="43" lean-forward="true" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="43" />
           <folding>
-            <element signature="e#2955#4773#0#PHP" expanded="true" />
-            <element signature="e#13071#14666#0#PHP" expanded="true" />
+            <element signature="e#403#462#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
         </state>
       </provider>
     </entry>

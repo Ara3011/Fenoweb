@@ -12,7 +12,7 @@
 
             <button class="btn btn-success btn-round">
                 <a href="{{url('/escalas/create')}}">
-                    <i class="material-icons text-light">loupe</i><i class="text-light">Agregar</i>
+                    <i class="material-icons text-light">loupe</i><i class="text-light">Agregar escala</i>
                 </a>
             </button>
         </div>
@@ -79,7 +79,7 @@
                                                     <button type="submit" rel="tooltip"
                                                             class="btn btn-danger rounded-circle ">
                                                         <i class="material-icons"
-                                                           onclick="return confirm('¿Borrar?');">restore_from_trash</i>
+                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>
                                                 </form>
                                             </td>

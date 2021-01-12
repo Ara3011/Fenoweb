@@ -44,7 +44,7 @@
                 type: 'pyramid'
             },
             title: {
-                text: 'Registros de un colector "X" en cierto año',
+                text: 'Registros de los observadores.',
                 x: -100
             },
             plotOptions: {
@@ -62,7 +62,7 @@
                 enabled: false
             },
             series: [{
-                name: 'Registros',
+                name: 'Observaciones',
                 data: {!! $datos !!}
             }],
 

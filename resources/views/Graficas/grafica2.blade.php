@@ -17,7 +17,7 @@
                 type: 'column'
             },
             title: {
-                text: 'Observaciones para cada especie'
+                text: 'Observaciones por cada especie.'
             },
             subtitle: {
                 text: ''

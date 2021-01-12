@@ -1,0 +1,48 @@
+
+.navbar-default .navbar-nav > li > a{
+    line-height: 22px;
+    text-align: center;
+    color: black;
+}
+.bg-verde
+{
+    background-color: rgba(6, 46, 10, 0.7);
+    min-height: 650px;
+}
+.fondo
+{
+    background: url('../img/fenologia.png') no-repeat fixed;
+    background-size: cover;
+    min-height: 650px;
+}
+
+
+.navbar-default {
+    background-color: #f9f9f9;
+    border:0px;
+    padding: 20px 0;
+    transition: all 0.3s;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover
+{
+    color: #002F2F;
+}
+
+.top-nav-collapse {
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+.logo-dec
+{
+    color: #fc9540;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #fd7e14;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    background-color: transparent;
+    color: #fd7e14;
+}

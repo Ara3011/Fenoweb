@@ -57,6 +57,49 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica2', compact('datos'));
 
     }
+    public function grafica13()
+    {
+        //consulta 4.5 Observaciones para cada estado
+
+        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("estados.nombre")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("estados.nombre")
+            ->orderBy('valor', 'DESC')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"nombre"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+
+
+        //return $datos;
+
+        return view('Graficas.grafica13', compact('datos'));
+
+    }
+    public function grafica14()
+    {
+        //consulta 4.6 Observaciones para cada municipio
+        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("municipios.nombre")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("municipios.nombre")
+            ->orderBy('valor', 'DESC')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"nombre"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+
+        //return $datos;
+        return view('Graficas.grafica14', compact('datos'));
+
+    }
     public function observacionessitiosInfo()
     {
         //consulta 4.2 Observaciones para cada sitio
@@ -71,6 +114,27 @@ class Grafica1Controller extends Controller
 
 
         return view('Graficas.grafica3', compact('categorias','valores'));
+
+    }
+    public function grafica15()
+    {
+        //consulta 4.7 Observaciones para cada comunidad
+
+        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("sitios.comunidad")
+            ->selectRaw("count(notas.fecha) as valor")
+            ->groupBy("sitios.comunidad")
+            ->orderBy('valor', 'DESC')
+            ->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"comunidad"','name',$datos);
+        $datos=str_replace('"valor":',"y:",$datos);
+
+        //return $datos;
+        return view('Graficas.grafica15', compact('datos'));
 
     }
     public function observacionesfenofasesInfo()
@@ -90,6 +154,20 @@ class Grafica1Controller extends Controller
     {
 
         //consulta 1.1 Calendario particular por especie y por individuo por mes y por grupo de planta (escala BBCH), (ID de individuo y fenofase)
+
+
+        //consulta 1.1 Calendario particular por especie y por individuo por mes y por grupo de planta (escala BBCH), (ID de individuo y fenofase)
+        /*
+          select e.descripcion especie,fe.descrip_fenofase fenofase,n.fecha fechas, count(*) observaciones
+           from individuos i, fenofases fe, notas n,
+            subespecies s, especies e, sitios si, municipios mu, estados est
+            where si.id_sitio=n.id_sitio and si.id_municipio=mu.id_municipio and mu.id_estado=est.id_estado and
+            i.id_individuo=n.id_individuo and fe.id_fenofase=n.id_fenofase and i.id_subespecie=s.id_subespecie and e.id_especie=s.id_especie
+            group by fe.descrip_fenofase,e.descripcion,n.fecha order by e.descripcion,fe.descrip_fenofase,n.fecha ASC;
+        */
+
+        //return ($datos);
+
         $buscar_anio= $request->input('buscar_anio');
         $categorias=$this->nota->getCalendarioEspeciesInfo()->distinct("descrip_fenofase")->select("descrip_fenofase")->pluck("descrip_fenofase");
         $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
@@ -98,31 +176,35 @@ class Grafica1Controller extends Controller
             ->orderBy('anio', 'DESC')->get();
 
         $data=array();
-        foreach ($especies as $especie)
+        foreach ($especies as $index=>$especie)
         {
             $aux=array();
 
-            foreach ($categorias as $categoria)
+            foreach ($categorias as $index2=>$categoria)
             {
-                $valor=$this->nota->getCalendarioEspeciesInfo()
-                    ->whereDescripFenofase($categoria)->where("especies.descripcion",$especie)
-                    ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')->get();
-                if($valor->count()>0) {
-                   // $date = strtotime($valor[0]->primera_fecha);
+                for($i=1;$i<=12;$i++)
+                {
 
-                    //return $date;
-                    array_push($aux, ["low" => "Date.parse('{$valor[0]->primera_fecha}')",
-                        "high" =>"Date.parse('{$valor[0]->ultima_fecha}')",
-                        "name" => $valor[0]->resultado
-                    ]);
+                    $valor=$this->nota->getDateFenofase($i, $buscar_anio,$especie,$categoria)->where("observaciones","!=",0);
+
+                    if($valor->count()>0) {
+                        // $date = strtotime($valor[0]->primera_fecha);
+                        //return $valor;
+                        //return $date;
+                        array_push($aux, ["x" => "Date.parse('{$buscar_anio}-{$i}-1')",
+                            "x2" =>"Date.parse('{$buscar_anio}-{$i}-28')",
+                            "y"=>"$index2",
+                            "partialFill"=> "{$valor[0]->observaciones}"
+                        ]);
+                        // return $aux;
+                    }
                 }
-               else
-                    array_push($aux, []);
             }
-            array_push($data,["name"=>"'".$especie."'","data"=>$aux]);
+            array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["enabled"=>"true"]]);
+            break;
         }
 
-
+        //return $data;
         return view('Graficas.grafica5', compact('categorias',"data","buscar_anio","anos"));
 
     }
@@ -175,7 +257,6 @@ class Grafica1Controller extends Controller
         'buscar_anio','buscar_observador'));
 
     }
-
     public function grafica8(Request $request)
     {
         //Consulta 11.3 ¿Cuántos sitios monitorea un observador X en un año?
@@ -185,6 +266,9 @@ class Grafica1Controller extends Controller
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
             ->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("municipios.nombre")
             ->select('observadores.nom')
             ->selectRaw("count(DISTINCT sitios.id_sitio) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
@@ -212,7 +296,6 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica8', compact('datos','anios','observadores',
         'buscar_anio','buscar_observador'));
     }
-
     public function grafica9(Request $request)
     {
 
@@ -232,6 +315,7 @@ class Grafica1Controller extends Controller
             ->join('estados','estados.id_estado','=','municipios.id_estado')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
+            ->join('climas','climas.id_clima','=','notas.id_clima')
             ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
             ->where('especies.descripcion','like','%'.$buscar_especie.'%')
             ->selectRaw('notas.fecha as fecha')
@@ -255,7 +339,9 @@ class Grafica1Controller extends Controller
             ->selectRaw('notas.precipitacion as precipitacion')
             ->selectRaw('notas.temperatura_minima as temperatura_minima')
             ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
+            ->selectRaw('climas.descripcion as clima')
             ->selectRaw('notas.hallazgos as nota')
+            ->OrderBy('fecha','DESC')
             ->paginate($this::Paginacion);
 
         $sitios=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
@@ -272,7 +358,6 @@ class Grafica1Controller extends Controller
 
         return view('Graficas.grafica9', compact('datos','buscar_sitio','sitios','especies','buscar_especie'));
     }
-
     public function bladeToExcel()
     {
      return Excel::download(new NotasExport, 'notas.xlsx');
@@ -308,7 +393,6 @@ class Grafica1Controller extends Controller
         return view('Graficas.grafica10 ', compact('datos','anios',
             'buscar_anio'));
     }
-
     public function grafica11(Request $request)
     {
         //Consulta 11.4	¿Cuántas fenofases monitorea un observador X en un año?
@@ -317,7 +401,6 @@ class Grafica1Controller extends Controller
         $buscar_observador=$request->input('buscar_observador');
 
         $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->select('observadores.nom')
             ->selectRaw("count(DISTINCT fenofases.id_fenofase) as valor")
@@ -420,86 +503,51 @@ class Grafica1Controller extends Controller
         "buscar_municipio","comunidadades","buscar_comunidad","buscar_estado","estados"));
 
     }
-    public function grafica13()
-    {
-        //consulta 4.5 Observaciones para cada estado
-
-        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
-            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
-            ->join('estados','estados.id_estado','=','municipios.id_estado')
-            ->select("estados.nombre")
-            ->selectRaw("count(notas.fecha) as valor")
-            ->groupBy("estados.nombre")
-            ->orderBy('valor', 'DESC')
-            ->get();
-
-        $datos=json_encode($datos);
-        $datos=str_replace('"nombre"','name',$datos);
-        $datos=str_replace('"valor":',"y:",$datos);
-
-
-        //return $datos;
-
-        return view('Graficas.grafica13', compact('datos'));
-
-    }
-    public function grafica14()
-    {
-        //consulta 4.6 Observaciones para cada municipio
-        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
-            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
-            ->join('estados','estados.id_estado','=','municipios.id_estado')
-            ->select("municipios.nombre")
-            ->selectRaw("count(notas.fecha) as valor")
-            ->groupBy("municipios.nombre")
-            ->orderBy('valor', 'DESC')
-            ->get();
-
-        $datos=json_encode($datos);
-        $datos=str_replace('"nombre"','name',$datos);
-        $datos=str_replace('"valor":',"y:",$datos);
-
-        //return $datos;
-        return view('Graficas.grafica14', compact('datos'));
-
-    }
-    public function grafica15()
-    {
-        //consulta 4.7 Observaciones para cada comunidad
-
-        $datos=Nota::join('sitios','sitios.id_sitio','=','notas.id_sitio')
-            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
-            ->join('estados','estados.id_estado','=','municipios.id_estado')
-            ->select("sitios.comunidad")
-            ->selectRaw("count(notas.fecha) as valor")
-            ->groupBy("sitios.comunidad")
-            ->orderBy('valor', 'DESC')
-            ->get();
-
-        $datos=json_encode($datos);
-        $datos=str_replace('"comunidad"','name',$datos);
-        $datos=str_replace('"valor":',"y:",$datos);
-
-        //return $datos;
-        return view('Graficas.grafica15', compact('datos'));
-
-    }
-    public function grafica16()
+    public function grafica16(Request $request)
     {
         //consulta 1.2 Promediar por ejemplo todas las fechas de inicio del desarrollo de hojas y
         // las fechas de fin de una misma especie, con el objetivo de tener la duración total
         // de esta fase fenológica no por año, sino para la especie.
 
-        /* select e.descripcion,fe.descrip_fenofase, min(n.fecha) primer_fecha,max(n.fecha) ultima_fecha, month(min(n.fecha)) primer_mes, month(max(n.fecha)) ultimo_mes
- from individuos i, fenofases fe, notas n,
-especies e, subespecies s where i.id_individuo=n.id_individuo and fe.id_fenofase=n.id_fenofase and i.id_subespecie=s.id_subespecie
-    and e.id_especie=s.id_especie
-    and YEAR(n.fecha)="2014" and fe.descrip_fenofase="Desarrollo de hojas" group by fe.descrip_fenofase,e.descripcion;
+        //consulta 1.2 Promediar por ejemplo todas las fechas de inicio del desarrollo de hojas y
+        // las fechas de fin de una misma especie, con el objetivo de tener la duración total
+        // de esta fase fenológica no por año, sino para la especie.
+
+        /*
+
+         select e.descripcion especie,fe.descrip_fenofase fenofase, n.fecha primer_fecha
+         from individuos i, fenofases fe, notas n, especies e, subespecies s
+         where i.id_individuo=n.id_individuo and fe.id_fenofase=n.id_fenofase and i.id_subespecie=s.id_subespecie
+        and e.id_especie=s.id_especie group by fe.descrip_fenofase,e.descripcion,n.fecha order by e.descripcion,fe.descrip_fenofase,n.fecha ASC;
 */
+
+        $datoss=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select('especies.descripcion as especie','fenofases.descrip_fenofase as fenofase',"notas.fecha as fechas")
+            ->groupBy('fenofases.descrip_fenofase','especies.descripcion','notas.fecha')
+            ->orderBy("especies.descripcion","ASC")->orderBy("fenofases.descrip_fenofase","ASC")->orderBy("notas.fecha","ASC")
+            ->get();
+
+        return($datoss);
+
+
+        $buscar_especie= $request->input('buscar_especie');
+
+        $esp=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("especies.descripcion as especie")
+            ->distinct("especies.descripcion as especie")
+            ->get();
+
+
         $datos=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
-            ->join('especies','especies.id_especie','=','subespecies.id_especie');
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->where('especies.descripcion','like','%'.$buscar_especie.'%');
             //->where("especies.id_especie",1);
 
         $categorias=$datos->select("especies.descripcion")->orderBy("especies.id_especie")->distinct("especies.descripcion")->pluck("especies.descripcion");
@@ -540,9 +588,90 @@ especies e, subespecies s where i.id_individuo=n.id_individuo and fe.id_fenofase
             array_push($data,["name"=>"'".$fase->descrip_fenofase."'","data"=>$values]);
 
         }
-      // return $datos;
-        return view('Graficas.grafica16',compact("categorias","data"));
+       //return $data;
+        return view('Graficas.grafica16',compact("categorias","data","buscar_especie",
+        "esp"));
 
+
+    }
+    public function grafica17(Request $request)
+    {
+        //10.1	¿En qué año duró menos la (fase) de la (especie)?
+        $buscar_especie= $request->input('buscar_especie');
+        $buscar_anio= $request->input('buscar_anio');
+
+        $datos=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("fenofases.descrip_fenofase")
+            ->selectRaw('DATEDIFF(max(notas.fecha), min(notas.fecha)) as dias_transcurridos')
+            ->where('especies.descripcion','like','%'.$buscar_especie.'%')
+            ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
+            ->groupBy('fenofases.descrip_fenofase','especies.descripcion')
+            ->orderBy("dias_transcurridos","ASC")
+            ->get();
+
+        $especies=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("especies.descripcion as especie")
+            ->distinct("especies.descripcion as especie")
+            ->orderBy("especies.descripcion","ASC")
+            ->get();
+
+        $anios=Nota::selectRaw('year(fecha) as anio')
+            ->distinct('year(fecha)')
+            ->orderBy('anio', 'DESC')->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"descrip_fenofase"','name',$datos);
+        $datos=str_replace('"dias_transcurridos":',"y:",$datos);
+
+        //return "hola";
+        //return $datos;
+        return view('Graficas.grafica17', compact('datos','especies',
+        'buscar_especie','buscar_anio','anios'));
+
+    }
+    public function grafica18(Request $request)
+    {
+        //10.2	¿En qué año duró más la (fase) de la (especie)?
+        $buscar_especie= $request->input('buscar_especie');
+        $buscar_anio= $request->input('buscar_anio');
+
+        $datos=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("fenofases.descrip_fenofase")
+            ->selectRaw('DATEDIFF(max(notas.fecha), min(notas.fecha)) as dias_transcurridos')
+            ->where('especies.descripcion','like','%'.$buscar_especie.'%')
+            ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
+            ->groupBy('fenofases.descrip_fenofase','especies.descripcion')
+            ->orderBy("dias_transcurridos","DESC")
+            ->get();
+
+        $especies=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("especies.descripcion as especie")
+            ->distinct("especies.descripcion as especie")
+            ->orderBy("especies.descripcion","ASC")
+            ->get();
+
+        $anios=Nota::selectRaw('year(fecha) as anio')
+            ->distinct('year(fecha)')
+            ->orderBy('anio', 'DESC')->get();
+
+        $datos=json_encode($datos);
+        $datos=str_replace('"descrip_fenofase"','name',$datos);
+        $datos=str_replace('"dias_transcurridos":',"y:",$datos);
+
+        //return "hola";
+        //return $datos;
+        return view('Graficas.grafica18', compact('datos','especies','buscar_anio',
+            'buscar_especie','anios'));
 
     }
 

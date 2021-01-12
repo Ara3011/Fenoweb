@@ -28,7 +28,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Observaciones por cada estado'
+                text: 'Observaciones por cada estado.'
             },
 
             plotOptions: {

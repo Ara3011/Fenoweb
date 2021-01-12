@@ -42,12 +42,27 @@ class Nota extends Model
             ->selectRaw("max(notas.fecha) as ultima_fecha")
             ->selectRaw("count(*) as resultado")
             ->groupBy("fenofases.descrip_fenofase","especies.descripcion");
-
-
-
            $datos->map(function($item) use (&$categorias,$valores){
                 array_push($categorias,$item->descrip_fenofase);
            });
+    }
 
+    public function getDateFenofase($month, $year,$especie,$fenofase)
+    {
+        return Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("especies.descripcion as especie","fenofases.descrip_fenofase as fenofase")
+            ->selectRaw("count(*) as observaciones")
+            ->selectRaw("min(notas.fecha) as primer_fecha")
+            ->selectRaw("max(notas.fecha) as ultima_fecha")
+            ->whereMonth('notas.fecha',$month)
+            ->whereYear("notas.fecha",$year)
+            ->where("especies.descripcion",$especie)
+            ->where("fenofases.descrip_fenofase",$fenofase)
+            // ->groupBy("especies.descripcion","fenofases.descrip_fenofase","notas.fecha")
+            ->orderBy("especie","asc")
+            ->orderBy("fenofase","asc")->get();
     }
 }

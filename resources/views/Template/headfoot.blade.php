@@ -139,7 +139,7 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
-
+<!-- Gráficas Highcharts -->
 <script src="{{ mix('js/app.js') }}" defer></script>
 <script src="{{ asset('js/highcharts.js') }}"></script>
 <script src="{{ asset('js/exporting.js') }}"></script>
@@ -150,6 +150,9 @@
 <script src="{{ asset('js/highcharts-3d.js') }}"></script>
 <script src="{{ asset('js/cylinder.js') }}"></script>
 <script src="{{ asset('js/pyramid3d.js') }}"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+<script src="https://code.highcharts.com/modules/xrange.js"></script>
+<!-- Termino de uso de librerías Highcharts-->
 <script src = "{{asset('https://code.jquery.com/jquery-1.10.2.js')}}"></script>
 <script src = "{{asset('https://code.jquery.com/ui/1.10.4/jquery-ui.js')}}"></script>
 <script src="{{asset('https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js')}}"></script>
