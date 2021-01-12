@@ -22,9 +22,7 @@
                     <h1 class="card-header bg-success text-light"  >Registro de Observaciones</h1>
 <h6 class="text-center">Llenar los campos obligatorios (<a class="text-danger">*</a>)</h6>
                     <strong>Observador:</strong><br>
-                    @foreach($observadores as $observador)
-                    <h4>{{$observador->nombre}}</h4>
-                    @endforeach
+                    <h4>{{Auth::user()->name}}</h4>
 
 
                     <strong class="mt-3"><a class="text-danger">*</a>Fecha:</strong>

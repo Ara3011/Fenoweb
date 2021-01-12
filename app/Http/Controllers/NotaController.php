@@ -17,6 +17,8 @@ use App\Models\Subespecie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Nullable;
+use Auth;
+use App\Models\User;
 
 class NotaController extends Controller
 {
@@ -30,7 +32,7 @@ class NotaController extends Controller
     {
         $buscar_observador= $request->input('buscar_observador');
 
-        $notas=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+        $notas=Nota::join('users','users.id','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('generos','generos.id_genero','=','individuos.id_genero')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
@@ -41,11 +43,11 @@ class NotaController extends Controller
             ->join('estados','estados.id_estado','=','municipios.id_estado')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
-            ->where('observadores.nom','like','%'.$buscar_observador.'%')
+            ->where('users.name','like','%'.$buscar_observador.'%')
             ->selectRaw('notas.id_nota as id_nota')
             ->selectRaw('notas.fecha as fecha')
             ->selectRaw('notas.dia_juliano as dia_juliano')
-            ->selectRaw('observadores.nom as observador')
+            ->selectRaw('users.name as observador')
             ->selectRaw('individuos.nombre_comun as nombre_comun')
             ->selectRaw('individuos.id_individuo as id_individuo')
             ->selectRaw('familias.descripcion as familia')
@@ -120,6 +122,10 @@ class NotaController extends Controller
         $nombre_especies=Individuo::distinct()
             ->pluck("nombre_comun");
         $nombre_especies=($nombre_especies);
+    $observaciones=Nota::where('id_observador',Auth::user()->id)->count();
+        User::where('id','=',Auth::user()->id)->update(['insignias'=>(int)($observaciones/6)]);
+
+
 
         return view('Notas.create', compact('observadores','fenofases','sitios'
             ,'familias','generos','especies','escalas','climas','nombre_especies'));
@@ -184,7 +190,7 @@ class NotaController extends Controller
         $notas = new Nota();
         $notas->fecha=$request->fecha;
         $notas->dia_juliano=$fechajuliana;
-        $notas->id_observador='3';     //SE ASIGNÁ UN ID ESPECIFICO PERO SE DEBE MODIFICAR PARA MOSTARR EL USUARIO ACTIVO
+        $notas->id_observador= Auth::user()->id;     //SE ASIGNÁ UN ID ESPECIFICO PERO SE DEBE MODIFICAR PARA MOSTARR EL USUARIO ACTIVO
         $notas->id_individuo=$id_individuos;
         $notas->id_sitio=$request->id_sitio;
         $notas->intensidad_fenofase=$request->intensidad_fenofase;

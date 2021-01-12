@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--LIBRERIA DE ESTILOS UTILIZADOS  -->
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/Estilos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/Estilos.css') }}"/>
 
     <!--FUENTE DE LETRAS -->
-    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Oswald&display=swap') }}" />
+    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Oswald&display=swap') }}"/>
 
 
     <title>Red Nacional de Fenología</title>
@@ -60,16 +60,35 @@
             </div>
             <nav class="navbar-header">
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/municipios')}}">Municipios</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/individuos')}}">Individuos</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/sitios')}}">Sitios</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-dark " href="{{url('/notas')}}">Notas</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link text-dark "href="{{url('/notas/create')}}">Formulario</a>
-                    </li>
+                    @if(Auth::user()->tipo_usuario == 1)
+                        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/municipios')}}">Municipios</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/individuos')}}">Individuos</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/sitios')}}">Sitios</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-dark " href="{{url('/notas')}}">Notas</a>
+                        </li>
+                    @else
+                        <li class="nav-item"><a class="nav-link text-dark "
+                                                href="{{url('/notas/create')}}">Insignias</a>
+                        </li>
+                    @endif
+                        <li class="nav-item"><a class="nav-link text-dark "
+                                                href="{{url('/notas/create')}}">Formulario</a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                 </ul>
             </nav>
         </div>
@@ -165,7 +184,7 @@
                     Es de esta forma que hasta la fecha hemos conformado la primera red de observación fenológica, única
                     en su tipo en México y esperamos continuar extendiendo este esfuerzo para llegar a más comunidades
                     de México.
-                    </p>
+                </p>
                 <hr class="bottom-line">
             </div>
 
@@ -230,11 +249,17 @@
                     <img src="img/doctor.jpg" class="img-responsive" width="250" height="250">
                     <figcaption>
                         <h2>Dr. Abraham Navarro Moreno</h2>
-                        <p>Es Doctor en Geografía por la Universidad Nacional Autónoma de México y profesor de carrera de
-                            tiempo completo en el Colegio de Geografía de la Facultad de Filosofía y Letras de la misma universidad.
-                            Tiene a su cargo las cátedras de Laboratorio de Manejo de Mapas, Cartografía 1, Laboratorio de Sistemas de Información Geográfica, Cartografía Matemática 1, Cartografía Matemática 2 y Seminario de Cartografía. Sus líneas de investigación y la dirección de tesis a su cargo, reflexionan acerca de problemas cartográficos, tales como la aplicación de
+                        <p>Es Doctor en Geografía por la Universidad Nacional Autónoma de México y profesor de carrera
+                            de
+                            tiempo completo en el Colegio de Geografía de la Facultad de Filosofía y Letras de la misma
+                            universidad.
+                            Tiene a su cargo las cátedras de Laboratorio de Manejo de Mapas, Cartografía 1, Laboratorio
+                            de Sistemas de Información Geográfica, Cartografía Matemática 1, Cartografía Matemática 2 y
+                            Seminario de Cartografía. Sus líneas de investigación y la dirección de tesis a su cargo,
+                            reflexionan acerca de problemas cartográficos, tales como la aplicación de
 
-                            proyecciones cartográficas, el diseño de mapas para temáticas especializadas y el uso de los Sistemas de Información Geográfica.
+                            proyecciones cartográficas, el diseño de mapas para temáticas especializadas y el uso de los
+                            Sistemas de Información Geográfica.
                         </p>
                     </figcaption>
                 </figure>
@@ -255,38 +280,39 @@
             <!-- TARJETA 2 -->
             <div class=" col-12 ">
 
-               <center> <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100 " src="img/11.jpg" width="50" height="600"  alt="First slide">
+                <center>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 " src="img/11.jpg" width="50" height="600" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/22.jpg" width="50" height="600" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/33.jpg" width="50" height="600" alt="Third slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/44.png" width="50" height="600" alt="Third slide">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/22.jpg" width="50" height="600" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/33.jpg" width="50" height="600" alt="Third slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/44.png" width="50" height="600" alt="Third slide">
-                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div></center>
+                </center>
 
             </div>
         </div>
     </div>
 </section>
-
-
-
 
 
 <div class=" card card-body text-center">
@@ -299,31 +325,45 @@
 
     <div class="service-listing clearfix">
 
-        <div class="clearfix service-list odd wow fadeInLeft animated" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInLeft;">
+        <div class="clearfix service-list odd wow fadeInLeft animated" data-wow-delay="0.25s"
+             style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInLeft;">
             <div class="service-image">
-                <img src="https://redfenologicamx.com/wp-content/uploads/2018/01/EQUIPO-150x150.jpg" alt="¿Quiénes somos?">
+                <img src="https://redfenologicamx.com/wp-content/uploads/2018/01/EQUIPO-150x150.jpg"
+                     alt="¿Quiénes somos?">
             </div>
 
             <div class="service-detail">
                 <h3>¿Quiénes somos?</h3>
-                <div class="service-content"><div class="service-content">
-                        <p>Somos un grupo de alumnos, profesores, investigadores e instituciones de la sociedad civil, preocupados por rescatar el conocimiento tradicional fenológico que poseen las comunidades mexicanas y darle aplicaciones prácticas para que sean capaces de implementar sus propias estrategias de adaptación ante el cambio climático.&nbsp; Debido a nuestra preocupación por conocer la respuesta de la vegetación ante las variaciones en el sistema climático y qué qué efectos tendrán&nbsp; en las comunidades mexicanas, nos hemos dado a la tarea de crear la Red Nacional de Fenología, la primera en su tipo en nuestro país, esperando contribuir al conocimiento científico a través de la ciencia ciudadana creando ciencia por y para las comunidades de México.</p>
+                <div class="service-content">
+                    <div class="service-content">
+                        <p>Somos un grupo de alumnos, profesores, investigadores e instituciones de la sociedad civil,
+                            preocupados por rescatar el conocimiento tradicional fenológico que poseen las comunidades
+                            mexicanas y darle aplicaciones prácticas para que sean capaces de implementar sus propias
+                            estrategias de adaptación ante el cambio climático.&nbsp; Debido a nuestra preocupación por
+                            conocer la respuesta de la vegetación ante las variaciones en el sistema climático y qué qué
+                            efectos tendrán&nbsp; en las comunidades mexicanas, nos hemos dado a la tarea de crear la
+                            Red Nacional de Fenología, la primera en su tipo en nuestro país, esperando contribuir al
+                            conocimiento científico a través de la ciencia ciudadana creando ciencia por y para las
+                            comunidades de México.</p>
                     </div>
                 </div>
             </div>
         </div>
 
 
-
-        <div class="clearfix service-list even wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+        <div class="clearfix service-list even wow fadeInRight animated" data-wow-delay="0.5s"
+             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
             <div class="service-image">
                 <img src="https://redfenologicamx.com/wp-content/uploads/2018/01/MUNDO-150x150.jpg" alt="Misión">
             </div>
 
             <div class="service-detail">
                 <h3>Misión</h3>
-                <div class="service-content"><div class="service-content">
-                        <p>Empoderar a las comunidades de México de capacidades para monitorear, registrar y comprender, los cambios en la vegetación de las especies de importancia local, para hacer frente a los impactos del cambio climático a nivel local.</p>
+                <div class="service-content">
+                    <div class="service-content">
+                        <p>Empoderar a las comunidades de México de capacidades para monitorear, registrar y comprender,
+                            los cambios en la vegetación de las especies de importancia local, para hacer frente a los
+                            impactos del cambio climático a nivel local.</p>
                     </div>
                 </div>
             </div>
@@ -332,7 +372,8 @@
         <div class="clearfix"></div>
 
 
-        <div class="clearfix service-list odd wow fadeInLeft animated" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.75s; animation-name: fadeInLeft;">
+        <div class="clearfix service-list odd wow fadeInLeft animated" data-wow-delay="0.75s"
+             style="visibility: visible; animation-delay: 0.75s; animation-name: fadeInLeft;">
             <div class="service-image">
                 <img src="https://redfenologicamx.com/wp-content/uploads/2018/01/LUPA-150x150.jpg" alt="Visión">
             </div>
@@ -341,12 +382,24 @@
                 <h3>Visión</h3>
                 <div class="service-content"><h3></h3>
                     <div class="service-content">
-                        <p>Comunidades Mexicanas capaces de formular sus posibles estrategias locales de adaptación ante el cambio climático a partir de la construcción de capacidades de observación y registro fenológico</p>
+                        <p>Comunidades Mexicanas capaces de formular sus posibles estrategias locales de adaptación ante
+                            el cambio climático a partir de la construcción de capacidades de observación y registro
+                            fenológico</p>
                         <p>Nuestros objetivos</p>
                         <ul>
-                            <li>Implementar y consolidar de la red de monitoreo fenológico comunitario en la Reserva de la Biósfera Mariposa Monarca como sitio piloto de referencia de la iniciativa Red Nacional de Fenología mediante la generación de plataformas de bases de datos fenológicos y climáticos, talleres colaborativos y análisis de resultados en los desarrollos productivos y de protección de bosques.</li>
-                            <li>Obtener los patrones de tendencias, variabilidad climática interanual y espacial de la fenología local para especies de importancia comunitaria en cultivos y bosques con la información previa y la generada durante este proyecto.</li>
-                            <li>Promover la Red Nacional de Fenología mediante el inicio de registros de monitoreo con los interesados ya inscritos en la iniciativa en diciembre de 2015.</li>
+                            <li>Implementar y consolidar de la red de monitoreo fenológico comunitario en la Reserva de
+                                la Biósfera Mariposa Monarca como sitio piloto de referencia de la iniciativa Red
+                                Nacional de Fenología mediante la generación de plataformas de bases de datos
+                                fenológicos y climáticos, talleres colaborativos y análisis de resultados en los
+                                desarrollos productivos y de protección de bosques.
+                            </li>
+                            <li>Obtener los patrones de tendencias, variabilidad climática interanual y espacial de la
+                                fenología local para especies de importancia comunitaria en cultivos y bosques con la
+                                información previa y la generada durante este proyecto.
+                            </li>
+                            <li>Promover la Red Nacional de Fenología mediante el inicio de registros de monitoreo con
+                                los interesados ya inscritos en la iniciativa en diciembre de 2015.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -354,15 +407,17 @@
         </div>
 
 
-
-        <div class="clearfix service-list even wow fadeInRight animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInRight;">
+        <div class="clearfix service-list even wow fadeInRight animated" data-wow-delay="1s"
+             style="visibility: visible; animation-delay: 1s; animation-name: fadeInRight;">
             <div class="service-image">
-                <img src="https://redfenologicamx.com/wp-content/uploads/2018/01/COLABORADORES-1-150x150.jpg" alt="Colaboradores">
+                <img src="https://redfenologicamx.com/wp-content/uploads/2018/01/COLABORADORES-1-150x150.jpg"
+                     alt="Colaboradores">
             </div>
 
             <div class="service-detail">
                 <h3>Colaboradores</h3>
-                <div class="service-content"><h3><span style="font-size: 16px;">M. en C. Alyssa Rosemartin (USA-National Phenology Network, University of Arizona</span></h3>
+                <div class="service-content"><h3><span style="font-size: 16px;">M. en C. Alyssa Rosemartin (USA-National Phenology Network, University of Arizona</span>
+                    </h3>
                     <div class="service-content">
                         <p>M.&nbsp;en C. Esteban Solórzano Vega (Universidad Autónoma Chapingo)</p>
                         <p>Atzin Calvillo Arriola (Tierra Nueva)</p>
@@ -378,7 +433,12 @@
 
     </div>
 </div>
-<div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -100;" id="jarallax-container-2"><div style="background-position: 50% 50%; background-size: 100%; background-repeat: no-repeat; background-image: url(&quot;https://redfenologicamx.com/&quot;); position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none;"></div></div>
+<div
+    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -100;"
+    id="jarallax-container-2">
+    <div
+        style="background-position: 50% 50%; background-size: 100%; background-repeat: no-repeat; background-image: url(&quot;https://redfenologicamx.com/&quot;); position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none;"></div>
+</div>
 
 
 <!--FOOTER DE LA PAGINA -->
@@ -392,7 +452,6 @@
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>
-
 
 
 </body>
