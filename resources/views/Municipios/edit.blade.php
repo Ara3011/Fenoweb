@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center"style="left: 600px">
-                <button type="submit" class="btn btn-success" value="Editar">Actualizar</button>
+                <button type="submit" class="btn btn-success" value="Editar">Actualizar municipio</button>
             </div>
         </div>
 

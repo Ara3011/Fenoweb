@@ -97,7 +97,7 @@
                                                     <button type="submit" rel="tooltip"
                                                             class="btn btn-danger rounded-circle ">
                                                         <i class="material-icons"
-                                                           onclick="return confirm('¿Borrar?');">restore_from_trash</i>
+                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>
                                                 </form>
                                             </td>

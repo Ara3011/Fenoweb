@@ -42,6 +42,7 @@ class NotaController extends Controller
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('familias','familias.id_familia','=','individuos.id_familia')
             ->where('observadores.nom','like','%'.$buscar_observador.'%')
+            ->selectRaw('notas.id_nota as id_nota')
             ->selectRaw('notas.fecha as fecha')
             ->selectRaw('notas.dia_juliano as dia_juliano')
             ->selectRaw('observadores.nom as observador')
@@ -141,16 +142,16 @@ class NotaController extends Controller
             'id_familia'=>'required',
             'id_genero'=>'required',
             'id_especie'=>'required',
-            'descripcion'=>'required',
+            'descripcion'=>'nullable',
             'nombre_comun'=>'required',
-            'uso',
+            'uso'=>'required',
             'id_bbch'=>'required',
             'intensidad_fenofase'=>'required',
             'id_fenofase'=>'required',
-            'precipitacion'=>'required',
+            'precipitacion'=>'nullable',
             'id_clima'=>'required',
-            'temperatura_minima'=>'required',
-            'temperatura_maxima'=>'required',
+            'temperatura_minima'=>'nullable',
+            'temperatura_maxima'=>'nullable',
             'hallazgos'=>'required',
             'created_at'=>now(),
             'updated_at'=>now()
@@ -218,9 +219,52 @@ class NotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_nota)
     {
-        //
+        $familias=Familia::selectRaw('familias.id_familia as id_familia')
+            ->selectRaw('familias.descripcion as familia')
+            ->distinct('familias.descripcion')
+            ->get();
+
+        $generos=Genero::selectRaw('generos.id_genero as id_genero')
+            ->selectRaw('generos.descripcion as genero')
+            ->distinct('generos.descripcion')
+            ->get();
+
+        $especies=Especie::selectRaw('especies.id_especie as id_especie')
+            ->selectRaw('especies.descripcion as especie')
+            ->distinct('especies.descripcion')
+            ->get();
+        $escalas=Escala::selectRaw('escalas_bbch.id_bbch as id_bbch')
+            ->selectRaw('escalas_bbch.descripcion as escala')
+            ->distinct('escalas_bbch.descripcion')
+            ->get();
+        $observadores=Observador::selectRaw('observadores.id_observador as id_observador')
+            ->selectRaw('observadores.nom as nombre')
+            ->where('observadores.id_observador',3)
+            ->distinct('observadores.nom')
+            ->get();
+        $sitios=Sitio::selectRaw('sitios.id_sitio as id_sitio')
+            ->selectRaw('sitios.nombre as sitio')
+            ->distinct('sitios.nombre')
+            ->get();
+        $fenofases=Fenofase::selectRaw('fenofases.id_fenofase as id_fenofase')
+            ->selectRaw('fenofases.descrip_fenofase as fenofase')
+            ->distinct('fenofases.descrip_fenofase')
+            ->get();
+
+        $climas=Clima::selectRaw('climas.id_clima as id_clima')
+            ->selectRaw('climas.descripcion as clima')
+            ->distinct('climas.descripcion')
+            ->get();
+
+        $nombre_especies=Individuo::distinct()
+            ->pluck("nombre_comun");
+        $nombre_especies=($nombre_especies);
+
+        $datosnotas= Nota::findOrFail($id_nota);
+        return view('notas.edit ', compact('datosnotas','observadores','fenofases','sitios'
+            ,'familias','generos','especies','escalas','climas','nombre_especies'));
     }
 
     /**
@@ -230,9 +274,51 @@ class NotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_nota)
     {
-        //
+        $subespecies = new Subespecie();       //NUEVO MODELO
+        $subespecies->descripcion=$request->descripcion;
+        $subespecies->id_especie=$request->id_especie;
+        $subespecies->save();
+        $id_subespecies= $subespecies->id_subespecie;   //ULTIMO ID DE INSERCIÓN
+
+        $individuos= new Individuo();
+        $individuos->nombre_comun=$request->nombre_comun;
+        $individuos->uso=$request->uso;
+        $individuos->id_genero=$request->id_genero;
+        $individuos->id_subespecie=$id_subespecies;
+        $individuos->id_familia=$request->id_familia;
+        $individuos->id_bbch=$request->id_bbch;
+        $individuos->save();
+        $id_individuos= $individuos->id_individuo;
+
+        $fecha=$request->fecha;    //SE EXTRAÉ LA FECHA INSERTADA
+        $date=Carbon::create($fecha); //OBTIENE LA VARIABLE FECHA INSERTADA
+        $year=$date->format("Y");
+        $initialDate=Carbon::create($year,1,1);
+        $julianDate=$initialDate->diffInDays($date)+1;
+        $fechajuliana= $year.$julianDate;
+
+        $notas = new Nota();
+        $notas->fecha=$request->fecha;
+        $notas->dia_juliano=$fechajuliana;
+        $notas->id_observador='3';     //SE ASIGNÁ UN ID ESPECIFICO PERO SE DEBE MODIFICAR PARA MOSTARR EL USUARIO ACTIVO
+        $notas->id_individuo=$id_individuos;
+        $notas->id_sitio=$request->id_sitio;
+        $notas->intensidad_fenofase=$request->intensidad_fenofase;
+        $notas->id_fenofase=$request->id_fenofase;
+        $notas->precipitacion=$request->precipitacion;
+        $notas->id_clima=$request->id_clima;
+        $notas->temperatura_minima=$request->temperatura_minima;
+        $notas->temperatura_maxima=$request->temperatura_maxima;
+        $notas->hallazgos=$request->hallazgos;
+        $notas->save();
+        $id_notas=$notas->id_nota;
+
+        $datosnotas= Nota::findOrFail($id_nota);
+
+        return redirect()->route('notas.index')
+            ->with('Mensaje','Nota Actualizada Con éxito');
     }
 
     /**
@@ -241,8 +327,11 @@ class NotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Nota $nota)
     {
-        //
+        $nota->delete();
+
+        return redirect()->route('notas.index')
+            ->with('Mensaje','Nota Eliminada Con éxito');
     }
 }
