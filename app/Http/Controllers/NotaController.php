@@ -100,10 +100,10 @@ class NotaController extends Controller
             ->selectRaw('escalas_bbch.descripcion as escala')
             ->distinct('escalas_bbch.descripcion')
             ->get();
-        $observadores=Observador::selectRaw('observadores.id_observador as id_observador')
-            ->selectRaw('observadores.nom as nombre')
-            ->where('observadores.id_observador',3)
-            ->distinct('observadores.nom')
+        $observadores=User::selectRaw('users.id as id_observador')
+            ->selectRaw('users.name as nombre')
+            ->where('users.id',3)
+            ->distinct('users.name')
             ->get();
         $sitios=Sitio::selectRaw('sitios.id_sitio as id_sitio')
             ->selectRaw('sitios.nombre as sitio')
@@ -245,10 +245,10 @@ class NotaController extends Controller
             ->selectRaw('escalas_bbch.descripcion as escala')
             ->distinct('escalas_bbch.descripcion')
             ->get();
-        $observadores=Observador::selectRaw('observadores.id_observador as id_observador')
-            ->selectRaw('observadores.nom as nombre')
-            ->where('observadores.id_observador',3)
-            ->distinct('observadores.nom')
+        $observadores=Observador::selectRaw('users.id as id_observador')
+            ->selectRaw('users.name as nombre')
+            ->where('users.id',3)
+            ->distinct('users.name')
             ->get();
         $sitios=Sitio::selectRaw('sitios.id_sitio as id_sitio')
             ->selectRaw('sitios.nombre as sitio')
