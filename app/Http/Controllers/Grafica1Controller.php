@@ -154,6 +154,32 @@ class Grafica1Controller extends Controller
     {
 
         //consulta 1.1 Calendario particular por especie y por individuo por mes y por grupo de planta (escala BBCH), (ID de individuo y fenofase)
+
+
+        //consulta 1.1 Calendario particular por especie y por individuo por mes y por grupo de planta (escala BBCH), (ID de individuo y fenofase)
+        /*
+          select e.descripcion especie,fe.descrip_fenofase fenofase,n.fecha fechas, count(*) observaciones
+           from individuos i, fenofases fe, notas n,
+            subespecies s, especies e, sitios si, municipios mu, estados est
+            where si.id_sitio=n.id_sitio and si.id_municipio=mu.id_municipio and mu.id_estado=est.id_estado and
+            i.id_individuo=n.id_individuo and fe.id_fenofase=n.id_fenofase and i.id_subespecie=s.id_subespecie and e.id_especie=s.id_especie
+            group by fe.descrip_fenofase,e.descripcion,n.fecha order by e.descripcion,fe.descrip_fenofase,n.fecha ASC;
+        */
+
+        $datos=Nota::join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select("especies.descripcion as especie","fenofases.descrip_fenofase as fenofase","notas.fecha as fechas")
+            ->selectRaw("count(*) as observaciones")
+            ->groupBy("especies.descripcion","fenofases.descrip_fenofase","notas.fecha")
+            ->orderBy("especie","asc")
+            ->orderBy("fenofase","asc")
+            ->orderBy("fechas","asc")
+            ->get();
+
+        return ($datos);
+
         $buscar_anio= $request->input('buscar_anio');
         $categorias=$this->nota->getCalendarioEspeciesInfo()->distinct("descrip_fenofase")->select("descrip_fenofase")->pluck("descrip_fenofase");
         $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
@@ -490,6 +516,29 @@ class Grafica1Controller extends Controller
         //consulta 1.2 Promediar por ejemplo todas las fechas de inicio del desarrollo de hojas y
         // las fechas de fin de una misma especie, con el objetivo de tener la duración total
         // de esta fase fenológica no por año, sino para la especie.
+
+        //consulta 1.2 Promediar por ejemplo todas las fechas de inicio del desarrollo de hojas y
+        // las fechas de fin de una misma especie, con el objetivo de tener la duración total
+        // de esta fase fenológica no por año, sino para la especie.
+
+        /*
+
+         select e.descripcion especie,fe.descrip_fenofase fenofase, n.fecha primer_fecha
+         from individuos i, fenofases fe, notas n, especies e, subespecies s
+         where i.id_individuo=n.id_individuo and fe.id_fenofase=n.id_fenofase and i.id_subespecie=s.id_subespecie
+        and e.id_especie=s.id_especie group by fe.descrip_fenofase,e.descripcion,n.fecha order by e.descripcion,fe.descrip_fenofase,n.fecha ASC;
+*/
+
+        $datoss=Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->select('especies.descripcion as especie','fenofases.descrip_fenofase as fenofase',"notas.fecha as fechas")
+            ->groupBy('fenofases.descrip_fenofase','especies.descripcion','notas.fecha')
+            ->orderBy("especies.descripcion","ASC")->orderBy("fenofases.descrip_fenofase","ASC")->orderBy("notas.fecha","ASC")
+            ->get();
+
+        return($datoss);
 
 
         $buscar_especie= $request->input('buscar_especie');
