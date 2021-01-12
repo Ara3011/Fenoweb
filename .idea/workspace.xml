@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="502" column="13" lean-forward="true" selection-start-line="502" selection-start-column="13" selection-end-line="502" selection-end-column="45" />
+            <state relative-caret-position="338">
+              <caret line="504" column="94" selection-start-line="504" selection-start-column="94" selection-end-line="504" selection-end-column="94" />
               <folding>
                 <element signature="e#2955#4773#0#PHP" expanded="true" />
                 <element signature="e#13071#14666#0#PHP" expanded="true" />
@@ -49,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="560">
-              <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -213,6 +213,11 @@
       <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
     </include_path>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1280" />
+    <option name="height" value="778" />
+  </component>
   <component name="ProjectId" id="1iU5JAOTVIurl52BYri3l19BZMX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -371,10 +376,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4369000" />
+    <option name="totallyTimeSpent" value="4602000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="778" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2536349" />
@@ -501,7 +506,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/Graficas/grafica5.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
-          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -517,8 +522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Grafica1Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="502" column="13" lean-forward="true" selection-start-line="502" selection-start-column="13" selection-end-line="502" selection-end-column="45" />
+        <state relative-caret-position="338">
+          <caret line="504" column="94" selection-start-line="504" selection-start-column="94" selection-end-line="504" selection-end-column="94" />
           <folding>
             <element signature="e#2955#4773#0#PHP" expanded="true" />
             <element signature="e#13071#14666#0#PHP" expanded="true" />
