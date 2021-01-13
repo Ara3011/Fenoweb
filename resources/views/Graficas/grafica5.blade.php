@@ -44,7 +44,8 @@
             },
             tooltip: {
                 formatter: function() {
-                    return new Date(this.point.x).toLocaleDateString()+"-"+new Date(this.point.x2).toLocaleDateString()+"<br>Observaciones:"+this.point.partialFill;
+
+                    return new Date(this.point.x).toLocaleDateString()+" - "+new Date(this.point.x2).toLocaleDateString()+"<br>Observaciones:"+this.point.partialFill+ '.';
 
                 }
             },
