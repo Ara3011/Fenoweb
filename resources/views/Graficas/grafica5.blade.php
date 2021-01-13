@@ -44,17 +44,12 @@
             },
             tooltip: {
                 formatter: function() {
-                    return 'hola';
+                    return new Date(this.point.x).toLocaleDateString()+"-"+new Date(this.point.x2).toLocaleDateString()+"<br>Observaciones:"+this.point.partialFill;
+
                 }
             },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                formatter: function() {
-                    return 'hola';
-                }
-            },
+
+
             plotOptions: {
                 series: {
                     label: {
@@ -66,10 +61,9 @@
                 point: {
                     descriptionFormatter: function (point) {
                         var ix = point.index + 1,
-                            category = point.partial,
+                            category = point.yCategory,
                             from = new Date(point.x),
                             to = new Date(point.x2);
-                        //console.log(ix);
                         return ix + '. ' + category + ', ' + from.toDateString() +
                             ' to ' + to.toDateString() + '.';
                     }

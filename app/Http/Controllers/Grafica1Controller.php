@@ -195,13 +195,14 @@ class Grafica1Controller extends Controller
                             "x2" =>"Date.parse('{$buscar_anio}-{$i}-28')",
                             "y"=>"$index2",
                             "partialFill"=> "{$valor[0]->observaciones}"
+
                         ]);
                         // return $aux;
                     }
                 }
             }
             array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["enabled"=>"true"]]);
-            break;
+
         }
 
         //return $data;
