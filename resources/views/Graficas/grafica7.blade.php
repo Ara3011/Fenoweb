@@ -39,6 +39,8 @@
 @endsection
 @section("scripts")
     <script type="text/javascript">
+
+
         Highcharts.chart('container_chart', {
             chart: {
                 type: 'pyramid'

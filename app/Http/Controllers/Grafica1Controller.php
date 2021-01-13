@@ -24,10 +24,10 @@ class Grafica1Controller extends Controller
     {
         //consulta 4.3 Observaciones por cada observador
 
-        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->select("observadores.nom")
+        $datos=Nota::join('users','users.id','=','notas.id_observador')
+            ->select("users.name")
             ->selectRaw("count(notas.fecha) as valor")
-            ->groupBy("observadores.nom")
+            ->groupBy("users.name")
             ->get();
 
 
@@ -227,24 +227,24 @@ class Grafica1Controller extends Controller
         $buscar_observador= $request->input('buscar_observador');
         $buscar_anio= $request->input('buscar_anio');
 
-        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->select('observadores.nom')
+        $datos=Nota::join('users','users.id','=','notas.id_observador')
+            ->select('users.name')
             ->selectRaw("count(notas.fecha) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
-            ->where('observadores.nom','like','%'.$buscar_observador.'%')
-            ->groupBy('observadores.nom')
+            ->where('users.name','like','%'.$buscar_observador.'%')
+            ->groupBy('users.name')
             ->orderBy('valor', 'DESC')
             ->get();
 
             $datos=json_encode($datos);
-            $datos=str_replace('"nom":','',$datos);
+            $datos=str_replace('"name":','',$datos);
             $datos=str_replace('"valor":','',$datos);
             $datos=str_replace('{','[',$datos);
             $datos=str_replace('}',']',$datos);
 
-        $observadores=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->selectRaw('observadores.nom as nombre')
-            ->distinct('observadores.nom')
+        $observadores=Nota::join('users','users.id','=','notas.id_observador')
+            ->selectRaw('users.name as nombre')
+            ->distinct('users.name')
             ->get();
 
 
@@ -264,28 +264,28 @@ class Grafica1Controller extends Controller
         $buscar_observador= $request->input('buscar_observador');
         $buscar_anio= $request->input('buscar_anio');
 
-        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+        $datos=Nota::join('users','users.id','=','notas.id_observador')
             ->join('sitios','sitios.id_sitio','=','notas.id_sitio')
             ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
             ->join('estados','estados.id_estado','=','municipios.id_estado')
             ->select("municipios.nombre")
-            ->select('observadores.nom')
+            ->select('users.name')
             ->selectRaw("count(DISTINCT sitios.id_sitio) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
-            ->where('observadores.nom','like','%'.$buscar_observador.'%')
-            ->groupBy('observadores.nom')
+            ->where('users.name','like','%'.$buscar_observador.'%')
+            ->groupBy('users.name')
             ->orderBy('valor', 'DESC')
             ->get();
 
         $datos=json_encode($datos);
-        $datos=str_replace('"nom":','',$datos);
+        $datos=str_replace('"name":','',$datos);
         $datos=str_replace('"valor":','',$datos);
         $datos=str_replace('{','[',$datos);
         $datos=str_replace('}',']',$datos);
 
-        $observadores=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->selectRaw('observadores.nom as nombre')
-            ->distinct('observadores.nom')
+        $observadores=Nota::join('users','users.id','=','notas.id_observador')
+            ->selectRaw('users.name as nombre')
+            ->distinct('users.name')
             ->get();
 
 
@@ -304,7 +304,7 @@ class Grafica1Controller extends Controller
         $buscar_especie= $request->input('buscar_especie');
 
 
-        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+        $datos=Nota::join('users','users.id','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('generos','generos.id_genero','=','individuos.id_genero')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
@@ -320,7 +320,7 @@ class Grafica1Controller extends Controller
             ->where('especies.descripcion','like','%'.$buscar_especie.'%')
             ->selectRaw('notas.fecha as fecha')
             ->selectRaw('notas.dia_juliano as dia_juliano')
-            ->selectRaw('observadores.nom as observador')
+            ->selectRaw('users.name as observador')
             ->selectRaw('individuos.nombre_comun as nombre_comun')
             ->selectRaw('familias.descripcion as familia')
             ->selectRaw('generos.descripcion as genero')
@@ -368,19 +368,19 @@ class Grafica1Controller extends Controller
 
         $buscar_anio= $request->input('buscar_anio');
 
-        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+        $datos=Nota::join('users','users.id','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
             ->join('especies','especies.id_especie','=','subespecies.id_especie')
-            ->select('observadores.nom')
+            ->select('users.name')
             ->selectRaw("count(DISTINCT especies.id_especie) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
-            ->groupBy('observadores.nom')
+            ->groupBy('users.name')
             ->orderBy('valor', 'DESC')
             ->get();
 
         $datos=json_encode($datos);
-        $datos=str_replace('"nom":','',$datos);
+        $datos=str_replace('"name":','',$datos);
         $datos=str_replace('"valor":','',$datos);
         $datos=str_replace('{','[',$datos);
         $datos=str_replace('}',']',$datos);
@@ -400,27 +400,27 @@ class Grafica1Controller extends Controller
         $buscar_anio= $request->input('buscar_anio');
         $buscar_observador=$request->input('buscar_observador');
 
-        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+        $datos=Nota::join('users','users.id','=','notas.id_observador')
             ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
-            ->select('observadores.nom')
+            ->select('users.name')
             ->selectRaw("count(DISTINCT fenofases.id_fenofase) as valor")
             ->whereYear('notas.fecha','like','%'.$buscar_anio.'%')
-            ->where('observadores.nom','like','%'.$buscar_observador.'%')
-            ->groupBy('observadores.nom')
+            ->where('users.name','like','%'.$buscar_observador.'%')
+            ->groupBy('users.name')
             ->orderBy('valor', 'DESC')
             ->get();
 
         $datos=json_encode($datos);
-        $datos=str_replace('"nom":','',$datos);
+        $datos=str_replace('"name":','',$datos);
         $datos=str_replace('"valor":','',$datos);
         $datos=str_replace('{','[',$datos);
         $datos=str_replace('}',']',$datos);
 
 
 
-        $observadores=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
-            ->selectRaw('observadores.nom as nombre')
-            ->distinct('observadores.nom')
+        $observadores=Nota::join('users','users.id','=','notas.id_observador')
+            ->selectRaw('users.name as nombre')
+            ->distinct('users.name')
             ->get();
 
         $anios=Nota::selectRaw('year(fecha) as anio')

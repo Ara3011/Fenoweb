@@ -14,7 +14,7 @@ class NotasExport implements FromCollection,  WithHeadings
     public function collection()
     {
 
-        $datos=Nota::join('observadores','observadores.id_observador','=','notas.id_observador')
+        $datos=Nota::join('users','users.id','=','notas.id_observador')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
             ->join('generos','generos.id_genero','=','individuos.id_genero')
             ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
@@ -28,7 +28,7 @@ class NotasExport implements FromCollection,  WithHeadings
             ->join('climas','climas.id_clima','=','notas.id_clima')
             ->selectRaw('notas.fecha as fecha')
             ->selectRaw('notas.dia_juliano as dia_juliano')
-            ->selectRaw('observadores.nom as observador')
+            ->selectRaw('users.name as observador')
             ->selectRaw('individuos.nombre_comun as nombre_comun')
             ->selectRaw('familias.descripcion as familia')
             ->selectRaw('generos.descripcion as genero')
