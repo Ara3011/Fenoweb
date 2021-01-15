@@ -75,17 +75,34 @@
 <div class="text-center card-header" style="text-align: center">
 <nav class="navbar-header" style="left: 1000px">
     <ul class="nav">
+
         <li class="nav-item"><a class="nav-link text-dark " href="{{url('/municipios')}}">Municipios</a>
         </li>
         <li class="nav-item"><a class="nav-link text-dark " href="{{url('/individuos')}}">Individuos</a>
         </li>
         <li class="nav-item"><a class="nav-link text-dark " href="{{url('/sitios')}}">Sitios</a>
         </li>
+
+
         <li class="nav-item"><a class="nav-link text-dark " href="{{url('/notas')}}">Notas</a>
         </li>
         <li class="nav-item"> <a class="nav-link text-dark "href="{{url('/notas/create')}}">Formulario</a>
         </li>
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                </a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Cerrar Sesión') }}
+                    </a>
 
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
+            </li>
 
     </ul>
 </nav>
@@ -150,9 +167,10 @@
 <script src="{{ asset('js/highcharts-3d.js') }}"></script>
 <script src="{{ asset('js/cylinder.js') }}"></script>
 <script src="{{ asset('js/pyramid3d.js') }}"></script>
+
 <script src="https://code.highcharts.com/modules/heatmap.js"></script>
 <script src="https://code.highcharts.com/modules/xrange.js"></script>
-<script src="https://code.highcharts.com/gantt/highcharts-gantt.js">
+<script src="https://code.highcharts.com/gantt/highcharts-gantt.js"></script>
 <!-- Termino de uso de librerías Highcharts-->
 <script src = "{{asset('https://code.jquery.com/jquery-1.10.2.js')}}"></script>
 <script src = "{{asset('https://code.jquery.com/ui/1.10.4/jquery-ui.js')}}"></script>

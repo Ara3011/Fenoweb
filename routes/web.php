@@ -22,17 +22,21 @@ use App\Http\Controllers\NotaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('head', function () {
+    return view('Template.headerf');
+});
+Route::get('/', function () {
+    return view('Template.bienvenida');
+});
 Route::group(['middleware'=>['auth']],function () {
     Route::get('welcome', function () {
         return view('welcome');
     });
-    Route::get('bienvenido', function () {
-        return view('Template.bienvenida');
-    });
+
 
 //PAGINA DE HOME
-    Route::get('/', function () {
-        return view('Template.template');
+    Route::get('/template', function () {
+        return view('Template.header');
     });
 
 

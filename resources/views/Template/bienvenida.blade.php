@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Red Nacional de Fenología</title>
     <!-- ESTILOS BOOTSTARP Y LETRAS-->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons') }}" />
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" />
     <!--FUENTE DE LETRAS -->
     <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Oswald&display=swap') }}"/>
     <!-- ESTILOS DE LA PLANTILLA-->
@@ -31,22 +34,36 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{{url('/')}}">Inicio</a></li>
-                    <li class=""><a href="{{url('/climas')}}">Climas</a></li>
-                    <li class=""><a href="{{url('/escalas')}}">Escalas BBCH</a></li>
-                    <li class=""><a href="{{url('/especies')}}">Especies</a></li>
-                    <li class=""><a href="{{url('/estados')}}">Estados</a></li>
-                    <li class=""><a href="{{url('/familias')}}">Familias</a></li>
-                    <li class=""><a href="{{url('/fenofases')}}">Fenofases</a></li>
+                    <li class="active"><a href="{{url('/notas')}}">Notas</a></li>
+
 
                     @if (Route::has('login'))
                         @auth
-                            <li><a href="{{ url('/home') }}" class="fin">Inicio</a></li>
+                            <li class=""><a href="{{url('#')}}">Mis insignias</a></li>
+                            <li class=""><a href="{{url('/notas/create')}}">Formulario</a></li>
+                            @if(Auth::user()->tipo_usuario == 1)
+                            <li class=""><a href="{{url('#')}}">cat</a></li>
+                            <li class=""><a href="{{url('/notas/create')}}">user</a></li>
+                            <li class=""><a href="{{url('#')}}">Mis insignias</a></li>
+                            <li class=""><a href="{{url('/notas/create')}}">admins</a></li>
+                        @endif
+                            <li class="nav-item dropdown">
+
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Cerrar Sesión') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
                         @else
-                            <li><a href="{{ route('login') }}" class="fin">Login</a></li>
+                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión</a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="fin">Register</a></li>
+                                <li><a href="{{ route('register') }}" class="fin">Registrame</a></li>
                             @endif
                         @endif
 

@@ -123,6 +123,7 @@ class NotaController extends Controller
             ->pluck("nombre_comun");
         $nombre_especies=($nombre_especies);
     $observaciones=Nota::where('id_observador',Auth::user()->id)->count();
+
         User::where('id','=',Auth::user()->id)->update(['insignias'=>(int)($observaciones/6)]);
 
 
