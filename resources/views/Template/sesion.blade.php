@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{{ url('/') }}" class="fin">Inicio</a></li>
-                    <li class=""><a href="{{url('/notas')}}">Notas</a></li>
+                    <li class=""><a href="{{url('/Notas_visitante')}}">Notas</a></li>
 
 
                     @if (Route::has('login'))

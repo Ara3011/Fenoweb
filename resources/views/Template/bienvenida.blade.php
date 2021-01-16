@@ -49,7 +49,7 @@
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                     <a class="nav-linkk"  href="{{url('/notas')}}">Notas Generales</a>
-                                    <a class="nav-linkk  " href="{{url('/escalas')}}">Mis notas</a>
+                                    <a class="nav-linkk  " href="{{url('/notas/mis_notas')}}">Mis Notas</a>
 
                                 </div>
                             </li>
@@ -74,6 +74,7 @@
                                 </li>
                                 <li class="nav-item"><a class="nav-link text-naranja " href="{{url('/graficas')}}">Gráficas</a>
                                 </li>
+                                <li class=""><a href="{{url('/usuarios')}}">Usuarios <i class="fas fa-users-cog"> </i></a></li>
                             @endif
                             <li class="nav-item dropdown">
 
@@ -87,8 +88,9 @@
                                     @csrf
                                 </form>
                             </li>
+
                         @else
-                            <li class=""><a href="{{url('/notas')}}">Notas</a></li>
+                            <li class=""><a href="{{url('/Notas_visitante')}}">Notas</a></li>
                             <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión <i class="fas fa-sign-in-alt"> </i></a></li>
 
                             @if (Route::has('register'))

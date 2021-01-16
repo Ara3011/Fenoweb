@@ -53,7 +53,7 @@
 
                         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                             <a class="nav-linkk"  href="{{url('/notas')}}">Notas Generales</a>
-                            <a class="nav-linkk  " href="{{url('/escalas')}}">Mis notas</a>
+                            <a class="nav-linkk  " href="{{url('/notas/mis_notas')}}">Mis Notas</a>
 
                         </div>
                     </li>
@@ -73,8 +73,10 @@
                                 <a class="nav-linkk " href="{{url('/fenofases')}}">Fenofases</a>
                                 <a class="nav-linkk " href="{{url('/generos')}}">Géneros</a>
                                 <a class="nav-linkk " href="{{url('/municipios')}}">Municipios</a>
-                                <a class="nav-linkk " href="{{url('/individuos')}}">Individuos</a>
                                 <a class="nav-linkk " href="{{url('/sitios')}}">Sitios</a>
+                                <a class="nav-linkk " href="{{url('/estados')}}">Estados</a>
+                                <a class="nav-linkk " href="{{url('/individuos')}}">Individuos</a>
+
                             </div>
                         </li>
                     <li class="nav-item"><a class="nav-link text-naranja " href="{{url('/graficas')}}">Gráficas</a>
@@ -102,7 +104,7 @@
                                     {{ __('Cerrar Sesión') }} <i class="fas fa-sign-out-alt"> </i>
                                 </a>
                                 @if(Auth::user()->tipo_usuario == 1)
-                                    <a class="nav-linkk " href="{{url('#')}}">Usuarios <i class="fas fa-users-cog"> </i></a>
+                                    <a class="nav-linkk " href="{{url('/usuarios')}}">Usuarios <i class="fas fa-users-cog"> </i></a>
                                 @endif
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

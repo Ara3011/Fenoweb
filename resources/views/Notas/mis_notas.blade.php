@@ -12,12 +12,19 @@
 
             <div class="" >
                 <div class="bg-greencard">
-                <div class="card-header text-blanco" >
-
-                    <h4 class="text-center text-blanco">Notas</h4>
-                </div>
+                    <div class="card-header text-blanco" >
+                        <h4 class="text-center text-blanco">Notas</h4>
+                    </div>
                 </div>
                 <div class="">
+                    <div class="float-left">
+                        <form action="{{url('/notas/show/exportar')}}" enctype="multipart/form-data">
+                            <button class="btn font-weight-bold" style="border: grey 1px solid;" type="submit">
+                                <img src="/img/excell.png" width="30" height="30">
+                                Exportar mis notas</button>
+                        </form>
+                    </div>
+                    <br>
                     <div class="float-left">
                         <form action="{{url('/graficas/grafica9/exportar')}}" enctype="multipart/form-data">
                             <button class="btn font-weight-bold" style="border: grey 1px solid;" type="submit">
@@ -26,15 +33,7 @@
                         </form>
                     </div>
                     <div>
-                        <center>
-                            <form class="form-group form mt-2">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar_observador" class="text-dark"><h4>Buscar: </h4></label>
-                                <input name="buscar_observador" class="form-control form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar observador"
-                                       aria-label="buscar_observador" >
-                            </form>
-                        </center>
+                       <h3 class="text-center">Notas de:   {{ Auth::user()->name }}</h3>
                     </div>
 
                     <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
@@ -147,10 +146,10 @@
                                             aria-label="Rendering engine: activate to sort column descending">Hallazgo
                                         </th>
                                         @if(Auth::user()->tipo_usuario == 1)
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Acciones
-                                        </th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-sort="ascending"
+                                                aria-label="Rendering engine: activate to sort column descending">Acciones
+                                            </th>
                                     @endif
                                     </thead>
                                     <tbody>
@@ -180,28 +179,28 @@
                                             <td>{{$nota->nota}}</td>
                                             <td>
                                                 @if(Auth::user()->tipo_usuario == 1)
-                                                <form method="post"
-                                                      action="{{url('/notas/'.$nota->id_nota)}}">
-                                                    <!-- Actualizar -->
+                                                    <form method="post"
+                                                          action="{{url('/notas/'.$nota->id_nota)}}">
+                                                        <!-- Actualizar -->
+                                                        {{csrf_field()}}
+                                                        <button type="button" rel="tooltip"
+                                                                class="btn btn-success rounded-circle ">
+                                                            <a class="text-light"
+                                                               href="{{url('/notas/'.$nota->id_nota.'/edit')}}"><i
+                                                                    class="material-icons ">edit</i></a>
+                                                        </button>
+
+
                                                     {{csrf_field()}}
-                                                    <button type="button" rel="tooltip"
-                                                            class="btn btn-success rounded-circle ">
-                                                        <a class="text-light"
-                                                           href="{{url('/notas/'.$nota->id_nota.'/edit')}}"><i
-                                                                class="material-icons ">edit</i></a>
-                                                    </button>
-
-
-                                                {{csrf_field()}}
-                                                {{method_field('DELETE')}}
-                                                <!-- BORRAR -->
-                                                    <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle ">
-                                                        <i class="material-icons"
-                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
-                                                    </button>
-                                                </form>
-                                                    @endif
+                                                    {{method_field('DELETE')}}
+                                                    <!-- BORRAR -->
+                                                        <button type="submit" rel="tooltip"
+                                                                class="btn btn-danger rounded-circle ">
+                                                            <i class="material-icons"
+                                                               onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
+                                                        </button>
+                                                    </form>
+                                                @endif
                                             </td>
 
                                         </tr>

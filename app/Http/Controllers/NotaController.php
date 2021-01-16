@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Exports\MisnotasExport;
 use Carbon\Carbon;
 use App\Models\Clima;
 use App\Models\Escala;
@@ -16,6 +17,7 @@ use App\Models\Sitio;
 use App\Models\Subespecie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 use phpDocumentor\Reflection\Types\Nullable;
 use Auth;
 use App\Models\User;
@@ -217,9 +219,51 @@ class NotaController extends Controller
      */
     public function show(Request $request)
     {
+        $notas=Nota::join('users','users.id','=','notas.id_observador')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('generos','generos.id_genero','=','individuos.id_genero')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->join('escalas_bbch','escalas_bbch.id_bbch','=','individuos.id_bbch')
+            ->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('familias','familias.id_familia','=','individuos.id_familia')
+            ->where('id','=',Auth::user()->id)
+            ->selectRaw('notas.id_nota as id_nota')
+            ->selectRaw('notas.fecha as fecha')
+            ->selectRaw('notas.dia_juliano as dia_juliano')
+            ->selectRaw('users.name as observador')
+            ->selectRaw('individuos.nombre_comun as nombre_comun')
+            ->selectRaw('individuos.id_individuo as id_individuo')
+            ->selectRaw('familias.descripcion as familia')
+            ->selectRaw('generos.descripcion as genero')
+            ->selectRaw('especies.descripcion as especie')
+            ->selectRaw('subespecies.descripcion as subespecies')
+            ->selectRaw('escalas_bbch.descripcion as escala_bbch')
+            ->selectRaw('sitios.nombre as sitio')
+            ->selectRaw('sitios.comunidad as comunidad')
+            ->selectRaw('municipios.nombre as municipio')
+            ->selectRaw('estados.nombre as estado')
+            ->selectRaw('sitios.latitud as latitud')
+            ->selectRaw('sitios.longitud as longitud')
+            ->selectRaw('sitios.altitud as altitud')
+            ->selectRaw('fenofases.descrip_fenofase as fenofase')
+            ->selectRaw('notas.intensidad_fenofase as int_feno')
+            ->selectRaw('notas.precipitacion as precipitacion')
+            ->selectRaw('notas.temperatura_minima as temperatura_minima')
+            ->selectRaw('notas.temperatura_maxima as temperatura_maxima')
+            ->selectRaw('notas.hallazgos as nota')
+            ->OrderBy('fecha','DESC')
+            ->paginate($this::Paginacion);
 
+        return view('Notas.mis_notas', compact('notas'));
     }
-
+    public function bladeToExcel()
+    {
+        return Excel::download(new MisnotasExport,'mis notas.xlsx');
+    }
     /**
      * Show the form for editing the specified resource.
      *

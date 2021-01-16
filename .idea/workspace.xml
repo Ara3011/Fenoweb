@@ -3,34 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Familias/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Generos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Generos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Individuos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Individuos/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Template/sesion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/sesion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,17 +169,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Template" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Exports" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\app\Exports" />
       <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Template" />
       <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Sitios" />
       <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Municipios" />
       <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views\Notas" />
-      <recent name="C:\Users\araax\Documents\TESVB\Residencia\Fenoweb\resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -267,7 +245,9 @@
       <workItem from="1610507157072" duration="1315000" />
       <workItem from="1610646934210" duration="267000" />
       <workItem from="1610647234923" duration="23359000" />
-      <workItem from="1610685810296" duration="18935000" />
+      <workItem from="1610685810296" duration="21865000" />
+      <workItem from="1610822593214" duration="4713000" />
+      <workItem from="1610827694937" duration="10101000" />
     </task>
     <servers />
   </component>
@@ -279,15 +259,19 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="531" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1604890211647" />
-    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1609443525466">
+    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1610822526108">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1609443525466" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607624922614">
+    <state x="449" y="169" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1610822526108" />
+    <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610833439616">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1610833439616" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610833075278">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1604508046206" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1607624922614" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1610833075278" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1604102147136">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -311,7 +295,6 @@
     <state width="498" height="446" key="SwitcherDM" timestamp="1606363768116">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1602113803382" />
     <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1606363768116" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1609451646532">
       <screen x="0" y="0" width="1536" height="864" />

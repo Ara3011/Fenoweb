@@ -1,30 +1,19 @@
-@extends('Template.headerf')
+@extends('Template.sesion')
 @section('content')
 
-
     <div class="container-fluid" >
-        @if(Session::has('Mensaje'))
-            <div class="alert alert-secondary text-center alert-dismissible text-uppercase">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
-        @endif
+      <h4>Si deseas Exportar Notas por favor registrate</h4>
         <div class="col-md-12" >
 
             <div class="" >
                 <div class="bg-greencard">
-                <div class="card-header text-blanco" >
-
-                    <h4 class="text-center text-blanco">Notas</h4>
-                </div>
-                </div>
-                <div class="">
-                    <div class="float-left">
-                        <form action="{{url('/graficas/grafica9/exportar')}}" enctype="multipart/form-data">
-                            <button class="btn font-weight-bold" style="border: grey 1px solid;" type="submit">
-                                <img src="/img/excell.png" width="30" height="30">
-                                Exportar notas generales</button>
-                        </form>
+                    <div class="card-header text-blanco" >
+                        <h4 class="text-center text-blanco">Notas</h4>
                     </div>
+                </div>
+
+                <div class="">
+
                     <div>
                         <center>
                             <form class="form-group form mt-2">
@@ -146,12 +135,6 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Hallazgo
                                         </th>
-                                        @if(Auth::user()->tipo_usuario == 1)
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Acciones
-                                        </th>
-                                    @endif
                                     </thead>
                                     <tbody>
                                     @foreach($notas as $nota)
@@ -178,32 +161,6 @@
                                             <td>{{$nota->temperatura_minima}}</td>
                                             <td>{{$nota->temperatura_maxima}}</td>
                                             <td>{{$nota->nota}}</td>
-                                            <td>
-                                                @if(Auth::user()->tipo_usuario == 1)
-                                                <form method="post"
-                                                      action="{{url('/notas/'.$nota->id_nota)}}">
-                                                    <!-- Actualizar -->
-                                                    {{csrf_field()}}
-                                                    <button type="button" rel="tooltip"
-                                                            class="btn btn-success rounded-circle ">
-                                                        <a class="text-light"
-                                                           href="{{url('/notas/'.$nota->id_nota.'/edit')}}"><i
-                                                                class="material-icons ">edit</i></a>
-                                                    </button>
-
-
-                                                {{csrf_field()}}
-                                                {{method_field('DELETE')}}
-                                                <!-- BORRAR -->
-                                                    <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle ">
-                                                        <i class="material-icons"
-                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
-                                                    </button>
-                                                </form>
-                                                    @endif
-                                            </td>
-
                                         </tr>
                                     @endforeach
                                     </tbody>

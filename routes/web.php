@@ -22,9 +22,12 @@ use App\Http\Controllers\NotaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('Notas_visitante', \App\Http\Controllers\VisitanteController::class);
+
 Route::get('head', function () {
     return view('Template.headerf');
 });
+
 Route::get('/', function () {
     return view('Template.bienvenida');
 });
@@ -53,6 +56,7 @@ Route::group(['middleware'=>['auth']],function () {
     Route::resource('municipios', \App\Http\Controllers\MunicipioController::class);
     Route::resource('individuos', \App\Http\Controllers\IndividuoController::class);
     Route::resource('sitios', \App\Http\Controllers\SitioController::class);
+    Route::resource('usuarios', \App\Http\Controllers\UsuarioController::class);
     Route::resource('notas', NotaController::class);
 
     Route::get('/show', [App\Http\Controllers\NotaController::class, 'show'])->name('show');
@@ -60,7 +64,7 @@ Route::group(['middleware'=>['auth']],function () {
 
 
     Route::get('/graficas/grafica9/exportar', [App\Http\Controllers\Grafica1Controller::class, 'bladeToExcel'])->name('exportar');
-
+    Route::get('/notas/show/exportar', [App\Http\Controllers\NotaController::class, 'bladeToExcel'])->name('exportar');
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
