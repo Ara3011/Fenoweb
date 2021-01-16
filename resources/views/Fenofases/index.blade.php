@@ -1,4 +1,4 @@
-@extends('Template.headfoot')
+@extends('Template.headerf')
 @section('content')
 
     <div class="container-fluid">
@@ -8,7 +8,7 @@
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
         @endif
-        <div class="col-md-2 mt-3" style="left: 197px">
+        <div class="col-md-2 mt-3" >
 
             <button class="btn btn-success btn-round">
                 <a href="{{url('/fenofases/create')}}">
@@ -16,7 +16,7 @@
                 </a>
             </button>
         </div>
-        <div class="col-md-12" style="left: 197px">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-success">
 

@@ -3,20 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Especies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Familias/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Generos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Generos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Individuos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Individuos/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headfoot.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/sesion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/sesion.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +267,7 @@
       <workItem from="1610507157072" duration="1315000" />
       <workItem from="1610646934210" duration="267000" />
       <workItem from="1610647234923" duration="23359000" />
-      <workItem from="1610685810296" duration="12821000" />
+      <workItem from="1610685810296" duration="18935000" />
     </task>
     <servers />
   </component>

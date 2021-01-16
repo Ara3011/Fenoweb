@@ -1,4 +1,4 @@
-@extends('Template.headfoot')
+@extends('Template.headerf')
 @section('content')
 
 
@@ -16,7 +16,7 @@
         @csrf
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12"style="left: 500px">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group card card-body">
                     <strong>Sitio:</strong><br>
                     <input type="text" name="nombre" class="form-control" placeholder="Ecribe nombre del sitio">
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center"style="left: 500px">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-success">Crear sitio</button>
             </div>
         </div>

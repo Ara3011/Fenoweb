@@ -1,4 +1,4 @@
-@extends('Template.headfoot')
+@extends('Template.headerf')
 @section('content')
 
     <form action={{url('/municipios/'.$datosmunicipios->id_municipio)}} method="POST" >
@@ -6,7 +6,7 @@
         {{method_field('PATCH')}}
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12"style="left: 600px">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group card card-body">
                     <strong>Nombre del municipio:</strong><br>
                     <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{$datosmunicipios->nombre}}"><br>
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center"style="left: 600px">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-success" value="Editar">Actualizar municipio</button>
             </div>
         </div>

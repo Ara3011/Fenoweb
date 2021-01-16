@@ -43,26 +43,40 @@
 
                     <li class=""><a href="{{url('#')}}">Mis insignias</a></li>
                     <li class=""><a href="{{url('/notas/create')}}">Formulario</a></li>
-                    <li class=""><a href="{{url('/notas')}}">Notas</a></li>
-                    @if(Auth::user()->tipo_usuario == 1)
+
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Catalogos
+                            Notas <i class="fas fa-caret-down"> </i>
                         </a>
 
                         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                            <a class="nav-linkk" href="{{url('/climas')}}">Climas</a>
-                            <a class="nav-linkk  " href="{{url('/escalas')}}">Escalas BBCH</a>
-                            <a class="nav-linkk " href="{{url('/especies')}}">Especies</a>
-                            <a class="nav-linkk " href="{{url('/familias')}}">Familias</a>
-                            <a class="nav-linkk " href="{{url('/fenofases')}}">Fenofases</a>
-                            <a class="nav-linkk " href="{{url('/generos')}}">Géneros</a>
-                            <a class="nav-linkk " href="{{url('/municipios')}}">Municipios</a>
-                            <a class="nav-linkk " href="{{url('/individuos')}}">Individuos</a>
-                            <a class="nav-linkk " href="{{url('/sitios')}}">Sitios</a>
+                            <a class="nav-linkk"  href="{{url('/notas')}}">Notas Generales</a>
+                            <a class="nav-linkk  " href="{{url('/escalas')}}">Mis notas</a>
+
                         </div>
                     </li>
+
+                    @if(Auth::user()->tipo_usuario == 1)
+                    <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Catalogos <i class="fas fa-caret-down"> </i>
+                            </a>
+
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                <a class="nav-linkk" href="{{url('/climas')}}">Climas</a>
+                                <a class="nav-linkk  " href="{{url('/escalas')}}">Escalas BBCH</a>
+                                <a class="nav-linkk " href="{{url('/especies')}}">Especies</a>
+                                <a class="nav-linkk " href="{{url('/familias')}}">Familias</a>
+                                <a class="nav-linkk " href="{{url('/fenofases')}}">Fenofases</a>
+                                <a class="nav-linkk " href="{{url('/generos')}}">Géneros</a>
+                                <a class="nav-linkk " href="{{url('/municipios')}}">Municipios</a>
+                                <a class="nav-linkk " href="{{url('/individuos')}}">Individuos</a>
+                                <a class="nav-linkk " href="{{url('/sitios')}}">Sitios</a>
+                            </div>
+                        </li>
                     <li class="nav-item"><a class="nav-link text-naranja " href="{{url('/graficas')}}">Gráficas</a>
                     </li>
                    @endif
@@ -78,17 +92,17 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name }} <i class="fas fa-user"> </i>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="nav-linkk" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Cerrar Sesión') }}
+                                    {{ __('Cerrar Sesión') }} <i class="fas fa-sign-out-alt"> </i>
                                 </a>
                                 @if(Auth::user()->tipo_usuario == 1)
-                                    <a class="nav-linkk " href="{{url('#')}}">Usuarios</a>
+                                    <a class="nav-linkk " href="{{url('#')}}">Usuarios <i class="fas fa-users-cog"> </i></a>
                                 @endif
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

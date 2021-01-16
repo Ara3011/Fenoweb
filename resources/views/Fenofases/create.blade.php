@@ -1,4 +1,4 @@
-@extends('Template.headfoot')
+@extends('Template.headerf')
 @section('content')
 
 
@@ -16,14 +16,14 @@
         @csrf
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12" style="left: 600px">
+            <div class="col-xs-12 col-sm-12 col-md-12" >
                 <div class="form-group">
                     <strong>Nombre de fenofase:</strong>
                     <input type="text" name="descrip_fenofase" class="form-control" placeholder="Fenofase">
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="left: 600px">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-success">Crear fenofase</button>
             </div>
         </div>

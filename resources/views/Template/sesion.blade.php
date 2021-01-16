@@ -55,10 +55,10 @@
                                 </form>
                             </li>
                         @else
-                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión</a></li>
+                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión <i class="fas fa-sign-in-alt"> </i></a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="fin">Registrame</a></li>
+                                <li><a href="{{ route('register') }}" class="fin">Registrarme <i class="fas fa-user-plus"> </i></a></li>
                             @endif
                         @endif
 

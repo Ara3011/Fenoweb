@@ -34,25 +34,53 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{{url('/notas')}}">Notas</a></li>
+
 
 
                     @if (Route::has('login'))
                         @auth
                             <li class=""><a href="{{url('#')}}">Mis insignias</a></li>
                             <li class=""><a href="{{url('/notas/create')}}">Formulario</a></li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Notas <i class="fas fa-caret-down"> </i>
+                                </a>
+
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                    <a class="nav-linkk"  href="{{url('/notas')}}">Notas Generales</a>
+                                    <a class="nav-linkk  " href="{{url('/escalas')}}">Mis notas</a>
+
+                                </div>
+                            </li>
                             @if(Auth::user()->tipo_usuario == 1)
-                            <li class=""><a href="{{url('#')}}">cat</a></li>
-                            <li class=""><a href="{{url('/notas/create')}}">user</a></li>
-                            <li class=""><a href="{{url('#')}}">Mis insignias</a></li>
-                            <li class=""><a href="{{url('/notas/create')}}">admins</a></li>
-                        @endif
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        Catalogos <i class="fas fa-caret-down"> </i>
+                                    </a>
+
+                                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                        <a class="nav-linkk" href="{{url('/climas')}}">Climas</a>
+                                        <a class="nav-linkk  " href="{{url('/escalas')}}">Escalas BBCH</a>
+                                        <a class="nav-linkk " href="{{url('/especies')}}">Especies</a>
+                                        <a class="nav-linkk " href="{{url('/familias')}}">Familias</a>
+                                        <a class="nav-linkk " href="{{url('/fenofases')}}">Fenofases</a>
+                                        <a class="nav-linkk " href="{{url('/generos')}}">Géneros</a>
+                                        <a class="nav-linkk " href="{{url('/municipios')}}">Municipios</a>
+                                        <a class="nav-linkk " href="{{url('/individuos')}}">Individuos</a>
+                                        <a class="nav-linkk " href="{{url('/sitios')}}">Sitios</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item"><a class="nav-link text-naranja " href="{{url('/graficas')}}">Gráficas</a>
+                                </li>
+                            @endif
                             <li class="nav-item dropdown">
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Cerrar Sesión') }}
+                                    {{ __('Cerrar Sesión') }} <i class="fas fa-sign-out-alt"> </i>
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -60,10 +88,11 @@
                                 </form>
                             </li>
                         @else
-                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión</a></li>
+                            <li class=""><a href="{{url('/notas')}}">Notas</a></li>
+                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión <i class="fas fa-sign-in-alt"> </i></a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="fin">Registrame</a></li>
+                                <li><a href="{{ route('register') }}" class="fin">Registrarme <i class="fas fa-user-plus"> </i></a></li>
                             @endif
                         @endif
 

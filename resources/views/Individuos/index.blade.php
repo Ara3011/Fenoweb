@@ -1,9 +1,9 @@
-@extends('Template.headfoot')
+@extends('Template.headerf')
 @section('content')
 
     <div class="container-fluid">
 
-        <div class="col-12" style="left: 197px">
+        <div class="col-12" >
             <div class="card">
                 <div class="card-header bg-success">
 
