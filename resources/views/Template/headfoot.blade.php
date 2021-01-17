@@ -167,10 +167,10 @@
 <script src="{{ asset('js/highcharts-3d.js') }}"></script>
 <script src="{{ asset('js/cylinder.js') }}"></script>
 <script src="{{ asset('js/pyramid3d.js') }}"></script>
+<script src="{{ asset('js/heatmap.js') }}"></script>
+<script src="{{ asset('js/x-range-series.js') }}"></script>
+<script src="{{ asset('js/gantt.js') }}"></script>
 
-<script src="https://code.highcharts.com/modules/heatmap.js"></script>
-<script src="https://code.highcharts.com/modules/xrange.js"></script>
-<script src="https://code.highcharts.com/gantt/highcharts-gantt.js"></script>
 <!-- Termino de uso de librerías Highcharts-->
 <script src = "{{asset('https://code.jquery.com/jquery-1.10.2.js')}}"></script>
 <script src = "{{asset('https://code.jquery.com/ui/1.10.4/jquery-ui.js')}}"></script>

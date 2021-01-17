@@ -202,9 +202,8 @@ class Grafica1Controller extends Controller
                 }
             }
             array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["enabled"=>"true"]]);
-
+            break;
         }
-
         //return $data;
         return view('Graficas.grafica5', compact('categorias',"data","buscar_anio","anos"));
 
@@ -441,12 +440,14 @@ class Grafica1Controller extends Controller
         $buscar_comunidad= $request->input('buscar_comunidad');
         $buscar_municipio= $request->input('buscar_municipio');
         $buscar_estado= $request->input('buscar_estado');
-
+        $buscar_anio= $request->input('buscar_anio');
 
 
         $categorias=$this->nota->getCalendarioEspeciesInfo()->distinct("descrip_fenofase")->select("descrip_fenofase")->pluck("descrip_fenofase");
         $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
-
+        $anos=$this->nota->selectRaw('year(fecha) as anio')
+            ->distinct('year(fecha)')
+            ->orderBy('anio', 'DESC')->get();
         $sitios=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
             ->select('sitios.nombre as sitio')
             ->distinct("sitios.nombre as sitio")
@@ -469,39 +470,98 @@ class Grafica1Controller extends Controller
             ->select('estados.nombre as estado')
             ->distinct("estados.nombre as estado")
             ->orderBy('estado', 'ASC')->get();
-
         $data=array();
-        foreach ($especies as $especie)
+        foreach ($especies as $index=>$especie)
         {
             $aux=array();
 
-            foreach ($categorias as $categoria)
+            foreach ($categorias as $index2=>$categoria)
             {
-                $valor=$this->nota->getCalendarioEspeciesInfo()
-                    ->whereDescripFenofase($categoria)->where("especies.descripcion",$especie)
-                    ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
-                    ->where('sitios.comunidad','like','%'.$buscar_comunidad.'%')
-                    ->where('municipios.nombre','like','%'.$buscar_municipio.'%')
-                    ->where('estados.nombre','like','%'.$buscar_estado.'%')->get();
+                for($i=1;$i<=12;$i++)
+                {
 
-                if($valor->count()>0) {
-                    // $date = strtotime($valor[0]->primera_fecha);
+                    $valor=$this->nota->getDateFenofase2($i, $buscar_anio,$especie,$categoria,$buscar_sitio,$buscar_comunidad,
+                        $buscar_municipio,$buscar_estado)
+                        ->where("observaciones","!=",0);
 
-                    //return $date;
-                    array_push($aux, ["low" => "Date.parse('{$valor[0]->primera_fecha}')",
-                        "high" =>"Date.parse('{$valor[0]->ultima_fecha}')",
-                        "name" => $valor[0]->resultado
-                    ]);
+                    if($valor->count()>0) {
+                        // $date = strtotime($valor[0]->primera_fecha);
+                        //return $valor;
+                        //return $date;
+                        array_push($aux, ["x" => "Date.parse('{$buscar_anio}-{$i}-1')",
+                            "x2" =>"Date.parse('{$buscar_anio}-{$i}-28')",
+                            "y"=>"$index2",
+                            "partialFill"=> "{$valor[0]->observaciones}"
+
+                        ]);
+                        // return $aux;
+                    }
                 }
-                else
-                    array_push($aux, []);
             }
-            array_push($data,["name"=>"'".$especie."'","data"=>$aux]);
+            array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["enabled"=>"true"]]);
+            break;
         }
-
-
         return view('Graficas.grafica12', compact('categorias',"data","buscar_sitio","sitios","municipios",
-        "buscar_municipio","comunidadades","buscar_comunidad","buscar_estado","estados"));
+            "buscar_municipio","comunidadades","buscar_comunidad","buscar_estado","estados","buscar_anio","especies","anos"));
+
+        /*
+
+                $categorias=$this->nota->getCalendarioEspeciesInfo()->distinct("descrip_fenofase")->select("descrip_fenofase")->pluck("descrip_fenofase");
+                $especies=$this->nota->getCalendarioEspeciesInfo()->select("especies.descripcion")->distinct("especies.descripcion")->orderby("especies.descripcion")->pluck("especies.descripcion");
+
+                $sitios=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+                    ->select('sitios.nombre as sitio')
+                    ->distinct("sitios.nombre as sitio")
+                    ->orderBy('sitio', 'ASC')->get();
+
+                $municipios=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+                    ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+                    ->select('municipios.nombre as municipio')
+                    ->distinct("municipios.nombre as municipio")
+                    ->orderBy('municipio', 'ASC')->get();
+
+                $comunidadades=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+                    ->select('sitios.comunidad as comunidad')
+                    ->distinct("sitios.comunidad as comunidad")
+                    ->orderBy('comunidad', 'ASC')->get();
+
+                $estados=$this->nota->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+                    ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+                    ->join('estados','estados.id_estado','=','municipios.id_estado')
+                    ->select('estados.nombre as estado')
+                    ->distinct("estados.nombre as estado")
+                    ->orderBy('estado', 'ASC')->get();
+
+                $data=array();
+                foreach ($especies as $especie)
+                {
+                    $aux=array();
+
+                    foreach ($categorias as $categoria)
+                    {
+                        $valor=$this->nota->getCalendarioEspeciesInfo()
+                            ->whereDescripFenofase($categoria)->where("especies.descripcion",$especie)
+                            ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
+                            ->where('sitios.comunidad','like','%'.$buscar_comunidad.'%')
+                            ->where('municipios.nombre','like','%'.$buscar_municipio.'%')
+                            ->where('estados.nombre','like','%'.$buscar_estado.'%')->get();
+
+                        if($valor->count()>0) {
+                            // $date = strtotime($valor[0]->primera_fecha);
+
+                            //return $date;
+                            array_push($aux, ["low" => "Date.parse('{$valor[0]->primera_fecha}')",
+                                "high" =>"Date.parse('{$valor[0]->ultima_fecha}')",
+                                "name" => $valor[0]->resultado
+                            ]);
+                        }
+                        else
+                            array_push($aux, []);
+                    }
+                    array_push($data,["name"=>"'".$especie."'","data"=>$aux]);
+                }
+        */
+
 
     }
     public function grafica16(Request $request)
