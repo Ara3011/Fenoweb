@@ -61,10 +61,6 @@ class Nota extends Model
             ->whereYear("notas.fecha",$year)
             ->where("especies.descripcion",$especie)
             ->where("fenofases.descrip_fenofase",$fenofase)
-            ->where('sitios.nombre','like','%'.$buscar_sitio.'%')
-            ->where('sitios.comunidad','like','%'.$buscar_comunidad.'%')
-            ->where('municipios.nombre','like','%'.$buscar_municipio.'%')
-            ->where('estados.nombre','like','%'.$buscar_estado.'%')
             // ->groupBy("especies.descripcion","fenofases.descrip_fenofase","notas.fecha")
             ->orderBy("especie","asc")
             ->orderBy("fenofase","asc")->get();
