@@ -499,7 +499,7 @@ class Grafica1Controller extends Controller
                 }
             }
             array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["format"=>"'{point.partialFill}'"]]);
-            break;
+//            break;
         }
         return view('Graficas.grafica12', compact('categorias',"data","buscar_sitio","sitios","municipios",
             "buscar_municipio","comunidadades","buscar_comunidad","buscar_estado","estados","buscar_anio","especies","anos"));
