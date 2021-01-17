@@ -43,6 +43,9 @@
                 column: {
                     borderRadius:10
                 },
+                animation: {
+                    duration: 3000
+                },
                 series: {
                     borderWidth: 0,
                     dataLabels: {

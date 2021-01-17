@@ -201,8 +201,8 @@ class Grafica1Controller extends Controller
                     }
                 }
             }
-            array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["enabled"=>"true"]]);
-            break;
+            array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["format"=>"'{point.partialFill}'"]]);
+            //break;
         }
         //return $data;
         return view('Graficas.grafica5', compact('categorias',"data","buscar_anio","anos"));
@@ -498,7 +498,7 @@ class Grafica1Controller extends Controller
                     }
                 }
             }
-            array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["enabled"=>"true"]]);
+            array_push($data,["name"=>"'".$especie."'","data"=>$aux,"dataLabels"=>["format"=>"'{point.partialFill}'"]]);
             break;
         }
         return view('Graficas.grafica12', compact('categorias',"data","buscar_sitio","sitios","municipios",

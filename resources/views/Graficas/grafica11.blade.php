@@ -50,6 +50,9 @@
             },
 
             plotOptions: {
+                animation: {
+                    duration: 3000
+                },
                 pie: {
                     allowPointSelect: true,
                     cursor: 'pointer',

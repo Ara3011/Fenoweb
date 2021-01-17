@@ -143,30 +143,8 @@
                 }
             });
 
-            /**
-             * Max x2 should be considered in xAxis extremes
-             */
-            H.wrap(H.Axis.prototype, 'getSeriesExtremes', function (proceed) {
-                var axis = this,
-                    dataMax,
-                    modMax;
 
-                proceed.call(this);
-                if (this.isXAxis) {
-                    dataMax = pick(axis.dataMax, Number.MIN_VALUE);
-                    each(this.series, function (series) {
-                        each(series.x2Data || [], function (val) {
-                            if (val > dataMax) {
-                                dataMax = val;
-                                modMax = true;
-                            }
-                        });
-                    });
-                    if (modMax) {
-                        axis.dataMax = dataMax;
-                    }
-                }
-            });
+
         }(Highcharts));
         Highcharts.chart('container_chart', {
             chart: {
@@ -182,14 +160,21 @@
 
                 }
             },
-
-
             plotOptions: {
                 series: {
                     label: {
                         connectorAllowed: false
-                    }
-                }
+                    },
+                    animation: {
+                        duration: 3000
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        inside: true
+                    },
+                },
+
+
             },
             accessibility: {
                 point: {
@@ -216,7 +201,60 @@
             series: {!! str_replace('"',"",json_encode($data)) !!}
 
         });
+
         {{--
+        Highcharts.chart('container_prueba_mamalona', {
+  chart: {
+    type: 'xrange'
+  },
+  title: {
+    text: 'Highcharts X-range'
+  },
+   plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                inside: true
+            }
+        }
+    },
+  accessibility: {
+    point: {
+      descriptionFormatter: function (point) {
+        var ix = point.index + 1,
+          category = point.yCategory,
+          from = new Date(point.x),
+          to = new Date(point.x2);
+        return ix + '. ' + category + ', ' + from.toDateString() +
+          ' to ' + to.toDateString() + '.';
+      }
+    }
+  },
+  xAxis: {
+    type: 'datetime'
+  },
+  yAxis: {
+    title: {
+      text: ''
+    },
+    categories: ['Prototyping', 'Development', 'Testing'],
+    reversed: true
+  },
+  series: [{  dataLabels: [{
+            align: 'center',
+            format: '{point.partialFill}'
+        }],
+            /*series:[{  dataLabels: [{
+                    align: 'center',
+                    format: '{point.partialFill}'
+                }], [{name:'acuminata Kunth',data:[{x:Date.parse('2013-6-1'),x2:Date.parse('2013-6-28'),y:4,partialFill:5},*/
+
+    name:'acuminata Kunth',data:[{x:Date.parse('2013-6-1'),x2:Date.parse('2013-6-28'),y:0,partialFill:5},{x:Date.parse('2013-6-10'),x2:Date.parse('2013-6-28'),y:1,partialFill:1}, ],
+  }]
+
+});
+
+
         Highcharts.chart('container_chart', {
 
             chart: {

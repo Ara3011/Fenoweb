@@ -47,6 +47,9 @@
                 x: -100
             },
             plotOptions: {
+                animation: {
+                    duration: 3000
+                },
                 series: {
                     dataLabels: {
                         enabled: true,

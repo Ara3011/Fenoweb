@@ -67,7 +67,9 @@
                 enabled: false
             },
             plotOptions: {
-
+                animation: {
+                    duration: 3000
+                },
                 column: {
                     borderRadius:10
                 },

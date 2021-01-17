@@ -74,6 +74,9 @@
             },
 
             plotOptions: {
+                animation: {
+                    duration: 3000
+                },
                 columnrange: {
                     dataLabels: {
                         enabled: true,
