@@ -101,7 +101,7 @@
                                                 {{method_field('DELETE')}}
                                                 <!-- BORRAR -->
                                                     <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle ">
+                                                            class="btn btn-danger rounded-circle " onclick="return confirm('¿Está seguro que desea eliminar?');">
                                                         <i class="material-icons"
                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>

@@ -13,7 +13,7 @@
             <div class="" >
                 <div class="bg-greencard">
                     <div class="card-header text-blanco" >
-                        <h4 class="text-center text-blanco">Notas</h4>
+                        <h4 class="text-center text-blanco">Mis notas</h4>
                     </div>
                 </div>
                 <div class="">
@@ -33,7 +33,7 @@
                         </form>
                     </div>
                     <div>
-                       <h3 class="text-center">Notas de:   {{ Auth::user()->name }}</h3>
+                       <h3 class="text-center">Notas de:   {{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h3>
                     </div>
 
                     <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
@@ -145,12 +145,11 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Hallazgo
                                         </th>
-                                        @if(Auth::user()->tipo_usuario == 1)
+
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
                                                 aria-label="Rendering engine: activate to sort column descending">Acciones
                                             </th>
-                                    @endif
                                     </thead>
                                     <tbody>
                                     @foreach($notas as $nota)
@@ -178,16 +177,15 @@
                                             <td>{{$nota->temperatura_maxima}}</td>
                                             <td>{{$nota->nota}}</td>
                                             <td>
-                                                @if(Auth::user()->tipo_usuario == 1)
                                                     <form method="post"
                                                           action="{{url('/notas/'.$nota->id_nota)}}">
                                                         <!-- Actualizar -->
                                                         {{csrf_field()}}
                                                         <button type="button" rel="tooltip"
-                                                                class="btn btn-success rounded-circle ">
+                                                                class="btn btn-success btn-limon text-blanco ">
                                                             <a class="text-light"
                                                                href="{{url('/notas/'.$nota->id_nota.'/edit')}}"><i
-                                                                    class="material-icons ">edit</i></a>
+                                                                    class="material-icons text-blanco ">edit</i></a>
                                                         </button>
 
 
@@ -195,12 +193,11 @@
                                                     {{method_field('DELETE')}}
                                                     <!-- BORRAR -->
                                                         <button type="submit" rel="tooltip"
-                                                                class="btn btn-danger rounded-circle ">
+                                                                class="btn btn-danger rounded-circle " onclick="return confirm('¿Está seguro que desea eliminar?');">
                                                             <i class="material-icons"
                                                                onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                         </button>
                                                     </form>
-                                                @endif
                                             </td>
 
                                         </tr>
@@ -216,7 +213,7 @@
             </div>
         </div>
     </div>
-    <div class="">
+    <div class="text-center">
         <span >
             {{ $notas->links('pagination::bootstrap-4') }}
         </span>

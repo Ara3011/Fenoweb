@@ -2,24 +2,15 @@
 @section('content')
 
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
     <form action="/climas" method="POST" >
         @csrf
 
-        <div class="row">
+        <div class="row card-bodyy">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nombre del clima:</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="Clima">
+                   <center> <strong><a class="text-danger">*</a>Nombre del clima:</strong>
+                    <input type="text" name="descripcion" class="form-catalogo" placeholder="Clima"></center>
                 </div>
             </div>
 
@@ -27,6 +18,8 @@
                 <button type="submit" class="btn btn-success">Crear clima</button>
             </div>
         </div>
-
+        <div>
+            <br>
+        </div>
     </form>
 @endsection

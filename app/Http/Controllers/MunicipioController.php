@@ -14,17 +14,18 @@ class MunicipioController extends Controller
      * @return \Illuminate\Http\Response
      */
     const Paginacion=8;
-    public function index()
+    public function index(Request $request)
     {
-
+        $buscar= $request->input('buscar');
         $datosmunicipio=Municipio::join('estados','estados.id_estado','=','municipios.id_estado')
+            ->where('municipios.nombre','like','%'.$buscar.'%')
             ->selectRaw('municipios.id_municipio as id_municipio')
             ->selectRaw('municipios.nombre as municipio')
             ->selectRaw('estados.id_estado as id_estado')
             ->selectRaw('estados.nombre as estado')
             ->paginate($this::Paginacion);
 
-        return view('Municipios.index', compact('datosmunicipio'));
+        return view('Municipios.index', compact('datosmunicipio','buscar'));
 
     }
 

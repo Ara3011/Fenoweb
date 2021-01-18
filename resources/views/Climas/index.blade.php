@@ -4,31 +4,30 @@
     <div class="container-fluid">
 
         @if(Session::has('Mensaje'))
-            <div class="alert alert-secondary text-center alert-dismissible text-uppercase">
+            <div class="alert bg-gris  text-center alert-dismissible text-uppercase">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
-    @endif
+        @endif
         <div class="col-md-2 mt-3">
 
-            <button class="btn btn-success btn-round" >
+            <button class="btn bg-greencard btn-round" >
                 <a href="{{url('/climas/create')}}">
-                    <i class="material-icons text-light">loupe</i><i class="text-light">Agregar Clima</i>
+                    <i class="material-icons text-blanco">loupe</i><i class="text-blanco">Agregar Clima</i>
                 </a>
             </button>
         </div>
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-success">
-
-                    <h4 class="card-title">Climas</h4>
+                <div class="bg-greencard">
+                    <h4 class="card-header text-blanco">Climas</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-bodyy">
                     <div>
                         <center>
                             <form class="form-group form mt-2">
                                 <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar" class="text-dark"><h4>Buscar: </h4></label>
-                                <input name="buscar" class="form-control form-control-sm ml-3 w-75" type="text"
+                                <label for="buscar" class="text-dark"><h4>Filtro de búsqueda: </h4></label>
+                                <input name="buscar" class="form-catalogo form-control-sm ml-3 w-75" type="text"
                                        placeholder="Buscar Clima"
                                        aria-label="buscar" value="{{$buscar}}">
                             </form>
@@ -37,22 +36,7 @@
 
 
                     <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                       <!--  <center>
-                            <div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="dataTables_length" id="example1_length">
-                                        <label><h4>Número de resultados</h4> <select
-                                                name="example1_length" aria-controls="example1"
-                                                class="custom-select custom-select-sm form-control form-control-sm text-center">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select> </label></div>
-                                </div>
 
-                            </div>
-                        </center>-->
                         <div class="row">
                             <div class="col-sm-12">
                                 <table id="example1" class="table dataTable"
@@ -79,10 +63,10 @@
                                                     <!-- Actualizar -->
                                                     {{csrf_field()}}
                                                     <button type="button" rel="tooltip"
-                                                            class="btn btn-success rounded-circle ">
-                                                        <a class="text-light"
+                                                            class="btn btn-success btn-limon rounded-circle ">
+                                                        <a class="text-blanco"
                                                            href="{{url('/climas/'.$clima->id_clima.'/edit')}}"><i
-                                                                class="material-icons ">edit</i></a>
+                                                                class="material-icons text-blanco ">edit</i></a>
                                                     </button>
 
 
@@ -90,7 +74,7 @@
                                                         {{method_field('DELETE')}}
                                                     <!-- BORRAR -->
                                                     <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle ">
+                                                            class="btn btn-danger rounded-circle " onclick="return confirm('¿Está seguro que desea eliminar?');">
                                                         <i class="material-icons"
                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>
@@ -119,4 +103,5 @@
             </div>
         </div>
     </div>
+    <div><br></div>
 @endsection

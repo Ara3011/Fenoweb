@@ -1,12 +1,13 @@
 @extends('Template.sesion')
+<title>@yield('title', 'NOTAS VISITANTE')</title>
 @section('content')
 
     <div class="container-fluid" >
-      <h4>Si deseas Exportar Notas por favor registrate</h4>
+      <h4 style="width: 1080px">Si deseas exportar notas. Por favor, registrate o inicia sesión</h4>
         <div class="col-md-12" >
 
-            <div class="" >
-                <div class="bg-greencard">
+            <div class="center-block">
+                <div class="bg-greencard center-block" style="width: 1080px">
                     <div class="card-header text-blanco" >
                         <h4 class="text-center text-blanco">Notas</h4>
                     </div>
@@ -14,17 +15,6 @@
 
                 <div class="">
 
-                    <div>
-                        <center>
-                            <form class="form-group form mt-2">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar_observador" class="text-dark"><h4>Buscar: </h4></label>
-                                <input name="buscar_observador" class="form-control form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar observador"
-                                       aria-label="buscar_observador" >
-                            </form>
-                        </center>
-                    </div>
 
                     <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
                     height:480px;
@@ -44,10 +34,6 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Día
                                             Juliano
-                                        </th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Observador
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -141,7 +127,6 @@
                                         <tr role="row" class="odd">
                                             <td>{{$nota->fecha}}</td>
                                             <td>{{$nota->dia_juliano}}</td>
-                                            <td>{{$nota->observador}}</td>
                                             <td>{{$nota->nombre_comun}}</td>
                                             <td>{{$nota->familia}}</td>
                                             <td>{{$nota->genero}}</td>

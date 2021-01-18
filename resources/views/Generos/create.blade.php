@@ -12,14 +12,14 @@
             </ul>
         </div>
     @endif
-    <form action="/generos" method="POST" >
+    <form action="/generos" method="POST">
         @csrf
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12" >
+        <div class="row card-bodyy">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nombre de género:</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="Género">
+                    <center><strong><a class="text-danger">*</a>Nombre de género:</strong>
+                        <input type="text" name="descripcion" class="form-catalogo" placeholder="Género"></center>
                 </div>
             </div>
 
@@ -27,6 +27,6 @@
                 <button type="submit" class="btn btn-success">Crear género</button>
             </div>
         </div>
-
     </form>
+    <br>
 @endsection

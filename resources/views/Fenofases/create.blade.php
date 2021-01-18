@@ -15,11 +15,11 @@
     <form action="/fenofases" method="POST" >
         @csrf
 
-        <div class="row">
+        <div class="row card-bodyy">
             <div class="col-xs-12 col-sm-12 col-md-12" >
                 <div class="form-group">
-                    <strong>Nombre de fenofase:</strong>
-                    <input type="text" name="descrip_fenofase" class="form-control" placeholder="Fenofase">
+                  <center>  <strong><a class="text-danger">*</a>Nombre de fenofase:</strong>
+                    <input type="text" name="descrip_fenofase" class="form-catalogo" placeholder="Fenofase"></center>
                 </div>
             </div>
 
@@ -27,6 +27,6 @@
                 <button type="submit" class="btn btn-success">Crear fenofase</button>
             </div>
         </div>
-
     </form>
+    <br>
 @endsection

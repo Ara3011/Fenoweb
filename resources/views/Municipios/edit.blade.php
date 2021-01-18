@@ -5,18 +5,18 @@
         {{csrf_field()}}
         {{method_field('PATCH')}}
 
-        <div class="row">
+        <div class="row card-bodyy">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group card card-body">
-                    <strong>Nombre del municipio:</strong><br>
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{$datosmunicipios->nombre}}"><br>
+                    <center><strong>Nombre del municipio:</strong><br>
+                    <input type="text" name="nombre" class="form-catalogo" placeholder="Nombre" value="{{$datosmunicipios->nombre}}"><br>
                     <strong>Estado:</strong><br>
                     <select name="id_estado" id="id_estado">
                         <option value="" disabled selected>Seleccione un estado</option>
                         @foreach($estados as $estado)
                             <option value={{$estado->id}}>{{$estado->estado}}</option>
                         @endforeach
-                    </select>
+                    </select></center>
                 </div>
             </div>
 
@@ -24,8 +24,8 @@
                 <button type="submit" class="btn btn-success" value="Editar">Actualizar municipio</button>
             </div>
         </div>
-
     </form>
+    <br>
 @endsection
 @section('scripts')
     <script type="text/javascript">

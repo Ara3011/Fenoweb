@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Red Nacional de Fenología</title>
-    <!-- ESTILOS BOOTSTARP Y LETRAS-->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <title>@yield('title', 'RED NACIONAL DE FENOLOGÍA')</title>
+
     <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons') }}" />
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" />
+    <!-- MIS ESTILOS, HEADER -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <!--FUENTE DE LETRAS -->
     <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Oswald&display=swap') }}"/>
     <!-- ESTILOS DE LA PLANTILLA-->
@@ -17,7 +18,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('Plantilla/css/jquery.bxslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('plantilla/css/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('Plantilla/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Plantilla/css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('Plantilla/css/style.css')}}">
 </head>
 <body>
@@ -186,8 +186,11 @@
 <script src="{{asset('Plantilla/js/jquery.min.js')}}"></script>
 <script src="{{asset('Plantilla/js/jquery.easing.min.js')}}"></script>
 <script src="{{asset('Plantilla/js/bootstrap.min.js')}}"></script>
+
+
+<!--Para carrousel-->
 <script src="{{asset('Plantilla/js/wow.js')}}"></script>
 <script src="{{asset('Plantilla/js/jquery.bxslider.min.js')}}"></script>
 <script src="{{asset('Plantilla/js/custom.js')}}"></script>
-<script src="{{asset('Plantilla/contactform/contactform.js')}}"></script>
+
 </html>

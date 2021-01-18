@@ -5,11 +5,11 @@
         {{csrf_field()}}
         {{method_field('PATCH')}}
 
-        <div class="row">
+        <div class="row card-bodyy">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nombre del clima:</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="Clima" value="{{$clima->descripcion}}">
+                   <center> <strong>Nombre del clima:</strong>
+                    <input type="text" name="descripcion" class="form-catalogo" placeholder="Clima" value="{{$clima->descripcion}}"></center>
                 </div>
             </div>
 
@@ -17,7 +17,7 @@
                 <button type="submit" class="btn btn-success" value="Editar">Actualizar clima</button>
             </div>
         </div>
-
+<div><br></div>
     </form>
 @endsection
 
