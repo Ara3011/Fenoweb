@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'RED NACIONAL DE FENOLOGÍA')</title>
 
-    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons') }}" />
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" />
+    <link rel="stylesheet"
+          href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons') }}"/>
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}"/>
     <!-- MIS ESTILOS, HEADER -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
     <!--FUENTE DE LETRAS -->
     <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Oswald&display=swap') }}"/>
     <!-- ESTILOS DE LA PLANTILLA-->
@@ -36,10 +37,8 @@
                 <ul class="nav navbar-nav navbar-right">
 
 
-
                     @if (Route::has('login'))
                         @auth
-                            <li class=""><a href="{{url('#')}}">Mis insignias</a></li>
                             <li class=""><a href="{{url('/notas/create')}}">Formulario</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -48,7 +47,7 @@
                                 </a>
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                                    <a class="nav-linkk"  href="{{url('/notas')}}">Notas Generales</a>
+                                    <a class="nav-linkk" href="{{url('/notas')}}">Notas Generales</a>
                                     <a class="nav-linkk  " href="{{url('/notas/mis_notas')}}">Mis Notas</a>
 
                                 </div>
@@ -74,8 +73,23 @@
                                 </li>
                                 <li class="nav-item"><a class="nav-link text-naranja " href="{{url('/graficas')}}">Gráficas</a>
                                 </li>
-                                <li class=""><a href="{{url('/usuarios')}}">Usuarios <i class="fas fa-users-cog"> </i></a></li>
                             @endif
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Consulta de usuario <i class="fas fa-caret-down"> </i>
+                                </a>
+
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                                    <a class="nav-linkk  " href="{{url('/usuarios/show')}}">Mi perfil <i class="fas fa-user-edit"></i></a>
+                                    <a class="nav-linkk  " href="{{url('#')}}">Mis insignias <i class="fas fa-star"></i></a>
+                                    @if(Auth::user()->tipo_usuario == 1)
+                                    <a class="nav-linkk  " href="{{url('/usuarios')}}">Usuarios <i
+                                            class="fas fa-users-cog"> </i></a>
+                                        @endif
+                                </div>
+                            </li>
                             <li class="nav-item dropdown">
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -91,10 +105,12 @@
 
                         @else
                             <li class=""><a href="{{url('/Notas_visitante')}}">Notas</a></li>
-                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión <i class="fas fa-sign-in-alt"> </i></a></li>
+                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión <i
+                                        class="fas fa-sign-in-alt"> </i></a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="fin">Registrarme <i class="fas fa-user-plus"> </i></a></li>
+                                <li><a href="{{ route('register') }}" class="fin">Registrarme <i
+                                            class="fas fa-user-plus"> </i></a></li>
                             @endif
                         @endif
 
@@ -106,53 +122,54 @@
     <br><br><br><br>
 
 </header>
-    <section>
-        <section id="testimonial" class="wow fadeInUp delay-05s">
-            <div class="bg-verde">
-                <div class="container section-padding ">
+<section>
+    <section id="testimonial" class="wow fadeInUp delay-05s">
+        <div class="bg-verde">
+            <div class="container section-padding ">
 
-                    <div class="row">
-                        <div class="testimonial-item">
-                            <ul class="bxslider">
-                                <li>
-                                    <blockquote>
-                                        <br><br><br>
-                                        <h2>¡BIENVENIDOS!</h2>
-                                        <p>Consolidación del monitoreo fenológico comunitario. <br>
-                                            Hemos conformado la primera red de observación fenológica, <br>
-                                            única en su tipo en México y esperamos continuar extendiendo <br>
-                                            este esfuerzo para llegar a más comunidades de México </p>
-                                    </blockquote>
-                                    <small>Shaun Paul, Client</small>
-                                </li>
-                                <li>
-                                    <blockquote>
-                                        <img src="plantilla/img/thumb.png" class="img-responsive">
-                                        <p>So here is us, on the raggedy edge. Don't push me, and I won't push you. </p>
-                                    </blockquote>
-                                    <small>Marry Smith, Client</small>
-                                </li>
-                                <li>
-                                    <blockquote>
-                                        <img src="plantilla/img/thumb.png" class="img-responsive">
-                                        <p>Come a day there won't be room for naughty men like us to slip about at all. This job goes south, there well may not be another.</p>
-                                    </blockquote>
-                                    <small>Vivek Singh, Client</small>
-                                </li>
-                                <li>
-                                    <blockquote>
-                                        <img src="plantilla/img/thumb.png" class="img-responsive">
-                                        <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
-                                    </blockquote>
-                                    <small>John Doe, Client</small>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="row">
+                    <div class="testimonial-item">
+                        <ul class="bxslider">
+                            <li>
+                                <blockquote>
+                                    <br><br><br>
+                                    <h2>¡BIENVENIDOS!</h2>
+                                    <p>Consolidación del monitoreo fenológico comunitario. <br>
+                                        Hemos conformado la primera red de observación fenológica, <br>
+                                        única en su tipo en México y esperamos continuar extendiendo <br>
+                                        este esfuerzo para llegar a más comunidades de México </p>
+                                </blockquote>
+                                <small>Shaun Paul, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="plantilla/img/thumb.png" class="img-responsive">
+                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you. </p>
+                                </blockquote>
+                                <small>Marry Smith, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="plantilla/img/thumb.png" class="img-responsive">
+                                    <p>Come a day there won't be room for naughty men like us to slip about at all. This
+                                        job goes south, there well may not be another.</p>
+                                </blockquote>
+                                <small>Vivek Singh, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="plantilla/img/thumb.png" class="img-responsive">
+                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
+                                </blockquote>
+                                <small>John Doe, Client</small>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </section>
+</section>
 <section>
 
     <div class="bg-color">
@@ -176,7 +193,7 @@
 </section>
 <footer class=" card card-footer">
     <h6 class="text-center footer">
-        <strong>Copyright  © 2020 Red Nacional de Fenología</strong>
+        <strong>Copyright © 2020 Red Nacional de Fenología</strong>
         All rights reserved.
     </h6>
 </footer>

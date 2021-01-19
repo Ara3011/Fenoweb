@@ -35,7 +35,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{{url('/')}}">Inicio</a></li>
 
-                    <li class=""><a href="{{url('#')}}">Mis insignias</a></li>
                     <li class=""><a href="{{url('/notas/create')}}">Formulario</a></li>
 
 
@@ -97,6 +96,8 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Cerrar Sesión') }} <i class="fas fa-sign-out-alt"> </i>
                                 </a>
+                                <a class="nav-linkk " href="{{url('/usuarios/show')}}">Mi perfil <i class="fas fa-user-edit"></i></a>
+                                <a class="nav-linkk " href="{{url('/usuarios/show')}}">Mis insignias <i class="fas fa-star"></i></a>
                                 @if(Auth::user()->tipo_usuario == 1)
                                     <a class="nav-linkk " href="{{url('/usuarios')}}">Usuarios <i class="fas fa-users-cog"> </i></a>
                                 @endif

@@ -63,9 +63,22 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $rol=User::
+        selectRaw('users.tipo_usuario as rol')
+            ->get();
+
+        $usuarios=User::selectRaw('users.id as id_usuario')
+            ->where('id','=',Auth::user()->id)
+            ->selectRaw('users.name as nombre')
+            ->selectRaw('users.ap as ap')
+            ->selectRaw('users.am as am')
+            ->selectRaw('users.email as correo')
+            ->distinct('users.email')
+            ->paginate($this::Paginacion);
+
+        return view('Usuarios.mi_perfil', compact('usuarios','rol'));
     }
 
     /**
@@ -76,7 +89,11 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datosusuario= User::findOrFail($id);
+
+
+        return view('Usuarios.edit ', compact('datosusuario'));
+
     }
 
     /**
@@ -88,7 +105,17 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datosusuario=request()->except(['_token','_method']);
+        User::where('id','=',$id)->update($datosusuario);
+
+        if(Auth::user()->tipo_usuario == 1) {
+            return redirect('usuarios')
+                ->with('Mensaje', 'Usuario Actualizado Con éxito');
+        }
+        else{
+            return redirect('usuarios/show')
+                ->with('Mensaje', 'Datos Actualizados Con éxito');
+        }
     }
 
     /**

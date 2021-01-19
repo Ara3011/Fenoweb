@@ -12,21 +12,9 @@
             <div class="card">
                 <div class="bg-greencard">
 
-                    <h4 class="card-header text-blanco">Usuarios</h4>
+                    <h4 class="card-header text-blanco text-center">Mi perfil: <br> {{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h4>
                 </div>
                 <div class="card-bodyy">
-                    <div>
-                        <center>
-                            <form class="form-group form mt-2">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <label for="buscar_usuario" class="text-dark"><h4>Buscar: </h4></label>
-                                <input name="buscar_usuario" class="form-catalogo form-control-sm ml-3 w-75" type="text"
-                                       placeholder="Buscar Usuario"
-                                       aria-label="buscar_usuario">
-                            </form>
-                        </center>
-                    </div>
-
 
                     <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                         <div class="row">
@@ -55,12 +43,9 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Rol
+                                            aria-label="Rendering engine: activate to sort column descending">Actualizar mis datos
                                         </th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Acciones
-                                        </th>
+
                                     </thead>
                                     <tbody>
                                     @foreach($usuarios as $usuario)
@@ -69,7 +54,6 @@
                                             <td>{{$usuario->ap}}</td>
                                             <td>{{$usuario->am}}</td>
                                             <td>{{$usuario->correo}}</td>
-                                            <td>{{$usuario->rol}}</td>
                                             <td>
                                                 <form method="post"
                                                       action="{{url('/usuarios/'.$usuario->id_usuario)}}">
@@ -80,17 +64,6 @@
                                                         <a class="text-light"
                                                            href="{{url('/usuarios/'.$usuario->id_usuario.'/edit')}}"><i
                                                                 class="material-icons text-blanco ">edit</i></a>
-                                                    </button>
-
-
-                                                {{csrf_field()}}
-                                                {{method_field('DELETE')}}
-                                                <!-- BORRAR -->
-                                                    <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle "
-                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">
-                                                        <i class="material-icons"
-                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>
                                                 </form>
                                             </td>
