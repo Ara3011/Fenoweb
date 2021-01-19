@@ -20,7 +20,7 @@
                     <div class="card">
                         <div class="card-body">
                             <figure class="highcharts-figure">
-                                <div id="container_chart" style="height: 700px; width: 1050px"></div>
+                                <div id="container_chart" style="height: 500px; width: 800px"></div>
                             </figure>
                         </div>
                     </div>

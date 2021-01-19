@@ -91,4 +91,26 @@ class Nota extends Model
             ->orderBy("especie","asc")
             ->orderBy("fenofase","asc")->get();
     }
+    public function getDateFenofase3($month, $year,$especie,$fenofase,$buscar_especie)
+    {
+        return Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
+            ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
+            ->join('subespecies','subespecies.id_subespecie','=','individuos.id_subespecie')
+            ->join('especies','especies.id_especie','=','subespecies.id_especie')
+            ->join('sitios','sitios.id_sitio','=','notas.id_sitio')
+            ->join('municipios','municipios.id_municipio','=','sitios.id_municipio')
+            ->join('estados','estados.id_estado','=','municipios.id_estado')
+            ->select("especies.descripcion as especie","fenofases.descrip_fenofase as fenofase")
+            ->selectRaw("count(*) as observaciones")
+            ->selectRaw("min(notas.fecha) as primer_fecha")
+            ->selectRaw("max(notas.fecha) as ultima_fecha")
+            ->whereMonth('notas.fecha',$month)
+            ->whereYear("notas.fecha",$year)
+            ->where("especies.descripcion",$especie)
+            ->where("fenofases.descrip_fenofase",$fenofase)
+            ->where('especies.descripcion','like','%'.$buscar_especie.'%')
+            // ->groupBy("especies.descripcion","fenofases.descrip_fenofase","notas.fecha")
+            ->orderBy("especie","asc")
+            ->orderBy("fenofase","asc")->get();
+    }
 }
