@@ -676,29 +676,42 @@ class Grafica1Controller extends Controller
 
             foreach ($especies as $index2=>$especie)
             {
-                for($i=1;$i<=12;$i++)
-                {
+                 if($especie==$buscar_especie)
+                 {
+                     for($i=1;$i<=12;$i++)
+                     {
 
-                    $valor=$this->nota->getDateFenofase3($i, $buscar_anio,$especie,$categoria,$buscar_especie)
-                        ->where("observaciones","!=",0);
+                         $valor=$this->nota->getDateFenofase3($i, $buscar_anio,$categoria,$buscar_especie)
+                             ->where("observaciones","!=",0);
 
-                    if($valor->count()>0) {
-                        // $date = strtotime($valor[0]->primera_fecha);
-                        //return $valor;
-                        //return $date;
-                        array_push($aux, ["x" => "Date.parse('{$buscar_anio}-{$i}-1')",
-                            "x2" =>"Date.parse('{$buscar_anio}-{$i}-28')",
-                            "y"=>"$index2",
-                            "partialFill"=> "{$valor[0]->observaciones}"
+                         if($valor->count()>0) {
+                             // $date = strtotime($valor[0]->primera_fecha);
+                             //return $valor;
+                             //return $date;
+                             array_push($aux, ["x" => "Date.parse('{$buscar_anio}-{$i}-1')",
+                                 "x2" =>"Date.parse('{$buscar_anio}-{$i}-28')",
+                                 "y"=>"$index2",
+                                 "partialFill"=> "{$valor[0]->observaciones}"
 
-                        ]);
-                        // return $aux;
-                    }
-                }
+                             ]);
+                             // return $aux;
+                         }
+                     }
+                 }
+
+
+
             }
-            array_push($data,["name"=>"'".$categoria."'","data"=>$aux,"dataLabels"=>["format"=>"'{point.partialFill}'"]]);
+            //dd(count($aux));
+            if(count($aux)>0)
+            {
+                array_push($data,["name"=>"'".$categoria."'","data"=>$aux,"dataLabels"=>["format"=>"'{point.partialFill}'"]]);
+
+            }
+
             //break;
         }
+        //return $data;
         return view('Graficas.grafica16',compact("categorias","data","buscar_especie",
         "esp","buscar_anio","anos","especies"));
 

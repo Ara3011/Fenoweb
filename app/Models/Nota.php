@@ -91,7 +91,7 @@ class Nota extends Model
             ->orderBy("especie","asc")
             ->orderBy("fenofase","asc")->get();
     }
-    public function getDateFenofase3($month, $year,$especie,$fenofase,$buscar_especie)
+    public function getDateFenofase3($month, $year,$fenofase,$buscar_especie)
     {
         return Nota::join('fenofases','fenofases.id_fenofase','=','notas.id_fenofase')
             ->join('individuos','individuos.id_individuo','=','notas.id_individuo')
@@ -106,7 +106,7 @@ class Nota extends Model
             ->selectRaw("max(notas.fecha) as ultima_fecha")
             ->whereMonth('notas.fecha',$month)
             ->whereYear("notas.fecha",$year)
-            ->where("especies.descripcion",$especie)
+            //->where("especies.descripcion",$especie)
             ->where("fenofases.descrip_fenofase",$fenofase)
             ->where('especies.descripcion','like','%'.$buscar_especie.'%')
             // ->groupBy("especies.descripcion","fenofases.descrip_fenofase","notas.fecha")

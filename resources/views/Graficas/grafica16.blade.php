@@ -200,7 +200,7 @@
                 title: {
                     text: ''
                 },
-                categories:  {!! json_encode($especies) !!},
+                categories:  [{!! json_encode($buscar_especie) !!}],
                 reversed: true
             },
             series: {!! str_replace('"',"",json_encode($data)) !!}
