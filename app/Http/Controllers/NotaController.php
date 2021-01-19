@@ -290,11 +290,6 @@ class NotaController extends Controller
             ->selectRaw('escalas_bbch.descripcion as escala')
             ->distinct('escalas_bbch.descripcion')
             ->get();
-        $observadores=Observador::selectRaw('users.id as id_observador')
-            ->selectRaw('users.name as nombre')
-            ->where('users.id',3)
-            ->distinct('users.name')
-            ->get();
         $sitios=Sitio::selectRaw('sitios.id_sitio as id_sitio')
             ->selectRaw('sitios.nombre as sitio')
             ->distinct('sitios.nombre')
@@ -314,7 +309,7 @@ class NotaController extends Controller
         $nombre_especies=($nombre_especies);
 
         $datosnotas= Nota::findOrFail($id_nota);
-        return view('notas.edit ', compact('datosnotas','observadores','fenofases','sitios'
+        return view('notas.edit ', compact('datosnotas','fenofases','sitios'
             ,'familias','generos','especies','escalas','climas','nombre_especies'));
     }
 
@@ -327,46 +322,6 @@ class NotaController extends Controller
      */
     public function update(Request $request, $id_nota)
     {
-        $subespecies = new Subespecie();       //NUEVO MODELO
-        $subespecies->descripcion=$request->descripcion;
-        $subespecies->id_especie=$request->id_especie;
-        $subespecies->save();
-        $id_subespecies= $subespecies->id_subespecie;   //ULTIMO ID DE INSERCIÓN
-
-        $individuos= new Individuo();
-        $individuos->nombre_comun=$request->nombre_comun;
-        $individuos->uso=$request->uso;
-        $individuos->id_genero=$request->id_genero;
-        $individuos->id_subespecie=$id_subespecies;
-        $individuos->id_familia=$request->id_familia;
-        $individuos->id_bbch=$request->id_bbch;
-        $individuos->save();
-        $id_individuos= $individuos->id_individuo;
-
-        $fecha=$request->fecha;    //SE EXTRAÉ LA FECHA INSERTADA
-        $date=Carbon::create($fecha); //OBTIENE LA VARIABLE FECHA INSERTADA
-        $year=$date->format("Y");
-        $initialDate=Carbon::create($year,1,1);
-        $julianDate=$initialDate->diffInDays($date)+1;
-        $fechajuliana= $year.$julianDate;
-
-        $notas = new Nota();
-        $notas->fecha=$request->fecha;
-        $notas->dia_juliano=$fechajuliana;
-        $notas->id_observador='3';     //SE ASIGNÁ UN ID ESPECIFICO PERO SE DEBE MODIFICAR PARA MOSTARR EL USUARIO ACTIVO
-        $notas->id_individuo=$id_individuos;
-        $notas->id_sitio=$request->id_sitio;
-        $notas->intensidad_fenofase=$request->intensidad_fenofase;
-        $notas->id_fenofase=$request->id_fenofase;
-        $notas->precipitacion=$request->precipitacion;
-        $notas->id_clima=$request->id_clima;
-        $notas->temperatura_minima=$request->temperatura_minima;
-        $notas->temperatura_maxima=$request->temperatura_maxima;
-        $notas->hallazgos=$request->hallazgos;
-        $notas->save();
-        $id_notas=$notas->id_nota;
-
-        $datosnotas= Nota::findOrFail($id_nota);
 
         return redirect()->route('notas.index')
             ->with('Mensaje','Nota Actualizada Con éxito');
