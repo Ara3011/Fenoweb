@@ -51,7 +51,7 @@
                                             <td></td>
                                             <td></td>
                                             <td class="text-center">Fecha: {{$fecha->fecha}} <br>
-                                                <span class="text-danger">(Cada 6 registros obtendrás una insignia)</span></td>
+                                                <span class="text-naranja">(Cada 6 registros obtendrás una insignia)</span></td>
                                             <td></td>
                                             <td></td>
                                         </tr>

@@ -1,10 +1,7 @@
 @extends('Template.menugraf')
 @section('contenido')
-    <div class="col-md-12 " style="padding-top: 65px;padding-right:0px ">
+    <div class="col-md-12 ">
                 <h1 class="text-center"><strong><u>Datos de observación</u></strong></h1>
-
-
-
                 <p class=" text-muted pt-4 " style="padding-left: 90px">
                     Se le invita a utilizar el Portal de observación de fenología para descargar y/o visualizar
                     conjuntos de datos de observación de la Base de

@@ -24,6 +24,9 @@ use App\Http\Controllers\NotaController;
 */
 Route::resource('Notas_visitante', \App\Http\Controllers\VisitanteController::class);
 
+Route::get('men', function () {
+    return view('Template.headfoot');
+});
 Route::get('head', function () {
     return view('Template.headerf');
 });

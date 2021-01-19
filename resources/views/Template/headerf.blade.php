@@ -121,6 +121,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="container">
+                    @if(Session::has('Mensaje'))
+                        <div class="alert bg-gris  text-center alert-dismissible text-uppercase">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
+                    @endif
                     <br><br>
                     @yield('content')
                 </div>

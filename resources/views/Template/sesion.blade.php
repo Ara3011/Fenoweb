@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Red Nacional de Fenología</title>
     <!-- ESTILOS MIOS E ICONOS-->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}"/>
     <!--FUENTE DE LETRAS -->
-    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons') }}" />
-    <link href = "{{asset('https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css')}}"
-          rel = "stylesheet">
+    <link rel="stylesheet"
+          href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons') }}"/>
+    <link href="{{asset('https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css')}}"
+          rel="stylesheet">
     <!-- ESTILOS DE HEADER-->
     <link rel="stylesheet" type="text/css"
           href="{{asset ('https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600')}}">
@@ -51,10 +52,12 @@
                                 </form>
                             </li>
                         @else
-                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión <i class="fas fa-sign-in-alt"> </i></a></li>
+                            <li><a href="{{ route('login') }}" class="fin">Iniciar Sesión <i
+                                        class="fas fa-sign-in-alt"> </i></a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="fin">Registrarme <i class="fas fa-user-plus"> </i></a></li>
+                                <li><a href="{{ route('register') }}" class="fin">Registrarme <i
+                                            class="fas fa-user-plus"> </i></a></li>
                             @endif
                         @endif
 
@@ -65,24 +68,22 @@
     </nav>
     <br><br><br><br><br><br>
 </header>
-<center><section class=" justify-content-center h-100">
+<center>
+    <section class=" justify-content-center h-100">
 
 
-
-                        @yield('content')
-
+        @yield('content')
 
 
-
-    <br>
-
+        <br>
 
 
-</section></center>
+    </section>
+</center>
 
 <footer class=" card card-footer">
     <h6 class="text-center footer">
-        <strong>Copyright  © 2020 Red Nacional de Fenología</strong>
+        <strong>Copyright © 2020 Red Nacional de Fenología</strong>
         All rights reserved.
     </h6>
 </footer>
@@ -91,8 +92,6 @@
 <script src="{{asset('Plantilla/js/jquery.min.js')}}"></script>
 
 <script src="{{asset('Plantilla/js/bootstrap.min.js')}}"></script>
-
-
 
 
 </html>
