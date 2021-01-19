@@ -57,6 +57,7 @@ Route::group(['middleware'=>['auth']],function () {
     Route::resource('individuos', \App\Http\Controllers\IndividuoController::class);
     Route::resource('sitios', \App\Http\Controllers\SitioController::class);
     Route::resource('usuarios', \App\Http\Controllers\UsuarioController::class);
+    Route::resource('insignias', \App\Http\Controllers\InsigniaController::class);
     Route::resource('notas', NotaController::class);
 
     Route::get('/show', [App\Http\Controllers\NotaController::class, 'show'])->name('show');

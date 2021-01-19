@@ -83,7 +83,7 @@
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
 
                                     <a class="nav-linkk  " href="{{url('/usuarios/show')}}">Mi perfil <i class="fas fa-user-edit"></i></a>
-                                    <a class="nav-linkk  " href="{{url('#')}}">Mis insignias <i class="fas fa-star"></i></a>
+                                    <a class="nav-linkk  " href="{{url('/insignias')}}">Mis insignias <i class="fas fa-star"></i></a>
                                     @if(Auth::user()->tipo_usuario == 1)
                                     <a class="nav-linkk  " href="{{url('/usuarios')}}">Usuarios <i
                                             class="fas fa-users-cog"> </i></a>

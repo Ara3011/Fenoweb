@@ -29,7 +29,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Red Nacional de<span class="logo-dec"> fenología</span></a>
+
+                <a class="navbar-brand" href="#">Red Nacional de<span class="logo-dec">fenología</span></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -97,7 +98,7 @@
                                     {{ __('Cerrar Sesión') }} <i class="fas fa-sign-out-alt"> </i>
                                 </a>
                                 <a class="nav-linkk " href="{{url('/usuarios/show')}}">Mi perfil <i class="fas fa-user-edit"></i></a>
-                                <a class="nav-linkk " href="{{url('/usuarios/show')}}">Mis insignias <i class="fas fa-star"></i></a>
+                                <a class="nav-linkk " href="{{url('/insignias')}}">Mis insignias <i class="fas fa-star"></i></a>
                                 @if(Auth::user()->tipo_usuario == 1)
                                     <a class="nav-linkk " href="{{url('/usuarios')}}">Usuarios <i class="fas fa-users-cog"> </i></a>
                                 @endif

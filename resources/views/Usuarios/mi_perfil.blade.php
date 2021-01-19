@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="bg-greencard">
 
-                    <h4 class="card-header text-blanco text-center">Mi perfil: <br> {{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h4>
+                    <h4 class="card-header text-blanco text-center">Mi perfil: <br> <h1 class="text-center text-blanco">{{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h1></h4>
                 </div>
                 <div class="card-bodyy">
 

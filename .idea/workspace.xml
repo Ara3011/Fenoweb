@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/mis_notas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/mis_notas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Insignias/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Insignias/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Usuarios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Usuarios/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Usuarios/mi_perfil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Usuarios/mi_perfil.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +248,7 @@
       <workItem from="1610685810296" duration="21865000" />
       <workItem from="1610822593214" duration="4713000" />
       <workItem from="1610827694937" duration="42698000" />
-      <workItem from="1611009111394" duration="6621000" />
+      <workItem from="1611009111394" duration="16165000" />
     </task>
     <servers />
   </component>
