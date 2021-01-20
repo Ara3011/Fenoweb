@@ -690,8 +690,9 @@ class Grafica1Controller extends Controller
                              //return $date;
                              array_push($aux, ["x" => "Date.parse('{$buscar_anio}-{$i}-1')",
                                  "x2" =>"Date.parse('{$buscar_anio}-{$i}-28')",
-                                 "y"=>"$index2",
-                                 "partialFill"=> "{$valor[0]->observaciones}"
+                                 "y"=>0,
+                                 "partialFill"=> "{$valor[0]->observaciones}",
+                                 "description"=>"'{$valor[0]->primer_fecha} / {$valor[0]->ultima_fecha}'",
 
                              ]);
                              // return $aux;
