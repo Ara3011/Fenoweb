@@ -19,4 +19,8 @@ class Individuo extends Model
     {
         return $this->hasMany(Response::class);
     }
+    public function getSubEspecie($id){
+        return Subespecie::findOrFail($id);
+    }
+
 }

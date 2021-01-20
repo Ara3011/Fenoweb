@@ -113,4 +113,7 @@ class Nota extends Model
             ->orderBy("especie","asc")
             ->orderBy("fenofase","asc")->get();
     }
+    public function getIndividuo($id){
+        return Individuo::findOrFail($id);
+    }
 }

@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Red Nacional de Fenología</title>
+    <!-- ESTILOS SELECT2 Y AUTOCOMPLETE-->
+    <link  rel = "stylesheet" href = "{{asset('https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css')}}">
+    <link href="{{asset('https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css')}}"
+          rel="stylesheet"/>
     <!-- MIS ESTILOS Y LOS ICONOS-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}"/>
     <!--ICONOS BOTONES ACTUALIZAR Y ELIMINAR-->
     <link rel="stylesheet"
           href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons') }}"/>
-
-    <link href="{{asset('https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css')}}"
-          rel="stylesheet"/>
 
     <!-- ESTILOS DE LA PLANTILLA-->
     <link rel="stylesheet" type="text/css" href="{{asset('Plantilla/css/bootstrap.min.css')}}">
