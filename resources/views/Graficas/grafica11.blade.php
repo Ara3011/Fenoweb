@@ -9,13 +9,13 @@
                         <select name="buscar_observador" id="buscar_observador" >
                             <option value="" disabled selected>Seleccione un observador</option>
                             @foreach($observadores as $observador)
-                                <option>{{$observador->nombre}}</option>
+                                <option value="{{$observador->nombre}}" {{$observador->nombre==$buscar_observador?"selected":""}}>{{$observador->nombre}}</option>
                             @endforeach
                         </select>
                         <select name="buscar_anio" id="buscar_anio" >
                             <option value="" disabled selected>Seleccione un año</option>
                             @foreach($anios as $anio)
-                                <option >{{$anio->anio}}</option>
+                                <option value="{{$anio->anio}}" {{$anio->anio==$buscar_anio?"selected":""}}>{{$anio->anio}}</option>
                             @endforeach
                         </select>
                         <input type="submit" value="Buscar" id="btn">

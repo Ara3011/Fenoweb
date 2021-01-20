@@ -10,13 +10,13 @@
                             <select name="buscar_especie" id="buscar_especie">
                                 <option  disabled selected>Seleccione una especie</option>
                                 @foreach($especies as $especie)
-                                    <option>{{$especie->especie}}</option>
+                                    <option value="{{$especie->especie}}" {{$especie->especie==$buscar_especie?"selected":""}}>{{$especie->especie}}</option>
                                 @endforeach
                             </select>
                             <select name="buscar_anio" id="buscar_anio" >
                                 <option value="" disabled selected>Seleccione un año</option>
-                                @foreach($anios as $anio)
-                                    <option >{{$anio->anio}}</option>
+                                @foreach($anios as $ano)
+                                    <option value="{{$ano->anio}}" {{$ano->anio==$buscar_anio?"selected":""}}>{{$ano->anio}}</option>
                                 @endforeach
                             </select>
                             <input type="submit" value="Buscar">

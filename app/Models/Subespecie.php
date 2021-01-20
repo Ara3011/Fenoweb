@@ -19,4 +19,7 @@ class Subespecie extends Model
     {
         return $this->hasMany(Response::class);
     }
+    public function getEspecie($id){
+        return Especie::findOrFail($id);
+    }
 }

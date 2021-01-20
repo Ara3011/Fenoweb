@@ -9,31 +9,31 @@
                             <select name="buscar_anio" id="buscar_anio">
                                 <option  disabled selected>Seleccione un año</option>
                                 @foreach($anos as $ano)
-                                    <option>{{$ano->anio}}</option>
+                                    <option value="{{$ano->anio}}" {{$ano->anio==$buscar_anio?"selected":""}}>{{$ano->anio}}</option>
                                 @endforeach
                             </select>
                             <select name="buscar_sitio" id="buscar_sitio">
                                 <option  disabled selected>Seleccione un sitio</option>
                                 @foreach($sitios as $sitio)
-                                    <option>{{$sitio->sitio}}</option>
+                                    <option value="{{$sitio->sitio}}" {{$sitio->sitio==$buscar_sitio?"selected":""}}>{{$sitio->sitio}}</option>
                                 @endforeach
                             </select>
                             <select name="buscar_comunidad" id="buscar_comunidad">
                                 <option  disabled selected>Seleccione una comunidad</option>
                                 @foreach($comunidadades as $comunidad)
-                                    <option>{{$comunidad->comunidad}}</option>
+                                    <option value="{{$comunidad->comunidad}}" {{$comunidad->comunidad==$buscar_comunidad?"selected":""}}>{{$comunidad->comunidad}}</option>
                                 @endforeach
                             </select>
                             <select name="buscar_municipio" id="buscar_municipio">
                                 <option  disabled selected>Seleccione un municipio</option>
                                 @foreach($municipios as $municipio)
-                                    <option>{{$municipio->municipio}}</option>
+                                    <option value="{{$municipio->municipio}}" {{$municipio->municipio==$buscar_municipio?"selected":""}}>{{$municipio->municipio}}</option>
                                 @endforeach
                             </select>
                             <select name="buscar_estado" id="buscar_estado">
                                 <option  disabled selected>Seleccione un estado</option>
                                 @foreach($estados as $estado)
-                                    <option>{{$estado->estado}}</option>
+                                    <option value="{{$estado->estado}}" {{$estado->estado==$buscar_estado?"selected":""}}>{{$estado->estado}}</option>
                                 @endforeach
                             </select>
                             <input type="submit" value="Buscar">
@@ -172,12 +172,12 @@
             type: 'xrange'
         },
             title: {
-            text: 'Highcharts X-range'
+            text: 'Primera y última fecha de cada fase fenológica de las especies.'
         },
             tooltip: {
             formatter: function() {
 
-            return new Date(this.point.x).toLocaleDateString()+" - "+new Date(this.point.x2).toLocaleDateString()+"<br>Observaciones:"+this.point.partialFill+ '.';
+                return (this.point.description)+"<br>Observaciones:"+this.point.partialFill+ '.';
 
         }
         },

@@ -9,7 +9,7 @@
                             <select name="buscar_anio" id="buscar_anio">
                                 <option  disabled selected>Seleccione un año</option>
                                 @foreach($anos as $ano)
-                                    <option>{{$ano->anio}}</option>
+                                    <option value="{{$ano->anio}}" {{$ano->anio==$buscar_anio?"selected":""}}>{{$ano->anio}}</option>
                                 @endforeach
                             </select>
                             <input type="submit" value="Buscar">
@@ -151,12 +151,12 @@
                 type: 'xrange'
             },
             title: {
-                text: 'Highcharts X-range'
+                text: 'Calendario de primera y última observación de cada fase fenológica por especie.'
             },
             tooltip: {
                 formatter: function() {
 
-                    return new Date(this.point.x).toLocaleDateString()+" - "+new Date(this.point.x2).toLocaleDateString()+"<br>Observaciones:"+this.point.partialFill+ '.';
+                    return (this.point.description)+"<br>Observaciones:"+this.point.partialFill+ '.';
 
                 }
             },

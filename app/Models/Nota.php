@@ -55,8 +55,8 @@ class Nota extends Model
             ->join('especies','especies.id_especie','=','subespecies.id_especie')
             ->select("especies.descripcion as especie","fenofases.descrip_fenofase as fenofase")
             ->selectRaw("count(*) as observaciones")
-            ->selectRaw("min(notas.fecha) as primer_fecha")
-            ->selectRaw("max(notas.fecha) as ultima_fecha")
+            ->selectRaw("date(min(notas.fecha)) as primer_fecha")
+            ->selectRaw("date(max(notas.fecha)) as ultima_fecha")
             ->whereMonth('notas.fecha',$month)
             ->whereYear("notas.fecha",$year)
             ->where("especies.descripcion",$especie)
@@ -77,8 +77,8 @@ class Nota extends Model
             ->join('estados','estados.id_estado','=','municipios.id_estado')
             ->select("especies.descripcion as especie","fenofases.descrip_fenofase as fenofase")
             ->selectRaw("count(*) as observaciones")
-            ->selectRaw("min(notas.fecha) as primer_fecha")
-            ->selectRaw("max(notas.fecha) as ultima_fecha")
+            ->selectRaw("date(min(notas.fecha)) as primer_fecha")
+            ->selectRaw("date(max(notas.fecha)) as ultima_fecha")
             ->whereMonth('notas.fecha',$month)
             ->whereYear("notas.fecha",$year)
             ->where("especies.descripcion",$especie)
@@ -116,4 +116,5 @@ class Nota extends Model
     public function getIndividuo($id){
         return Individuo::findOrFail($id);
     }
+
 }

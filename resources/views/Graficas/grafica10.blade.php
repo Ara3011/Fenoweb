@@ -9,7 +9,8 @@
                         <select name="buscar_anio" id="buscar_anio" >
                             <option value="" disabled selected>Seleccione un año</option>
                             @foreach($anios as $anio)
-                                <option >{{$anio->anio}}</option>
+                                <option value="{{$anio->anio}}" {{$anio->anio==$buscar_anio?"selected":""}}>{{$anio->anio}}</option>
+
                             @endforeach
                         </select>
                         <input type="submit" value="Buscar" id="btn">
