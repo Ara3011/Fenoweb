@@ -1,7 +1,7 @@
 @extends('Template.headerf')
 @section('content')
 
-    <form action={{url('/escalas/'.$escala->id_bbch)}} method="POST" >
+    <form action={{url('/escalas/'.$escala->id_bbch)}} method="POST">
         {{csrf_field()}}
         {{method_field('PATCH')}}
 
@@ -9,7 +9,8 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <center><strong>Nombre de escala:</strong>
-                    <input type="text" name="descripcion" class="form-catalogo" placeholder="Escalas" value="{{$escala->descripcion}}"></center>
+                        <input type="text" name="descripcion" class="form-catalogo" placeholder="Escalas"
+                               value="{{$escala->descripcion}}"></center>
                 </div>
             </div>
 

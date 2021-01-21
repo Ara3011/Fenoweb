@@ -64,7 +64,11 @@
                                             aria-label="Rendering engine: activate to sort column descending">Nombre
                                             Común
                                         </th>
-
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Uso
+                                        </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Familia
@@ -130,6 +134,11 @@
                                             aria-label="Rendering engine: activate to sort column descending">
                                             Precipitación
                                         </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            Clima
+                                        </th>
 
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -158,6 +167,7 @@
                                             <td>{{$nota->dia_juliano}}</td>
                                             <td>{{$nota->observador}}</td>
                                             <td>{{$nota->nombre_comun}}</td>
+                                            <td>{{$nota->uso}}</td>
                                             <td>{{$nota->familia}}</td>
                                             <td>{{$nota->genero}}</td>
                                             <td>{{$nota->especie}}</td>
@@ -173,6 +183,7 @@
                                             <td>{{$nota->fenofase}}</td>
                                             <td>{{$nota->int_feno}}</td>
                                             <td>{{$nota->precipitacion}}</td>
+                                            <td>{{$nota->clima}}</td>
                                             <td>{{$nota->temperatura_minima}}</td>
                                             <td>{{$nota->temperatura_maxima}}</td>
                                             <td>{{$nota->nota}}</td>

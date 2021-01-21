@@ -71,11 +71,12 @@
                                                            href="{{url('/escalas/'.$escala->id_bbch.'/edit')}}"><i
                                                                 class="material-icons text-blanco ">edit</i></a>
                                                     </button>
-                                                    {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                    <!-- BORRAR -->
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <!-- BORRAR -->
                                                     <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle " onclick="return confirm('¿Está seguro que desea eliminar?');">
+                                                            class="btn btn-danger rounded-circle "
+                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">
                                                         <i class="material-icons"
                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Red Nacional de Fenología</title>
     <!-- ESTILOS SELECT2 Y AUTOCOMPLETE-->
-    <link  rel = "stylesheet" href = "{{asset('https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{asset('https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css')}}">
     <link href="{{asset('https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css')}}"
           rel="stylesheet"/>
     <!-- MIS ESTILOS Y LOS ICONOS-->
@@ -37,27 +37,27 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{{url('/')}}">Inicio</a></li>
 
-                    <li class=""><a href="{{url('/notas/create')}}">Formulario</a></li>
+                    <li class=""><a href="{{url('/notas/create')}}">Registro de notas</a></li>
 
 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Notas <i class="fas fa-caret-down"> </i>
+                            Consulta de Notas <i class="fas fa-caret-down"> </i>
                         </a>
 
                         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                            <a class="nav-linkk"  href="{{url('/notas')}}">Notas Generales</a>
+                            <a class="nav-linkk" href="{{url('/notas')}}">Notas Generales</a>
                             <a class="nav-linkk  " href="{{url('/notas/mis_notas')}}">Mis Notas</a>
 
                         </div>
                     </li>
 
                     @if(Auth::user()->tipo_usuario == 1)
-                    <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Catalogos <i class="fas fa-caret-down"> </i>
+                                Catálogos <i class="fas fa-caret-down"> </i>
                             </a>
 
                             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
@@ -74,9 +74,9 @@
 
                             </div>
                         </li>
-                    <li class="nav-item"><a class="nav-link text-naranja " href="{{url('/graficas')}}">Gráficas</a>
-                    </li>
-                   @endif
+                        <li class="nav-item"><a class="nav-link text-naranja " href="{{url('/graficas')}}">Gráficas</a>
+                        </li>
+                    @endif
                     @guest
                         @if (Route::has('login'))
 
@@ -89,7 +89,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}  {{ Auth::user()->ap }}  <i class="fas fa-user"> </i>
+                                {{ Auth::user()->name }}  {{ Auth::user()->ap }} <i class="fas fa-user"> </i>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -98,10 +98,13 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Cerrar Sesión') }} <i class="fas fa-sign-out-alt"> </i>
                                 </a>
-                                <a class="nav-linkk " href="{{url('/usuarios/show')}}">Mi perfil <i class="fas fa-user-edit"></i></a>
-                                <a class="nav-linkk " href="{{url('/insignias')}}">Mis insignias <i class="fas fa-star"></i></a>
+                                <a class="nav-linkk " href="{{url('/usuarios/show')}}">Mi perfil <i
+                                        class="fas fa-user-edit"></i></a>
+                                <a class="nav-linkk " href="{{url('/insignias')}}">Mis insignias <i
+                                        class="fas fa-star"></i></a>
                                 @if(Auth::user()->tipo_usuario == 1)
-                                    <a class="nav-linkk " href="{{url('/usuarios')}}">Usuarios <i class="fas fa-users-cog"> </i></a>
+                                    <a class="nav-linkk " href="{{url('/usuarios')}}">Usuarios <i
+                                            class="fas fa-users-cog"> </i></a>
                                 @endif
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

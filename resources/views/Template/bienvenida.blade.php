@@ -39,11 +39,11 @@
 
                     @if (Route::has('login'))
                         @auth
-                            <li class=""><a href="{{url('/notas/create')}}">Formulario</a></li>
+                            <li class=""><a href="{{url('/notas/create')}}">Registro de notas</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Notas <i class="fas fa-caret-down"> </i>
+                                    Consulta de Notas <i class="fas fa-caret-down"> </i>
                                 </a>
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
@@ -56,7 +56,7 @@
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        Catalogos <i class="fas fa-caret-down"> </i>
+                                        Catálogos <i class="fas fa-caret-down"> </i>
                                     </a>
 
                                     <div class="dropdown-menu " aria-labelledby="navbarDropdown">
@@ -139,30 +139,34 @@
                                         única en su tipo en México y esperamos continuar extendiendo <br>
                                         este esfuerzo para llegar a más comunidades de México </p>
                                 </blockquote>
-                                <small>Shaun Paul, Client</small>
+
                             </li>
                             <li>
                                 <blockquote>
-                                    <img src="plantilla/img/thumb.png" class="img-responsive">
-                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you. </p>
+                                    <h2>¡MISIÓN!</h2>
+                                    <p>Empoderar a las comunidades de México de capacidades <br>
+                                        para monitorear, registrar y comprender,
+                                        los cambios <br> en la vegetación de las especies de importancia
+                                        local, para hacer frente <br> a los impactos del cambio climático a nivel local. </p>
                                 </blockquote>
-                                <small>Marry Smith, Client</small>
+
                             </li>
                             <li>
                                 <blockquote>
-                                    <img src="plantilla/img/thumb.png" class="img-responsive">
-                                    <p>Come a day there won't be room for naughty men like us to slip about at all. This
-                                        job goes south, there well may not be another.</p>
+                                    <h2>¡VISIÓN!</h2>
+                                    <p>Comunidades Mexicanas capaces de formular sus posibles <br>
+                                        estrategias locales de adaptación
+                                        ante el cambio climático <br>
+                                        a partir de la construcción de capacidades <br> de observación y registro fenológico </p>
                                 </blockquote>
-                                <small>Vivek Singh, Client</small>
                             </li>
-                            <li>
+                           <!-- <li>
                                 <blockquote>
                                     <img src="plantilla/img/thumb.png" class="img-responsive">
                                     <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
                                 </blockquote>
                                 <small>John Doe, Client</small>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </div>
@@ -172,24 +176,6 @@
 </section>
 <section>
 
-    <div class="bg-color">
-        <div class="wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="banner-info text-center wow fadeIn delay-05s">
-                        <h2 class="bnr-sub-title">Starting a new journey!!</h2>
-                        <p class="bnr-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip <br>ex ea commodo consequat.</p>
-
-                        <div class="overlay-detail">
-                            <a href="#feature"><i class="fa fa-angle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 <footer class=" card card-footer">
     <h6 class="text-center footer">

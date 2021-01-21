@@ -4,10 +4,21 @@
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Individuo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Individuo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Nota.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Nota.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VisitanteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VisitanteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Climas/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Escalas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Especies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Especies/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Notas/mis_notas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/mis_notas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/headerf.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +260,12 @@
       <workItem from="1610827694937" duration="42698000" />
       <workItem from="1611009111394" duration="29659000" />
       <workItem from="1611070814174" duration="3165000" />
-      <workItem from="1611121860549" duration="258000" />
+      <workItem from="1611121860549" duration="498000" />
+      <workItem from="1611123621384" duration="3764000" />
+      <workItem from="1611159652705" duration="85000" />
+      <workItem from="1611159764247" duration="8978000" />
+      <workItem from="1611174020308" duration="3246000" />
+      <workItem from="1611180758294" duration="28196000" />
     </task>
     <servers />
   </component>
@@ -269,11 +285,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1610833439616" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611010929095">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611126272704">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864/1920.0.1024.768@0.0.1536.864" timestamp="1604508046206" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1611010929095" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1611126272704" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1604102147136">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

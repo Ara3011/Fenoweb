@@ -34,6 +34,7 @@ class VisitanteController extends Controller
             ->selectRaw('notas.dia_juliano as dia_juliano')
             ->selectRaw('users.name as observador')
             ->selectRaw('individuos.nombre_comun as nombre_comun')
+            ->selectRaw('individuos.uso as uso')
             ->selectRaw('individuos.id_individuo as id_individuo')
             ->selectRaw('familias.descripcion as familia')
             ->selectRaw('generos.descripcion as genero')

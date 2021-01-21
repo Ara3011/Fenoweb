@@ -14,7 +14,8 @@
 
                             <div class="form-group row">
                                 <label for="email"
-                                       class="col-md-center ">{{ __('Correo electrónico') }}</label>
+                                       class="col-md-center "><span
+                                        class="text-danger">*</span>{{ __('Correo electrónico') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -31,7 +32,8 @@
 
                             <div class="form-group row">
                                 <label for="password"
-                                       class="col-md-center col-form-label text-md-right">{{ __('Contraseña') }}</label>
+                                       class="col-md-center col-form-label text-md-right"><span
+                                        class="text-danger">*</span>{{ __('Contraseña') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
