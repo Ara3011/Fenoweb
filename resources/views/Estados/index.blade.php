@@ -2,11 +2,11 @@
 @section('content')
 
     <div class="container-fluid">
-        <div class="col-md-12 mt-4" >
+        <div class="col-md-12 mt-4">
             <div class="card">
-                    <div class="bg-greencard">
+                <div class="bg-greencard">
                     <h4 class="card-header text-blanco">Estados</h4>
-                    </div>
+                </div>
 
                 <div class="card-bodyy">
                     <div>
@@ -32,7 +32,8 @@
                                        role="grid" aria-describedby="example1_info">
                                     <thead class="thead-light">
                                     <tr role="row">
-                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="example1" rowspan="1"
+                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="example1"
+                                            rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Nombre
                                         </th>

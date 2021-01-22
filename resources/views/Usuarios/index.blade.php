@@ -27,6 +27,8 @@
                         </center>
                     </div>
 
+                   <center> <h4 class="text-danger">El rol "1" es un Administrador</h4>
+                    <h4 class="text-danger">El rol "2" es Observador</h4><br></center>
 
                     <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                         <div class="row">
@@ -59,7 +61,8 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Acciones
+                                            aria-label="Rendering engine: activate to sort column descending">Actualizar
+                                            datos
                                         </th>
                                     </thead>
                                     <tbody>
@@ -82,16 +85,6 @@
                                                                 class="material-icons text-blanco ">edit</i></a>
                                                     </button>
 
-
-                                                {{csrf_field()}}
-                                                {{method_field('DELETE')}}
-                                                <!-- BORRAR -->
-                                                    <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle "
-                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">
-                                                        <i class="material-icons"
-                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
-                                                    </button>
                                                 </form>
                                             </td>
 

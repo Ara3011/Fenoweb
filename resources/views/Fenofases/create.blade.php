@@ -12,14 +12,15 @@
             </ul>
         </div>
     @endif
-    <form action="/fenofases" method="POST" >
+    <form action="/fenofases" method="POST">
         @csrf
 
         <div class="row card-bodyy">
-            <div class="col-xs-12 col-sm-12 col-md-12" >
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                  <center>  <strong><a class="text-danger">*</a>Nombre de fenofase:</strong>
-                    <input type="text" name="descrip_fenofase" class="form-catalogo" placeholder="Fenofase"></center>
+                    <center><strong><a class="text-danger">*</a>Nombre de fenofase:</strong>
+                        <input type="text" name="descrip_fenofase" class="form-catalogo" placeholder="Fenofase">
+                    </center>
                 </div>
             </div>
 

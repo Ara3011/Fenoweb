@@ -1,7 +1,5 @@
 @extends('Template.headerf')
 @section('content')
-
-
     <form action="/notas" method="POST">
         @csrf
         <div class="row card-body ">
@@ -47,6 +45,8 @@
                                 <option value={{$especie->id_especie}}>{{$especie->especie}}</option>
                             @endforeach
                         </select><br><br>
+                        <span class="text-danger"><i class="fas fa-question"></i> Si no conoce la subespecie </span><br>
+                        <span class="text-naranja">por favor, dejar campo vacío </span><br><br>
                         <strong>Subespecie:</strong><br>
                         <input type="text" name="descripcion" class="form-formulario"
                                placeholder="Ingresa nombre de subespecie"><br>
@@ -67,7 +67,8 @@
                             @foreach($escalas as $escala)
                                 <option value={{$escala->id_bbch}}>{{$escala->escala}}</option>
                             @endforeach
-                        </select><br><br>
+                        </select><br><br> <span class="text-danger"><i class="fas fa-question"></i> Si no existe el sitio que deseas agregar por favor escribe al correo:</span><br>
+                        <span class="text-naranja">rednacionaldefenologia.unam@gmail.com</span><br><br>
                         <strong><a class="text-danger">*</a>Sitio:</strong><br>
                         <select
                             style="width:300px;border:1px solid #04467E;background-color:#DDFFFF;color:#2D4167;font-size:18px"

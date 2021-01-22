@@ -12,7 +12,9 @@
             <div class="card">
                 <div class="bg-greencard">
 
-                    <h4 class="card-header text-blanco text-center">Mi perfil: <br> <h1 class="text-center text-blanco">{{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h1></h4>
+                    <h4 class="card-header text-blanco text-center">Mi perfil: <br>
+                        <h1 class="text-center text-blanco">{{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h1>
+                    </h4>
                 </div>
                 <div class="card-bodyy">
 
@@ -43,7 +45,8 @@
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Actualizar mis datos
+                                            aria-label="Rendering engine: activate to sort column descending">Actualizar
+                                            mis datos
                                         </th>
 
                                     </thead>

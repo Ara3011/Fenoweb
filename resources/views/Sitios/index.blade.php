@@ -7,16 +7,16 @@
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
         @endif
-        <div class="col-md-2 mt-3" >
+        <div class="col-md-2 mt-3">
 
-            <button class="btn bg-greencard" >
+            <button class="btn bg-greencard">
                 <a href="{{url('/sitios/create')}}">
                     <i class="material-icons text-blanco">loupe</i><i class="text-blanco">Agregar sitio</i>
                 </a>
             </button>
         </div>
 
-        <div class="col-md-12" >
+        <div class="col-md-12">
             <div class="card">
                 <div class="bg bg-greencard">
 
@@ -30,7 +30,7 @@
                                 <label for="buscar_sitio" class="text-dark"><h4>Filtro de búsqueda: </h4></label>
                                 <input name="buscar_sitio" class="form-catalogo form-control-sm ml-3 w-75" type="text"
                                        placeholder="Buscar Sitio"
-                                       aria-label="buscar sitio" >
+                                       aria-label="buscar sitio">
                             </form>
                         </center>
                     </div>
@@ -104,7 +104,8 @@
                                                 {{method_field('DELETE')}}
                                                 <!-- BORRAR -->
                                                     <button type="submit" rel="tooltip"
-                                                            class="btn btn-danger rounded-circle " onclick="return confirm('¿Está seguro que desea eliminar?');">
+                                                            class="btn btn-danger rounded-circle "
+                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">
                                                         <i class="material-icons"
                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
                                                     </button>
@@ -121,7 +122,7 @@
                 </div>
             </div>
             <div class="text-center">
-        <span >
+        <span>
             {{ $datossitios->links('pagination::bootstrap-4') }}
         </span>
             </div>
@@ -131,5 +132,5 @@
                 }
             </style>
         </div>
-        </div>
+    </div>
 @endsection

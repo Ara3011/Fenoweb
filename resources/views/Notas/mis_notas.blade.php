@@ -2,17 +2,17 @@
 @section('content')
 
 
-    <div class="container-fluid" >
+    <div class="container-fluid">
         @if(Session::has('Mensaje'))
             <div class="alert alert-secondary text-center alert-dismissible text-uppercase">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <span class="glyphicon glyphicon-ok"></span><em> {!! session('Mensaje') !!}</em></div>
         @endif
-        <div class="col-md-12" >
+        <div class="col-md-12">
 
-            <div class="" >
+            <div class="">
                 <div class="bg-greencard">
-                    <div class="card-header text-blanco" >
+                    <div class="card-header text-blanco">
                         <h4 class="text-center text-blanco">Mis notas</h4>
                     </div>
                 </div>
@@ -21,7 +21,8 @@
                         <form action="{{url('/notas/show/exportar')}}" enctype="multipart/form-data">
                             <button class="btn font-weight-bold" style="border: grey 1px solid;" type="submit">
                                 <img src="/img/excell.png" width="30" height="30">
-                                Exportar mis notas</button>
+                                Exportar mis notas
+                            </button>
                         </form>
                     </div>
                     <br>
@@ -29,11 +30,13 @@
                         <form action="{{url('/graficas/grafica9/exportar')}}" enctype="multipart/form-data">
                             <button class="btn font-weight-bold" style="border: grey 1px solid;" type="submit">
                                 <img src="/img/excell.png" width="30" height="30">
-                                Exportar notas generales</button>
+                                Exportar notas generales
+                            </button>
                         </form>
                     </div>
                     <div>
-                       <h3 class="text-center">Notas de:   {{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h3>
+                        <h3 class="text-center">Notas
+                            de: {{ Auth::user()->name }}  {{ Auth::user()->ap }}  {{ Auth::user()->am }}</h3>
                     </div>
 
                     <div class="dataTables_wrapper dt-bootstrap4" style=" overflow:scroll;
@@ -155,10 +158,10 @@
                                             aria-label="Rendering engine: activate to sort column descending">Hallazgo
                                         </th>
 
-                                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-sort="ascending"
-                                                aria-label="Rendering engine: activate to sort column descending">Acciones
-                                            </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                            colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">Acciones
+                                        </th>
                                     </thead>
                                     <tbody>
                                     @foreach($notas as $nota)
@@ -188,27 +191,28 @@
                                             <td>{{$nota->temperatura_maxima}}</td>
                                             <td>{{$nota->nota}}</td>
                                             <td>
-                                                    <form method="post"
-                                                          action="{{url('/notas/'.$nota->id_nota)}}">
-                                                        <!-- Actualizar -->
-                                                        {{csrf_field()}}
-                                                        <button type="button" rel="tooltip"
-                                                                class="btn btn-success btn-limon text-blanco ">
-                                                            <a class="text-light"
-                                                               href="{{url('/notas/'.$nota->id_nota.'/edit')}}"><i
-                                                                    class="material-icons text-blanco ">edit</i></a>
-                                                        </button>
-
-
+                                                <form method="post"
+                                                      action="{{url('/notas/'.$nota->id_nota)}}">
+                                                    <!-- Actualizar -->
                                                     {{csrf_field()}}
-                                                    {{method_field('DELETE')}}
-                                                    <!-- BORRAR -->
-                                                        <button type="submit" rel="tooltip"
-                                                                class="btn btn-danger rounded-circle " onclick="return confirm('¿Está seguro que desea eliminar?');">
-                                                            <i class="material-icons"
-                                                               onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
-                                                        </button>
-                                                    </form>
+                                                    <button type="button" rel="tooltip"
+                                                            class="btn btn-success btn-limon text-blanco ">
+                                                        <a class="text-light"
+                                                           href="{{url('/notas/'.$nota->id_nota.'/edit')}}"><i
+                                                                class="material-icons text-blanco ">edit</i></a>
+                                                    </button>
+
+
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <!-- BORRAR -->
+                                                    <button type="submit" rel="tooltip"
+                                                            class="btn btn-danger rounded-circle "
+                                                            onclick="return confirm('¿Está seguro que desea eliminar?');">
+                                                        <i class="material-icons"
+                                                           onclick="return confirm('¿Está seguro que desea eliminar?');">restore_from_trash</i>
+                                                    </button>
+                                                </form>
                                             </td>
 
                                         </tr>
@@ -225,7 +229,7 @@
         </div>
     </div>
     <div class="text-center">
-        <span >
+        <span>
             {{ $notas->links('pagination::bootstrap-4') }}
         </span>
     </div>

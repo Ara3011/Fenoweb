@@ -51,7 +51,9 @@
                                             <td></td>
                                             <td></td>
                                             <td class="text-center">Fecha: {{$fecha->fecha}} <br>
-                                                <span class="text-naranja">(Cada 6 registros obtendrás una insignia)</span></td>
+                                                <span
+                                                    class="text-naranja">(Cada 6 registros obtendrás una insignia)</span>
+                                            </td>
                                             <td></td>
                                             <td></td>
                                         </tr>
@@ -80,9 +82,12 @@
                                                  height="190"></td>
                                         <td><h3>Número total de insignias obtenidas</h3><br>
                                             @foreach($insignias as $insignia)
-                                            <h2 class="text-center"><a><img src="/img/insignia.png" alt="Red nacional de Fenología" width="50"
-                                                                            height="50"></a>{{$insignia->insignia}}</h2>
-                                                @endforeach
+                                                <h2 class="text-center"><a><img src="/img/insignia.png"
+                                                                                alt="Red nacional de Fenología"
+                                                                                width="50"
+                                                                                height="50"></a>{{$insignia->insignia}}
+                                                </h2>
+                                            @endforeach
                                         </td>
                                     </tr>
                                 </table>

@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <form action={{url('/notas/'.$datosnotas->id_nota)}} method="POST" >
+    <form action={{url('/notas/'.$datosnotas->id_nota)}} method="POST">
         {{csrf_field()}}
         {{method_field('PATCH')}}
         <input type="hidden" value="{{$datosindividuo->id_individuo}}" name="id_individuo">
@@ -20,7 +20,8 @@
 
                         <br>
                         <strong class="mt-3"><a class="text-danger">*</a>Fecha:</strong>
-                        <input type="date" class="form-formulario ui-datepicker" name="fecha"  value="{{date("Y",strtotime($datosnotas->fecha))}}-{{date("m",strtotime($datosnotas->fecha))}}-{{date("d",strtotime($datosnotas->fecha))}}"><br>
+                        <input type="date" class="form-formulario ui-datepicker" name="fecha"
+                               value="{{date("Y",strtotime($datosnotas->fecha))}}-{{date("m",strtotime($datosnotas->fecha))}}-{{date("d",strtotime($datosnotas->fecha))}}"><br>
                         <strong><a class="text-danger">*</a>Familia:</strong><br>
 
                         <!--Estilo del select-->
@@ -29,7 +30,8 @@
                             onchange="this.style.width=100" name="id_familia" id="id_familia">
                             <option value="" disabled selected>Seleccione familia</option>
                             @foreach($familias as $familia)
-                                <option value="{{$familia->id_familia}}" {{$familia->id_familia==$datosindividuo->id_familia?"selected":""}}>{{$familia->familia}}</option>
+                                <option
+                                    value="{{$familia->id_familia}}" {{$familia->id_familia==$datosindividuo->id_familia?"selected":""}}>{{$familia->familia}}</option>
                             @endforeach
                         </select><br><br>
                         <strong><a class="text-danger">*</a>Género:</strong><br>
@@ -39,7 +41,8 @@
                             onchange="this.style.width=100" name="id_genero" id="id_genero">
                             <option value="" disabled selected>Seleccione género</option>
                             @foreach($generos as $genero)
-                                <option value="{{$genero->id_genero}}" {{$genero->id_genero==$datosindividuo->id_genero?"selected":""}}>{{$genero->genero}}</option>
+                                <option
+                                    value="{{$genero->id_genero}}" {{$genero->id_genero==$datosindividuo->id_genero?"selected":""}}>{{$genero->genero}}</option>
                             @endforeach
                         </select><br><br>
                         <strong><a class="text-danger">*</a>Especie:</strong><br>
@@ -48,7 +51,8 @@
                             onchange="this.style.width=100" name="id_especie" id="id_especie">
                             <option value="" disabled selected>Seleccione especie</option>
                             @foreach($especies as $especie)
-                                <option value="{{$especie->id_especie}}" {{$especie->id_especie==$datossubespecie->id_especie?"selected":""}}>{{$especie->especie}}</option>
+                                <option
+                                    value="{{$especie->id_especie}}" {{$especie->id_especie==$datossubespecie->id_especie?"selected":""}}>{{$especie->especie}}</option>
                             @endforeach
                         </select><br><br>
                         <strong>Subespecie:</strong><br>
@@ -57,7 +61,8 @@
 
                         <strong><a class="text-danger">*</a>Nombre Común:</strong><br>
                         <input id="nombre_especies" type="text" name="nombre_comun" class="form-formulario typeahead"
-                               placeholder="Ingresa nombre común del individuo" value="{{$datosindividuo->nombre_comun}}"><br>
+                               placeholder="Ingresa nombre común del individuo"
+                               value="{{$datosindividuo->nombre_comun}}"><br>
 
                         <strong><a class="text-danger">*</a>Uso del individuo:</strong><br>
                         <input type="text" name="uso" class="form-formulario"
@@ -69,7 +74,8 @@
                             onchange="this.style.width=100" name="id_bbch" id="id_bbch">
                             <option value="" disabled selected>Seleccione grupo</option>
                             @foreach($escalas as $escala)
-                                <option value="{{$escala->id_bbch}}" {{$escala->id_bbch==$datosindividuo->id_bbch?"selected":""}}>{{$escala->escala}}</option>
+                                <option
+                                    value="{{$escala->id_bbch}}" {{$escala->id_bbch==$datosindividuo->id_bbch?"selected":""}}>{{$escala->escala}}</option>
                             @endforeach
                         </select><br><br>
                         <strong><a class="text-danger">*</a>Sitio:</strong><br>
@@ -78,7 +84,8 @@
                             onchange="this.style.width=100" name="id_sitio" id="id_sitio">
                             <option value="" disabled selected>Seleccione un sitio</option>
                             @foreach($sitios as $sitio)
-                                <option value="{{$sitio->id_sitio}}" {{$sitio->id_sitio==$datosnotas->id_sitio?"selected":""}}>{{$sitio->sitio}}</option>
+                                <option
+                                    value="{{$sitio->id_sitio}}" {{$sitio->id_sitio==$datosnotas->id_sitio?"selected":""}}>{{$sitio->sitio}}</option>
                             @endforeach
                         </select><br><br>
                         <strong><a class="text-danger">*</a>Intensidad Fenofase:</strong><br>
@@ -90,11 +97,13 @@
                             onchange="this.style.width=100" name="id_fenofase" id="id_fenofase">
                             <option value="" disabled selected>Seleccione una fenofase</option>
                             @foreach($fenofases as $fenofase)
-                                <option value="{{$fenofase->id_fenofase}}" {{$fenofase->id_fenofase==$datosnotas->id_fenofase?"selected":""}}>{{$fenofase->fenofase}}</option>
+                                <option
+                                    value="{{$fenofase->id_fenofase}}" {{$fenofase->id_fenofase==$datosnotas->id_fenofase?"selected":""}}>{{$fenofase->fenofase}}</option>
                             @endforeach
                         </select>
                         <br><br> <strong>Precipitación:</strong><br>
-                        <input type="number" name="precipitacion" class="form-formulario" placeholder="30mm." value="{{$datosnotas->precipitacion}}"><br>
+                        <input type="number" name="precipitacion" class="form-formulario" placeholder="30mm."
+                               value="{{$datosnotas->precipitacion}}"><br>
 
                         <strong><a class="text-danger">*</a>Clima:</strong><br>
                         <select
@@ -102,7 +111,8 @@
                             onchange="this.style.width=100" name="id_clima" id="id_clima">
                             <option value="" disabled selected>Seleccione clima</option>
                             @foreach($climas as $clima)
-                                <option value="{{$clima->id_clima}}" {{$clima->id_clima==$datosnotas->id_clima?"selected":""}}>{{$clima->clima}}</option>
+                                <option
+                                    value="{{$clima->id_clima}}" {{$clima->id_clima==$datosnotas->id_clima?"selected":""}}>{{$clima->clima}}</option>
                             @endforeach
                         </select>
                         <br><br> <strong>Temperatura minima:</strong>
@@ -159,9 +169,5 @@
     <script type="text/javascript">
         $("#id_clima",).select2({});
     </script>
-
-
-
-
 
 @endsection
