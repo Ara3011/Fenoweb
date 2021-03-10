@@ -444,7 +444,7 @@
 <!--FOOTER DE LA PAGINA -->
 <footer class="card-footer">
     <h6 class="text-center">
-        © 2020 Red Nacional de Fenología
+        © 2021 Red Nacional de Fenología
     </h6>
 </footer>
 <!--SCRIPTS QUE PERMITEN FUNCIONAMIENTO DE ESTILOS -->

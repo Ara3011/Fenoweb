@@ -135,7 +135,7 @@
 
 <footer class=" card card-footer">
     <h6 class="text-center footer">
-        <strong>Copyright © 2020 Red Nacional de Fenología</strong>
+        <strong>Copyright © 2021 Red Nacional de Fenología</strong>
         All rights reserved.
     </h6>
 </footer>
