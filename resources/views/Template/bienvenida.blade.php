@@ -82,12 +82,14 @@
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
 
-                                    <a class="nav-linkk  " href="{{url('/usuarios/show')}}">Mi perfil <i class="fas fa-user-edit"></i></a>
-                                    <a class="nav-linkk  " href="{{url('/insignias')}}">Mis insignias <i class="fas fa-star"></i></a>
+                                    <a class="nav-linkk  " href="{{url('/usuarios/show')}}">Mi perfil <i
+                                            class="fas fa-user-edit"></i></a>
+                                    <a class="nav-linkk  " href="{{url('/insignias')}}">Mis insignias <i
+                                            class="fas fa-star"></i></a>
                                     @if(Auth::user()->tipo_usuario == 1)
-                                    <a class="nav-linkk  " href="{{url('/usuarios')}}">Usuarios <i
-                                            class="fas fa-users-cog"> </i></a>
-                                        @endif
+                                        <a class="nav-linkk  " href="{{url('/usuarios')}}">Usuarios <i
+                                                class="fas fa-users-cog"> </i></a>
+                                    @endif
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -147,7 +149,8 @@
                                     <p>Empoderar a las comunidades de México de capacidades <br>
                                         para monitorear, registrar y comprender,
                                         los cambios <br> en la vegetación de las especies de importancia
-                                        local, para hacer frente <br> a los impactos del cambio climático a nivel local. </p>
+                                        local, para hacer frente <br> a los impactos del cambio climático a nivel local.
+                                    </p>
                                 </blockquote>
 
                             </li>
@@ -157,16 +160,17 @@
                                     <p>Comunidades Mexicanas capaces de formular sus posibles <br>
                                         estrategias locales de adaptación
                                         ante el cambio climático <br>
-                                        a partir de la construcción de capacidades <br> de observación y registro fenológico </p>
+                                        a partir de la construcción de capacidades <br> de observación y registro
+                                        fenológico </p>
                                 </blockquote>
                             </li>
-                           <!-- <li>
-                                <blockquote>
-                                    <img src="plantilla/img/thumb.png" class="img-responsive">
-                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
-                                </blockquote>
-                                <small>John Doe, Client</small>
-                            </li>-->
+                            <!-- <li>
+                                 <blockquote>
+                                     <img src="plantilla/img/thumb.png" class="img-responsive">
+                                     <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
+                                 </blockquote>
+                                 <small>John Doe, Client</small>
+                             </li>-->
                         </ul>
                     </div>
                 </div>

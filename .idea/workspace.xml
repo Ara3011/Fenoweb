@@ -3,28 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d06e0645-9427-41c6-a490-f568bc0c52ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Estados/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Estados/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Estados/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Familias/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Fenofases/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Generos/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Insignias/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Insignias/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Municipios/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Notas/mis_notas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Notas/mis_notas.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Sitios/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Usuarios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Usuarios/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Usuarios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Usuarios/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Usuarios/mi_perfil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Usuarios/mi_perfil.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Template/bienvenida.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +12,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -178,16 +155,17 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Usuarios" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -204,6 +182,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -272,11 +251,16 @@
       <workItem from="1611159764247" duration="8978000" />
       <workItem from="1611174020308" duration="3246000" />
       <workItem from="1611180758294" duration="47755000" />
+      <workItem from="1615403205024" duration="648000" />
+      <workItem from="1615403890147" duration="47000" />
+      <workItem from="1616634086789" duration="1252000" />
+      <workItem from="1616638800282" duration="68000" />
+      <workItem from="1616642139672" duration="4049000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="531" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604890211647">
