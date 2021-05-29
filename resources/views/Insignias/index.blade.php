@@ -33,7 +33,9 @@
                                             rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Última
-                                            Nota creada:
+                                            Nota creada: <br>
+                                            <span
+                                                    class="text-naranja">(Cada 6 registros obtendrás una insignia)</span>
                                         </th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-sort="ascending"
@@ -51,8 +53,7 @@
                                             <td></td>
                                             <td></td>
                                             <td class="text-center">Fecha: {{$fecha->fecha}} <br>
-                                                <span
-                                                    class="text-naranja">(Cada 6 registros obtendrás una insignia)</span>
+                                               
                                             </td>
                                             <td></td>
                                             <td></td>
